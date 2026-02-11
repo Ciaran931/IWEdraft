@@ -1,15 +1,54 @@
+/* Reset */
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 20px;
 }
 
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Site title */
+header .title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Navigation links */
+header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: #007acc;
+}
+
+/* Main content */
+main {
+  padding: 20px;
+  margin-top: 10px;
+}
+
+/* Clickable words */
 .word {
   color: blue;
   cursor: pointer;
   text-decoration: underline;
 }
 
+/* Popup */
 #popup {
   position: fixed;
   bottom: 20px;
