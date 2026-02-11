@@ -1,13 +1,37 @@
-<header>
-    
-<link rel="stylesheet" href="../../css/styles.css">
-<script src="js/app.js" defer></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story 1 - Input With Ease</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <script src="../../js/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="title">Input With Ease</div>
+    <nav>
+      <a href="../../index.html">Home</a>
+      <a href="../../input.html">Input</a>
+      <a href="../../vocab.html">Vocab</a>
+      <a href="../../grammar.html">Grammar</a>
+    </nav>
+  </header>
 
-  <div class="title">Input With Ease</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="input.html">Input</a>
-    <a href="vocab.html">Vocab</a>
-    <a href="grammar.html">Grammar</a>
-  </nav>
-</header>
+  <main>
+    <h2>Sample Sentence</h2>
+    <p id="text-container">
+      <span class="word" data-id="i">I</span>
+      <span class="word" data-id="appreciate">appreciate</span>
+      <span class="word" data-id="your">your</span>
+      <span class="word" data-id="help">help</span>.
+    </p>
+  </main>
+
+  <!-- Popup for word info -->
+  <div id="popup" class="hidden">
+    <button id="close-popup">&times;</button>
+    <div id="popup-content"></div>
+  </div>
+</body>
+</html>

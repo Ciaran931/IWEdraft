@@ -1,0 +1,30 @@
+[
+  {
+    "id": "i",
+    "word": "I",
+    "pos": "pronoun",
+    "definition_en": "the speaker referring to themselves",
+    "definition_pl": "ja"
+  },
+  {
+    "id": "appreciate",
+    "word": "appreciate",
+    "pos": "verb",
+    "definition_en": "to recognize the value of something",
+    "definition_pl": "doceniać"
+  },
+  {
+    "id": "your",
+    "word": "your",
+    "pos": "pronoun",
+    "definition_en": "belonging to you",
+    "definition_pl": "twój"
+  },
+  {
+    "id": "help",
+    "word": "help",
+    "pos": "noun",
+    "definition_en": "assistance or aid",
+    "definition_pl": "pomoc"
+  }
+]
