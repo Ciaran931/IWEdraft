@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input With Ease</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Input With Ease</h1>
+  </header>
+
+  <main>
+    <h2>Sample Text</h2>
+    <!-- Container for your text -->
+    <p id="text-container">
+      <!-- Example: wrap words manually for MVP -->
+      I <span class="word" data-id="appreciate">appreciate</span> your help.
+    </p>
+  </main>
+
+  <!-- Popup for word info -->
+  <div id="popup" class="hidden">
+    <button id="close-popup">&times;</button>
+    <div id="popup-content"></div>
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
