@@ -43,9 +43,7 @@ main {
 
 /* Clickable words */
 .word {
-  color: blue;
   cursor: pointer;
-  text-decoration: underline;
 }
 
 /* Popup */
