@@ -99,3 +99,27 @@ header nav a:hover {
   border-radius: 3px;
   padding: 2px 3px;
 }
+
+/* Sidebar at bottom */
+/* Only apply bottom sidebar on small screens (mobile) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* stack text and sidebar vertically */
+  }
+
+  #text-container {
+    order: 1;
+    padding: 15px;
+  }
+
+  #sidebar {
+    order: 2;               /* comes after text */
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-top: 1px solid #ccc;
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+}
