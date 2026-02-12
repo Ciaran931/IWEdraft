@@ -1,668 +1,668 @@
 [
   {
-    "id": "a",
-    "word": "a",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
     "id": "all",
     "word": "all",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "determiner",
+    "pl_translation": "wszystko, wszyscy, cały",
+    "en_definition": "the whole quantity or extent of something; every one of a group",
+    "pl_definition": "cała ilość lub zakres czegoś; każdy z grupy",
+    "example": "All students must complete the assignment by Friday."
   },
   {
     "id": "and",
     "word": "and",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "conjunction",
+    "pl_translation": "i",
+    "en_definition": "A word used to connect words, phrases, or clauses, indicating addition or connection.",
+    "pl_definition": "Słowo używane do łączenia wyrazów, fraz lub zdań, wskazujące na dodanie lub połączenie.",
+    "example": "I like apples and oranges."
+  },
+  {
+    "id": "a",
+    "word": "a",
+    "pos": "article",
+    "pl_translation": "jakiś, pewien",
+    "en_definition": "indefinite article used before singular nouns beginning with a consonant sound",
+    "pl_definition": "nieokreślony rodzajnik używany przed rzeczownikami w liczbie pojedynczej zaczynającymi się od spółgłoski",
+    "example": "I saw a cat in the garden."
   },
   {
     "id": "answered",
     "word": "answered",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "verb",
+    "pl_translation": "odpowiedział/odpowiedziała/odpowiedzieli",
+    "en_definition": "past tense and past participle of answer; responded or replied to a question or statement",
+    "pl_definition": "czas przeszły i imiesłów bierny od czasownika answer; odpowiedział lub odpowiedział na pytanie lub stwierdzenie",
+    "example": "She answered the question correctly during the exam."
   },
   {
     "id": "are",
     "word": "are",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "verb",
+    "pl_translation": "jesteś, są",
+    "en_definition": "second person singular present and first, second, third person plural present of 'be'",
+    "pl_definition": "czasownik posiłkowy w drugiej osobie liczby pojedynczej oraz pierwszej, drugiej i trzeciej osobie liczby mnogiej czasu teraźniejszego od 'być'",
+    "example": "We are going to the park tomorrow."
   },
   {
     "id": "away",
     "word": "away",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adverb",
+    "pl_translation": "daleko",
+    "en_definition": "at a distance from a particular place, person, or thing",
+    "pl_definition": "w pewnej odległości od danego miejsca, osoby lub rzeczy",
+    "example": "She moved away from the city to live in the countryside."
   },
   {
     "id": "base",
     "word": "base",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "battle",
-    "word": "battle",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "be",
-    "word": "be",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "baza",
+    "en_definition": "the bottom or foundation of something; a starting point or main ingredient",
+    "pl_definition": "dolna część lub podstawa czegoś; punkt wyjścia lub główny składnik",
+    "example": "The base of the mountain was covered in dense forest."
   },
   {
     "id": "beauty",
     "word": "beauty",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "piękno",
+    "en_definition": "A quality that gives pleasure to the senses or exalts the mind or spirit.",
+    "pl_definition": "Cecha, która sprawia przyjemność zmysłom lub wznosi umysł lub ducha.",
+    "example": "The beauty of the sunset left everyone speechless."
+  },
+  {
+    "id": "battle",
+    "word": "battle",
+    "pos": "noun",
+    "pl_translation": "bitwa",
+    "en_definition": "A sustained fight between large organized armed forces.",
+    "pl_definition": "Długotrwała walka między dużymi zorganizowanymi siłami zbrojnymi.",
+    "example": "The battle lasted for three days before the enemy surrendered."
+  },
+  {
+    "id": "be",
+    "word": "be",
+    "pos": "verb",
+    "pl_translation": "być",
+    "en_definition": "to exist, occur, or take place; used as a linking verb or auxiliary verb",
+    "pl_definition": "istnieć, występować lub mieć miejsce; używane jako czasownik łączący lub posiłkowy",
+    "example": "I want to be a doctor when I grow up."
   },
   {
     "id": "brought",
     "word": "brought",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "verb",
+    "pl_translation": "przyniósł/przyniosła/przynieśli",
+    "en_definition": "past tense and past participle of bring, meaning to carry or convey something to a place",
+    "pl_definition": "czas przeszły i imiesłów czasu przeszłego od 'bring', oznacza przyniesienie lub dostarczenie czegoś w określone miejsce",
+    "example": "She brought the documents to the meeting yesterday."
   },
   {
     "id": "but",
     "word": "but",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "colour",
-    "word": "colour",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "come",
-    "word": "come",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "conjunction",
+    "pl_translation": "ale",
+    "en_definition": "used to introduce a phrase or clause contrasting with what has already been mentioned",
+    "pl_definition": "używane do wprowadzenia frazy lub zdania kontrastującego z tym, co już zostało wspomniane",
+    "example": "I wanted to go to the party, but I was too tired."
   },
   {
     "id": "craving",
     "word": "craving",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "pragnienie",
+    "en_definition": "A powerful desire for something.",
+    "pl_definition": "Silna, nieodparta potrzeba lub pragnienie czegoś.",
+    "example": "After a long day of hiking, I had a craving for a cold drink."
   },
   {
-    "id": "cravings",
-    "word": "cravings",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "id": "come",
+    "word": "come",
+    "pos": "verb",
+    "pl_translation": "przyjść, przychodzić",
+    "en_definition": "to move or travel toward the speaker or with the speaker",
+    "pl_definition": "przemieszczać się lub podróżować w kierunku mówiącego lub z mówiącym",
+    "example": "Please come to my office when you have a moment."
+  },
+  {
+    "id": "colour",
+    "word": "colour",
+    "pos": "noun",
+    "pl_translation": "kolor",
+    "en_definition": "the property possessed by an object of producing different sensations on the eye as a result of the way it reflects or emits light",
+    "pl_definition": "właściwość przedmiotu polegająca na wywoływaniu różnych wrażeń wzrokowych w zależności od odbicia lub emisji światła",
+    "example": "The artist mixed different paints to create a unique colour for the sunset."
   },
   {
     "id": "death",
     "word": "death",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "śmierć",
+    "en_definition": "the permanent end of all life functions in an organism",
+    "pl_definition": "trwałe ustanie wszystkich funkcji życiowych organizmu",
+    "example": "The death of her grandfather left her feeling very sad."
+  },
+  {
+    "id": "cravings",
+    "word": "cravings",
+    "pos": "noun",
+    "pl_translation": "zachcianki",
+    "en_definition": "A powerful desire for something, often specific foods or substances.",
+    "pl_definition": "Silne, trudne do opanowania pragnienie czegoś, często określonych pokarmów lub substancji.",
+    "example": "During her pregnancy, she had intense cravings for pickles and ice cream."
   },
   {
     "id": "dreams",
     "word": "dreams",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "marzenia",
+    "en_definition": "A series of thoughts, images, or emotions occurring during sleep; also aspirations or ambitions.",
+    "pl_definition": "Seria myśli, obrazów lub emocji występujących podczas snu; także aspiracje lub ambicje.",
+    "example": "She had vivid dreams about traveling the world."
   },
   {
     "id": "else",
     "word": "else",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adverb",
+    "pl_translation": "inaczej",
+    "en_definition": "in addition; besides; otherwise; or if not",
+    "pl_definition": "w przeciwnym razie; inaczej; poza tym; lub jeśli nie",
+    "example": "If you don't want coffee, what else would you like to drink?"
   },
   {
     "id": "eyes",
     "word": "eyes",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "oczy",
+    "en_definition": "The organs of sight in humans and animals.",
+    "pl_definition": "Narządy wzroku u ludzi i zwierząt.",
+    "example": "She has beautiful blue eyes that sparkle in the sunlight."
   },
   {
     "id": "folly",
     "word": "folly",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "for",
-    "word": "for",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "głupota, szaleństwo",
+    "en_definition": "a foolish or unwise act, idea, or behavior",
+    "pl_definition": "głupie lub nierozsądne działanie, pomysł lub zachowanie",
+    "example": "Building a house without proper planning was a great folly."
   },
   {
     "id": "glorious",
     "word": "glorious",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adjective",
+    "pl_translation": "wspaniały",
+    "en_definition": "Having or deserving great fame, honor, or admiration; magnificent or splendid.",
+    "pl_definition": "Posiadający lub zasługujący na wielką sławę, honor lub podziw; wspaniały lub okazały.",
+    "example": "The sunset over the mountains was a glorious sight that left everyone speechless."
   },
   {
-    "id": "had",
-    "word": "had",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "id": "for",
+    "word": "for",
+    "pos": "preposition",
+    "pl_translation": "dla",
+    "en_definition": "used to indicate the purpose, recipient, duration, or reason for something",
+    "pl_definition": "używane do wskazania celu, odbiorcy, czasu trwania lub przyczyny czegoś",
+    "example": "I bought this gift for my sister."
   },
   {
     "id": "have",
     "word": "have",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "verb",
+    "pl_translation": "mieć",
+    "en_definition": "to possess, own, or hold; also used as an auxiliary verb to form perfect tenses",
+    "pl_definition": "mieć, posiadać; również używane jako czasownik posiłkowy do tworzenia czasów dokonanych",
+    "example": "I have a book that I want to read this weekend."
   },
   {
-    "id": "her",
-    "word": "her",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "id": "had",
+    "word": "had",
+    "pos": "verb",
+    "pl_translation": "miał/miała/miało/mieli/miały",
+    "en_definition": "past tense and past participle of 'have', used to indicate possession, experience, or obligation in the past",
+    "pl_definition": "czas przeszły i imiesłów bierny czasownika 'mieć', używany do wyrażania posiadania, doświadczenia lub obowiązku w przeszłości",
+    "example": "She had three cats when she lived in the countryside."
   },
   {
     "id": "i",
     "word": "i",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "pronoun",
+    "pl_translation": "ja",
+    "en_definition": "first person singular subject pronoun",
+    "pl_definition": "zaimek osobowy pierwszej osoby liczby pojedynczej w funkcji podmiotu",
+    "example": "I went to the store yesterday."
+  },
+  {
+    "id": "her",
+    "word": "her",
+    "pos": "pronoun",
+    "pl_translation": "jej, nią",
+    "en_definition": "object form of 'she', used to refer to a female person or animal previously mentioned or easily identified",
+    "pl_definition": "forma dopełnienia zaimka 'ona', używana do odniesienia się do wcześniej wspomnianej lub łatwo rozpoznawalnej osoby lub zwierzęcia płci żeńskiej",
+    "example": "I saw her at the store yesterday."
   },
   {
     "id": "if",
     "word": "if",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "conjunction",
+    "pl_translation": "jeśli, jeżeli",
+    "en_definition": "introducing a conditional clause; on the condition or supposition that",
+    "pl_definition": "wprowadzający zdanie warunkowe; pod warunkiem lub założeniu, że",
+    "example": "If it rains tomorrow, we'll stay indoors."
   },
   {
     "id": "ignoble",
     "word": "ignoble",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adjective",
+    "pl_translation": "niegodziwy",
+    "en_definition": "not honorable in character or purpose; deserving shame or disgrace",
+    "pl_definition": "niegodziwy, haniebny, niehonorowy",
+    "example": "His ignoble actions betrayed the trust of everyone who believed in him."
   },
   {
     "id": "in",
     "word": "in",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "indeed",
-    "word": "indeed",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "preposition",
+    "pl_translation": "w",
+    "en_definition": "Expressing the situation of something that is or appears to be enclosed or surrounded by something else.",
+    "pl_definition": "Wyraża sytuację czegoś, co jest lub wydaje się być zamknięte lub otoczone przez coś innego.",
+    "example": "The book is in the drawer."
   },
   {
     "id": "intentions",
     "word": "intentions",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "is",
-    "word": "is",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "intencje",
+    "en_definition": "Plans or purposes that guide actions or decisions.",
+    "pl_definition": "Plany lub cele, które kierują działaniami lub decyzjami.",
+    "example": "Her good intentions were clear, but the execution of the plan was flawed."
   },
   {
     "id": "isolated",
     "word": "isolated",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adjective",
+    "pl_translation": "izolowany",
+    "en_definition": "separated from others; alone or apart",
+    "pl_definition": "oddzielony od innych; samotny lub osobny",
+    "example": "The small village was isolated from the rest of the world by the surrounding mountains."
+  },
+  {
+    "id": "indeed",
+    "word": "indeed",
+    "pos": "adverb",
+    "pl_translation": "rzeczywiście, istotnie, faktycznie",
+    "en_definition": "used to emphasize a statement or response, confirm agreement, or introduce a further point",
+    "pl_definition": "używane do podkreślenia stwierdzenia lub odpowiedzi, potwierdzenia zgody lub wprowadzenia dalszego punktu",
+    "example": "It was indeed a remarkable achievement that deserved recognition."
+  },
+  {
+    "id": "is",
+    "word": "is",
+    "pos": "verb",
+    "pl_translation": "jest",
+    "en_definition": "third person singular present of 'be', used to indicate identity, existence, or state",
+    "pl_definition": "trzecia osoba liczby pojedynczej czasu teraźniejszego czasownika 'być', używana do wskazywania tożsamości, istnienia lub stanu",
+    "example": "The sky is blue today."
   },
   {
     "id": "it",
     "word": "it",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "life",
-    "word": "life",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "pronoun",
+    "pl_translation": "to",
+    "en_definition": "Used to refer to a thing previously mentioned or easily identified.",
+    "pl_definition": "Używane do odnoszenia się do wcześniej wspomnianej lub łatwo identyfikowalnej rzeczy.",
+    "example": "I saw the book and picked it up from the table."
   },
   {
     "id": "love",
     "word": "love",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "miłość",
+    "en_definition": "A deep feeling of affection, attachment, or devotion.",
+    "pl_definition": "Głębokie uczucie przywiązania, miłości lub oddania.",
+    "example": "Their love for each other grew stronger every day."
   },
   {
     "id": "me",
     "word": "me",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "pronoun",
+    "pl_translation": "mnie",
+    "en_definition": "first person singular object pronoun referring to the speaker",
+    "pl_definition": "zaimek osobowy pierwszej osoby liczby pojedynczej w formie dopełnienia, odnoszący się do mówiącego",
+    "example": "She gave the book to me."
   },
   {
     "id": "more",
     "word": "more",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adjective, adverb, determiner",
+    "pl_translation": "więcej",
+    "en_definition": "greater in amount, number, or degree; additional",
+    "pl_definition": "większy w ilości, liczbie lub stopniu; dodatkowy",
+    "example": "I need more time to finish this project."
+  },
+  {
+    "id": "life",
+    "word": "life",
+    "pos": "noun",
+    "pl_translation": "życie",
+    "en_definition": "The condition that distinguishes animals and plants from inorganic matter, including the capacity for growth, reproduction, functional activity, and continual change preceding death.",
+    "pl_definition": "Stan odróżniający zwierzęta i rośliny od materii nieorganicznej, obejmujący zdolność do wzrostu, rozmnażania, aktywności funkcjonalnej i ciągłych zmian poprzedzających śmierć.",
+    "example": "She believes that every life has inherent value and deserves respect."
   },
   {
     "id": "no",
     "word": "no",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adverb",
+    "pl_translation": "nie",
+    "en_definition": "used to give a negative response or express disagreement, denial, or refusal",
+    "pl_definition": "używane do wyrażenia negatywnej odpowiedzi, sprzeciwu, zaprzeczenia lub odmowy",
+    "example": "When asked if he wanted more coffee, he simply said 'no'."
   },
   {
     "id": "nothing",
     "word": "nothing",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "of",
-    "word": "of",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "nic",
+    "en_definition": "the absence of all things or the concept of non-existence",
+    "pl_definition": "brak czegokolwiek lub pojęcie nieistnienia",
+    "example": "There was nothing in the box when I opened it."
   },
   {
     "id": "our",
     "word": "our",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "determiner",
+    "pl_translation": "nasz",
+    "en_definition": "belonging to or associated with the speaker and one or more other people",
+    "pl_definition": "należący do lub związany z mówcą i jedną lub więcej innych osób",
+    "example": "We should bring our own snacks to the party."
   },
   {
-    "id": "peace",
-    "word": "peace",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "id": "of",
+    "word": "of",
+    "pos": "preposition",
+    "pl_translation": "z, od, o",
+    "en_definition": "expressing the relationship between a part and a whole, or indicating possession, origin, or association",
+    "pl_definition": "wyraża relację między częścią a całością, wskazuje na przynależność, pochodzenie lub związek",
+    "example": "The capital of France is Paris."
   },
   {
     "id": "place",
     "word": "place",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "miejsce",
+    "en_definition": "A particular position, point, or area in space; a location.",
+    "pl_definition": "Konkretne położenie, punkt lub obszar w przestrzeni; lokalizacja.",
+    "example": "This is a beautiful place to have a picnic."
+  },
+  {
+    "id": "peace",
+    "word": "peace",
+    "pos": "noun",
+    "pl_translation": "pokój",
+    "en_definition": "A state of tranquility or quiet, especially freedom from disturbance or war.",
+    "pl_definition": "Stan spokoju lub ciszy, szczególnie wolność od zakłóceń lub wojny.",
+    "example": "After years of conflict, the two nations finally signed a treaty to establish lasting peace."
   },
   {
     "id": "places",
     "word": "places",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "pleasure",
-    "word": "pleasure",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "miejsca",
+    "en_definition": "Locations, positions, or areas where things are situated or events occur.",
+    "pl_definition": "Miejsca, położenia lub obszary, gdzie coś się znajduje lub dzieją się wydarzenia.",
+    "example": "We visited many interesting places during our vacation in Europe."
   },
   {
     "id": "questions",
     "word": "questions",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "pytania",
+    "en_definition": "A sentence or phrase used to ask for information or to test knowledge.",
+    "pl_definition": "Zdanie lub wyrażenie służące do zadawania pytań lub sprawdzania wiedzy.",
+    "example": "The teacher asked several questions during the lesson to check our understanding."
+  },
+  {
+    "id": "pleasure",
+    "word": "pleasure",
+    "pos": "noun",
+    "pl_translation": "przyjemność",
+    "en_definition": "A feeling of happiness, enjoyment, or satisfaction derived from an experience or activity.",
+    "pl_definition": "Uczucie szczęścia, przyjemności lub zadowolenia wynikające z doświadczenia lub aktywności.",
+    "example": "It gives me great pleasure to announce the winner of this year's award."
   },
   {
     "id": "quiet",
     "word": "quiet",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adjective",
+    "pl_translation": "cichy",
+    "en_definition": "making little or no noise; calm and peaceful",
+    "pl_definition": "wydający mało lub żadnego hałasu; spokojny i cichy",
+    "example": "The library was so quiet that you could hear a pin drop."
   },
   {
     "id": "refuge",
     "word": "refuge",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "schronienie",
+    "en_definition": "A place or state of safety, shelter, or protection from danger or trouble.",
+    "pl_definition": "Miejsce lub stan bezpieczeństwa, schronienia lub ochrony przed niebezpieczeństwem lub kłopotami.",
+    "example": "The small cabin in the woods served as a refuge during the storm."
   },
   {
     "id": "robed",
     "word": "robed",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adjective",
+    "pl_translation": "odziany w szatę",
+    "en_definition": "wearing a robe or long loose garment",
+    "pl_definition": "noszący szatę lub długą luźną odzież",
+    "example": "The robed monks walked silently through the monastery courtyard."
   },
   {
     "id": "shape",
     "word": "shape",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "kształt",
+    "en_definition": "the external form, contours, or outline of someone or something",
+    "pl_definition": "zewnętrzna forma, kontury lub zarys kogoś lub czegoś",
+    "example": "The artist carefully studied the shape of the vase before beginning to paint."
   },
   {
     "id": "should",
     "word": "should",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "modal verb",
+    "pl_translation": "powinien",
+    "en_definition": "used to indicate obligation, duty, or correctness, typically when criticizing someone's actions",
+    "pl_definition": "używane do wyrażania obowiązku, powinności lub słuszności, zwykle przy krytykowaniu czyichś działań",
+    "example": "You should apologize for what you said."
   },
   {
     "id": "silenced",
     "word": "silenced",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "verb",
+    "pl_translation": "wyciszony",
+    "en_definition": "made quiet or prevented from speaking",
+    "pl_definition": "uciszony lub pozbawiony możliwości mówienia",
+    "example": "The protesters were silenced by the authorities during the demonstration."
   },
   {
     "id": "slaughter",
     "word": "slaughter",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun, verb",
+    "pl_translation": "ubój, rzeź",
+    "en_definition": "The killing of animals for food, or the brutal killing of many people.",
+    "pl_definition": "Ubój zwierząt na żywność lub brutalne zabijanie wielu ludzi.",
+    "example": "The slaughter of innocent civilians during the war was a tragedy."
   },
   {
     "id": "snare",
     "word": "snare",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "stress",
-    "word": "stress",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "such",
-    "word": "such",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "sidła",
+    "en_definition": "A trap for catching animals, especially one using a noose of wire or cord.",
+    "pl_definition": "Pułapka do łapania zwierząt, zwłaszcza taka, która używa pętli z drutu lub sznurka.",
+    "example": "The hunter set a snare to catch rabbits in the forest."
   },
   {
     "id": "suddenly",
     "word": "suddenly",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adverb",
+    "pl_translation": "nagle",
+    "en_definition": "happening quickly and unexpectedly",
+    "pl_definition": "zdarzenie szybkie i nieoczekiwane",
+    "example": "The car stopped suddenly when the deer appeared on the road."
+  },
+  {
+    "id": "such",
+    "word": "such",
+    "pos": "determiner",
+    "pl_translation": "taki",
+    "en_definition": "used to refer to someone or something of a particular kind, often for emphasis",
+    "pl_definition": "używane do wskazania kogoś lub czegoś określonego rodzaju, często dla podkreślenia",
+    "example": "I've never seen such a beautiful sunset before."
+  },
+  {
+    "id": "stress",
+    "word": "stress",
+    "pos": "noun, verb",
+    "pl_translation": "stres",
+    "en_definition": "Noun: mental or emotional strain; verb: to emphasize or put pressure on",
+    "pl_definition": "Rzeczownik: napięcie psychiczne lub emocjonalne; czasownik: podkreślać lub wywierać nacisk",
+    "example": "The constant deadlines at work caused him a lot of stress."
   },
   {
     "id": "summoned",
     "word": "summoned",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "verb",
+    "pl_translation": "wezwany",
+    "en_definition": "to call upon or order someone to appear, typically by authority",
+    "pl_definition": "wezwać kogoś, zwykle z autorytetem, aby się pojawił",
+    "example": "The judge summoned the witness to testify in court."
   },
   {
     "id": "surely",
     "word": "surely",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adverb",
+    "pl_translation": "na pewno",
+    "en_definition": "used to emphasize that something is true or certain",
+    "pl_definition": "używane do podkreślenia, że coś jest prawdziwe lub pewne",
+    "example": "She will surely arrive on time for the meeting."
   },
   {
     "id": "than",
     "word": "than",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "the",
-    "word": "the",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "conjunction",
+    "pl_translation": "niż",
+    "en_definition": "used to introduce the second element in a comparison",
+    "pl_definition": "używane do wprowadzenia drugiego elementu w porównaniu",
+    "example": "She is taller than her brother."
   },
   {
     "id": "there",
     "word": "there",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adverb",
+    "pl_translation": "tam",
+    "en_definition": "in, at, or to that place or position",
+    "pl_definition": "w tym miejscu lub do tego miejsca",
+    "example": "I left my keys over there on the table."
+  },
+  {
+    "id": "the",
+    "word": "the",
+    "pos": "article",
+    "pl_translation": "ten, ta, to",
+    "en_definition": "definite article used to specify a particular noun",
+    "pl_definition": "rodzajnik określony używany do wskazania konkretnego rzeczownika",
+    "example": "The cat is sleeping on the sofa."
   },
   {
     "id": "this",
     "word": "this",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "article",
+    "pl_translation": "ten/ta/to",
+    "en_definition": "used to identify a specific person or thing close at hand or being indicated or experienced",
+    "pl_definition": "używane do wskazania konkretnej osoby lub rzeczy znajdującej się blisko lub wskazywanej",
+    "example": "This book on the table is very interesting."
   },
   {
     "id": "to",
     "word": "to",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "us",
-    "word": "us",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "preposition",
+    "pl_translation": "do, ku, na, w celu",
+    "en_definition": "expressing direction, position, or relation; also used as part of the infinitive form of verbs",
+    "pl_definition": "wyraża kierunek, położenie lub relację; również używany jako część bezokolicznika czasowników",
+    "example": "I'm going to the store to buy some groceries."
   },
   {
     "id": "very",
     "word": "very",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adverb",
+    "pl_translation": "bardzo",
+    "en_definition": "to a high degree; extremely",
+    "pl_definition": "w bardzo wysokim stopniu; niezwykle",
+    "example": "The weather is very hot today."
+  },
+  {
+    "id": "us",
+    "word": "us",
+    "pos": "pronoun",
+    "pl_translation": "nas",
+    "en_definition": "the objective case of 'we', referring to the speaker and one or more other people",
+    "pl_definition": "celownik i biernik zaimka 'my', odnoszący się do mówiącego i jednej lub więcej innych osób",
+    "example": "She invited us to her party next weekend."
   },
   {
     "id": "voices",
     "word": "voices",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "głosy",
+    "en_definition": "the sounds produced by people when speaking or singing, or the opinions or expressions of individuals or groups",
+    "pl_definition": "dźwięki wydawane przez ludzi podczas mówienia lub śpiewania, lub opinie lub wyrażenia jednostek lub grup",
+    "example": "The choir's beautiful voices filled the concert hall with harmony."
   },
   {
     "id": "war",
     "word": "war",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "noun",
+    "pl_translation": "wojna",
+    "en_definition": "A state of armed conflict between different nations or states or different groups within a nation or state.",
+    "pl_definition": "Stan zbrojnego konfliktu między różnymi narodami, państwami lub grupami w obrębie narodu lub państwa.",
+    "example": "The two countries have been at war for over a decade."
   },
   {
     "id": "was",
     "word": "was",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
-  },
-  {
-    "id": "we",
-    "word": "we",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "verb",
+    "pl_translation": "był/była/było",
+    "en_definition": "past tense first and third person singular of 'be'",
+    "pl_definition": "czas przeszły pierwszej i trzeciej osoby liczby pojedynczej czasownika 'być'",
+    "example": "She was happy to see her friends at the party."
   },
   {
     "id": "why",
     "word": "why",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "adverb",
+    "pl_translation": "dlaczego",
+    "en_definition": "for what reason or purpose",
+    "pl_definition": "z jakiego powodu lub w jakim celu",
+    "example": "Why did you choose that book?"
   },
   {
     "id": "with",
     "word": "with",
-    "pos": "",
-    "pl_translation": "",
-    "en_definition": "",
-    "pl_definition": "",
-    "example": ""
+    "pos": "preposition",
+    "pl_translation": "z",
+    "en_definition": "accompanied by or having; using; indicating means, cause, or manner",
+    "pl_definition": "w towarzystwie lub posiadający; używając; wskazujący środek, przyczynę lub sposób",
+    "example": "She went to the park with her friends."
+  },
+  {
+    "id": "we",
+    "word": "we",
+    "pos": "pronoun",
+    "pl_translation": "my",
+    "en_definition": "first person plural pronoun referring to the speaker and one or more other people",
+    "pl_definition": "zaimek pierwszej osoby liczby mnogiej odnoszący się do mówiącego i jednej lub więcej innych osób",
+    "example": "We are going to the park this afternoon."
   }
 ]

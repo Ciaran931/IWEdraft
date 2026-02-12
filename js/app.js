@@ -21,10 +21,12 @@ closeBtn.addEventListener("click", () => {
 
 function showPopup(word) {
   popupContent.innerHTML = `
-    <strong>${word.word}</strong> <em>${word.pos}</em><br>
-    EN: ${word.en_definition}<br>
-    PL: ${word.pl_definition}<br>
-    Translation: ${word.pl_translation}
+    <strong>${word.word}</strong> <em>${word.pos || '-'}</em><br>  
+    <strong>Translation:</strong> ${word.pl_translation || '-'}<br>
+    <strong>EN Definition:</strong> ${word.en_definition || '-'}<br>
+    <strong>PL Definition:</strong> ${word.pl_definition || '-'}<br>
+    ${word.example ? `<strong>Example:</strong> ${word.example}` : ''}
   `;
   popup.classList.remove("hidden");
 }
+
