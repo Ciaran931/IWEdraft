@@ -1,0 +1,668 @@
+[
+  {
+    "id": "a",
+    "word": "a",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "all",
+    "word": "all",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "and",
+    "word": "and",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "answered",
+    "word": "answered",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "are",
+    "word": "are",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "away",
+    "word": "away",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "base",
+    "word": "base",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "battle",
+    "word": "battle",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "be",
+    "word": "be",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "beauty",
+    "word": "beauty",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "brought",
+    "word": "brought",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "but",
+    "word": "but",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "colour",
+    "word": "colour",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "come",
+    "word": "come",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "craving",
+    "word": "craving",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "cravings",
+    "word": "cravings",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "death",
+    "word": "death",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "dreams",
+    "word": "dreams",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "else",
+    "word": "else",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "eyes",
+    "word": "eyes",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "folly",
+    "word": "folly",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "for",
+    "word": "for",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "glorious",
+    "word": "glorious",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "had",
+    "word": "had",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "have",
+    "word": "have",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "her",
+    "word": "her",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "i",
+    "word": "i",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "if",
+    "word": "if",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "ignoble",
+    "word": "ignoble",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "in",
+    "word": "in",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "indeed",
+    "word": "indeed",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "intentions",
+    "word": "intentions",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "is",
+    "word": "is",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "isolated",
+    "word": "isolated",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "it",
+    "word": "it",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "life",
+    "word": "life",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "love",
+    "word": "love",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "me",
+    "word": "me",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "more",
+    "word": "more",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "no",
+    "word": "no",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "nothing",
+    "word": "nothing",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "of",
+    "word": "of",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "our",
+    "word": "our",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "peace",
+    "word": "peace",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "place",
+    "word": "place",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "places",
+    "word": "places",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "pleasure",
+    "word": "pleasure",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "questions",
+    "word": "questions",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "quiet",
+    "word": "quiet",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "refuge",
+    "word": "refuge",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "robed",
+    "word": "robed",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "shape",
+    "word": "shape",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "should",
+    "word": "should",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "silenced",
+    "word": "silenced",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "slaughter",
+    "word": "slaughter",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "snare",
+    "word": "snare",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "stress",
+    "word": "stress",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "such",
+    "word": "such",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "suddenly",
+    "word": "suddenly",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "summoned",
+    "word": "summoned",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "surely",
+    "word": "surely",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "than",
+    "word": "than",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "the",
+    "word": "the",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "there",
+    "word": "there",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "this",
+    "word": "this",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "to",
+    "word": "to",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "us",
+    "word": "us",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "very",
+    "word": "very",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "voices",
+    "word": "voices",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "war",
+    "word": "war",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "was",
+    "word": "was",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "we",
+    "word": "we",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "why",
+    "word": "why",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  },
+  {
+    "id": "with",
+    "word": "with",
+    "pos": "",
+    "pl_translation": "",
+    "en_definition": "",
+    "pl_definition": "",
+    "example": ""
+  }
+]

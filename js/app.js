@@ -22,8 +22,9 @@ closeBtn.addEventListener("click", () => {
 function showPopup(word) {
   popupContent.innerHTML = `
     <strong>${word.word}</strong> <em>${word.pos}</em><br>
-    EN: ${word.definition_en}<br>
-    PL: ${word.definition_pl}
+    EN: ${word.en_definition}<br>
+    PL: ${word.pl_definition}<br>
+    Translation: ${word.pl_translation}
   `;
   popup.classList.remove("hidden");
 }
