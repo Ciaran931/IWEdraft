@@ -1,32 +1,36 @@
 let dictionary = [];
+let selectedWordElement = null;
 
 fetch("words.json") // loads words from the same folder
   .then(res => res.json())
   .then(data => dictionary = data);
 
-const popup = document.getElementById("popup");
-const popupContent = document.getElementById("popup-content");
-const closeBtn = document.getElementById("close-popup");
+const sidebarContent = document.getElementById("sidebar-content");
 
 document.addEventListener("click", e => {
   if (e.target.classList.contains("word")) {
+    // Remove highlight from previous word
+    if (selectedWordElement) {
+      selectedWordElement.classList.remove("selected");
+    }
+
+    // Highlight current word
+    selectedWordElement = e.target;
+    selectedWordElement.classList.add("selected");
+
+    // Show word info in sidebar
     const wordData = dictionary.find(w => w.id === e.target.dataset.id);
-    if (wordData) showPopup(wordData);
+    if (wordData) showSidebar(wordData);
   }
 });
 
-closeBtn.addEventListener("click", () => {
-  popup.classList.add("hidden");
-});
-
-function showPopup(word) {
-  popupContent.innerHTML = `
-    <strong>${word.word}</strong> <em>${word.pos || '-'}</em><br>  
-    <strong>Translation:</strong> ${word.pl_translation || '-'}<br>
-    <strong>EN Definition:</strong> ${word.en_definition || '-'}<br>
-    <strong>PL Definition:</strong> ${word.pl_definition || '-'}<br>
-    ${word.example ? `<strong>Example:</strong> ${word.example}` : ''}
+function showSidebar(word) {
+  sidebarContent.innerHTML = `
+    <div><strong>Word:</strong> ${word.word}</div><br>
+    <div><strong>Part of Speech:</strong> ${word.pos}</div><br>
+    <div><strong>EN Definition:</strong> ${word.en_definition}</div><br>
+    <div><strong>PL Definition:</strong> ${word.pl_definition}</div><br>
+    <div><strong>Translation:</strong> ${word.pl_translation}</div><br>
+    <div><strong>Example:</strong> <em>${word.example}</em></div>
   `;
-  popup.classList.remove("hidden");
 }
-

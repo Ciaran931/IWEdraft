@@ -1,10 +1,23 @@
-/* Reset */
-body {
+/* --------------------------
+   Reset and Base Styles
+--------------------------- */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
 }
 
-/* Header */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #333;
+}
+
+/* --------------------------
+   Header
+--------------------------- */
 header {
   display: flex;
   justify-content: space-between;
@@ -12,8 +25,7 @@ header {
   padding: 10px 20px;
   background-color: #f8f8f8;
   border-bottom: 1px solid #ccc;
-  position: sticky;
-  top: 0;
+  flex-shrink: 0; /* prevents shrinking */
   z-index: 100;
 }
 
@@ -35,37 +47,55 @@ header nav a:hover {
   color: #007acc;
 }
 
-/* Main content */
-main {
-  padding: 20px;
-  margin-top: 10px;
+/* --------------------------
+   Container: Sidebar + Main Content
+--------------------------- */
+.container {
+  display: flex;
+  flex: 1;             /* fill remaining vertical space */
+  overflow: hidden;     /* prevent container overflow */
 }
 
-/* Clickable words */
+/* Sidebar for word info */
+#sidebar {
+  width: 300px;          /* fixed width */
+  background-color: #f4f4f4;
+  border-right: 1px solid #ccc;
+  padding: 20px;
+  overflow-y: auto;      /* scroll if content is long */
+  flex-shrink: 0;        /* don't shrink */
+}
+
+#sidebar-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Main text container */
+#text-container {
+  flex: 1;               /* take remaining horizontal space */
+  padding: 20px;
+  overflow-y: auto;      /* scroll if text is long */
+  line-height: 1.6;
+}
+
+/* --------------------------
+   Clickable words
+--------------------------- */
 .word {
   cursor: pointer;
+  color: black;
 }
 
-/* Popup */
-#popup {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 15px;
-  width: 250px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+.word:hover {
+  text-decoration: underline;
 }
 
-.hidden {
-  display: none;
-}
-
-#close-popup {
-  background: none;
-  border: none;
-  font-size: 16px;
-  float: right;
-  cursor: pointer;
+/* --------------------------
+   Optional: Highlighted word (when clicked)
+--------------------------- */
+.word.selected {
+  background-color: #ffff99;
+  border-radius: 3px;
+  padding: 2px 3px;
 }
