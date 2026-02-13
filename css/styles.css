@@ -25,17 +25,15 @@ header {
   padding: 10px 20px;
   background-color: #f8f8f8;
   border-bottom: 1px solid #ccc;
-  flex-shrink: 0; /* prevents shrinking */
+  flex-shrink: 0;
   z-index: 100;
 }
 
-/* Site title */
 header .title {
   font-weight: bold;
   font-size: 1.5rem;
 }
 
-/* Navigation links */
 header nav a {
   margin-left: 20px;
   text-decoration: none;
@@ -52,31 +50,22 @@ header nav a:hover {
 --------------------------- */
 .container {
   display: flex;
-  flex: 1;             /* fill remaining vertical space */
-  overflow: hidden;     /* prevent container overflow */
+  flex: 1;
+  overflow: hidden;
 }
 
-/* Sidebar for word info */
 #sidebar {
-  width: 300px;          /* fixed width */
+  width: 300px;
   background-color: #f4f4f4;
   border-right: 1px solid #ccc;
   padding: 20px;
-  overflow-y: auto;      /* scroll if content is long */
-  flex-shrink: 0;        /* don't shrink */
+  overflow-y: auto;
+  flex-shrink: 0;
 }
 
 #sidebar-content {
   font-size: 14px;
   line-height: 1.5;
-}
-
-/* Main text container */
-#text-container {
-  flex: 1;               /* take remaining horizontal space */
-  padding: 20px;
-  overflow-y: auto;      /* scroll if text is long */
-  line-height: 1.6;
 }
 
 /* --------------------------
@@ -91,20 +80,51 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-/* --------------------------
-   Optional: Highlighted word (when clicked)
---------------------------- */
 .word.selected {
   background-color: #ffff99;
   border-radius: 3px;
   padding: 2px 3px;
 }
 
-/* Sidebar at bottom */
-/* Only apply bottom sidebar on small screens (mobile) */
+/* --------------------------
+   Bilingual layout
+--------------------------- */
+.bilingual-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.paragraph {
+  display: flex;
+  gap: 1rem;
+}
+
+.english-column,
+.polish-column {
+  flex: 1;
+}
+
+.english-column p,
+.polish-column p {
+  margin: 0 0 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* Sentence highlighting */
+.english-sentence.sentence-highlight,
+.polish-sentence.sentence-highlight {
+  background-color: #d1e4ff;
+  border-radius: 3px;
+  padding: 2px 4px;
+}
+
+/* --------------------------
+   Responsive: sidebar at bottom on mobile
+--------------------------- */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* stack text and sidebar vertically */
+    flex-direction: column;
   }
 
   #text-container {
@@ -113,45 +133,12 @@ header nav a:hover {
   }
 
   #sidebar {
-    order: 2;               /* comes after text */
+    order: 2;
     width: 100%;
     height: auto;
     position: relative;
     border-top: 1px solid #ccc;
-    background-color: #f4f4f4;
     padding: 15px;
     box-sizing: border-box;
   }
-}
-.bilingual-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem; /* space between paragraphs */
-}
-
-.paragraph {
-  display: flex;
-  gap: 1rem; /* space between English & Polish columns */
-}
-
-.english-column,
-.polish-column {
-  flex: 1; /* equal width */
-}
-
-.english-column p,
-.polish-column p {
-  margin: 0 0 0.5rem 0; /* spacing between sentences */
-  line-height: 1.5;
-}
-
-/* Optional highlights */
-.word.selected {
-  background-color: #ffff99;
-  border-radius: 3px;
-  padding: 2px 3px;
-}
-
-.sentence-highlight {
-  background-color: #fff2a8; /* light highlight for sentence */
 }

@@ -1,22 +1,47 @@
 let dictionary = [];
 let selectedWordElement = null;
 
-fetch("words.json") // loads words from the same folder
+// Load words data
+fetch("words.json")
   .then(res => res.json())
   .then(data => dictionary = data);
 
 const sidebarContent = document.getElementById("sidebar-content");
 
-document.addEventListener("click", e => {
-  if (e.target.classList.contains("word")) {
-    // Remove highlight from previous word
-    if (selectedWordElement) {
-      selectedWordElement.classList.remove("selected");
-    }
+// Keep track of highlighted sentence
+let highlightedSentenceEN = null;
+let highlightedSentencePL = null;
 
-    // Highlight current word
+document.addEventListener("click", e => {
+  // Clicked a word
+  if (e.target.classList.contains("word")) {
+
+    // Remove previous word highlight
+    if (selectedWordElement) selectedWordElement.classList.remove("selected");
     selectedWordElement = e.target;
     selectedWordElement.classList.add("selected");
+
+    // Remove previous sentence highlights
+    if (highlightedSentenceEN) highlightedSentenceEN.classList.remove("sentence-highlight");
+    if (highlightedSentencePL) highlightedSentencePL.classList.remove("sentence-highlight");
+
+    // Highlight sentence containing the word
+    const sentenceEN = selectedWordElement.closest(".english-sentence");
+    if (sentenceEN) {
+      sentenceEN.classList.add("sentence-highlight");
+      highlightedSentenceEN = sentenceEN;
+
+      // Find corresponding Polish sentence
+      const paragraph = sentenceEN.closest(".paragraph");
+      if (paragraph) {
+        const sentenceNumber = sentenceEN.dataset.sentence;
+        const plSentence = paragraph.querySelector(`.polish-sentence[data-sentence="${sentenceNumber}"]`);
+        if (plSentence) {
+          plSentence.classList.add("sentence-highlight");
+          highlightedSentencePL = plSentence;
+        }
+      }
+    }
 
     // Show word info in sidebar
     const wordData = dictionary.find(w => w.id === e.target.dataset.id);
