@@ -123,3 +123,35 @@ header nav a:hover {
     box-sizing: border-box;
   }
 }
+.bilingual-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space between paragraphs */
+}
+
+.paragraph {
+  display: flex;
+  gap: 1rem; /* space between English & Polish columns */
+}
+
+.english-column,
+.polish-column {
+  flex: 1; /* equal width */
+}
+
+.english-column p,
+.polish-column p {
+  margin: 0 0 0.5rem 0; /* spacing between sentences */
+  line-height: 1.5;
+}
+
+/* Optional highlights */
+.word.selected {
+  background-color: #ffff99;
+  border-radius: 3px;
+  padding: 2px 3px;
+}
+
+.sentence-highlight {
+  background-color: #fff2a8; /* light highlight for sentence */
+}

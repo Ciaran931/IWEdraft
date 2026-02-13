@@ -1,0 +1,137 @@
+[
+  {
+    "id": "count",
+    "word": "count",
+    "pos": "verb",
+    "pl_translation": "liczyć",
+    "en_definition": "to determine the total number of items in a set",
+    "pl_definition": "określać całkowitą liczbę przedmiotów w zbiorze",
+    "example": "Please count the number of books on the shelf."
+  },
+  {
+    "id": "example",
+    "word": "example",
+    "pos": "noun",
+    "pl_translation": "przykład",
+    "en_definition": "a representative instance or illustration of a concept or category",
+    "pl_definition": "przykładowa instancja lub ilustracja koncepcji lub kategorii",
+    "example": "This sentence serves as an example of proper grammar usage."
+  },
+  {
+    "id": "and",
+    "word": "and",
+    "pos": "conjunction",
+    "pl_translation": "i",
+    "en_definition": "A word used to connect words, phrases, or clauses, indicating addition or connection.",
+    "pl_definition": "Słowo używane do łączenia wyrazów, fraz lub zdań, wskazujące na dodanie lub połączenie.",
+    "example": "I like apples and oranges."
+  },
+  {
+    "id": "an",
+    "word": "an",
+    "pos": "article",
+    "pl_translation": "jakiś, pewien (przedimek nieokreślony)",
+    "en_definition": "indefinite article used before words beginning with a vowel sound",
+    "pl_definition": "nieokreślony przedimek używany przed słowami zaczynającymi się od dźwięku samogłoski",
+    "example": "I saw an apple on the table."
+  },
+  {
+    "id": "as",
+    "word": "as",
+    "pos": "conjunction",
+    "pl_translation": "jak, jako, gdy, ponieważ",
+    "en_definition": "used to indicate the manner, degree, or extent of something; also used in comparisons or to introduce clauses",
+    "pl_definition": "używane do wskazania sposobu, stopnia lub zakresu czegoś; także używane w porównaniach lub do wprowadzania zdań podrzędnych",
+    "example": "She works as a teacher in the local school."
+  },
+  {
+    "id": "one",
+    "word": "one",
+    "pos": "numeral",
+    "pl_translation": "jeden",
+    "en_definition": "the number 1",
+    "pl_definition": "liczba 1",
+    "example": "I have one apple left."
+  },
+  {
+    "id": "is",
+    "word": "is",
+    "pos": "verb",
+    "pl_translation": "jest",
+    "en_definition": "third person singular present of 'be', used to indicate identity, existence, or a state",
+    "pl_definition": "trzecia osoba liczby pojedynczej czasu teraźniejszego czasownika 'być', używana do wskazywania tożsamości, istnienia lub stanu",
+    "example": "The sky is blue today."
+  },
+  {
+    "id": "it",
+    "word": "it",
+    "pos": "pronoun",
+    "pl_translation": "to",
+    "en_definition": "A third-person singular neuter pronoun used to refer to an inanimate object, animal, concept, or previously mentioned thing.",
+    "pl_definition": "Zaimek osobowy trzeciej osoby liczby pojedynczej rodzaju nijakiego, używany do odnoszenia się do przedmiotów nieożywionych, zwierząt, pojęć lub wcześniej wspomnianych rzeczy.",
+    "example": "I found a book on the table, and it was very interesting."
+  },
+  {
+    "id": "paragraph",
+    "word": "paragraph",
+    "pos": "noun",
+    "pl_translation": "akapit",
+    "en_definition": "A distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering.",
+    "pl_definition": "Wyodrębniony fragment tekstu, zazwyczaj dotyczący jednego tematu, oznaczony nową linią, wcięciem lub numeracją.",
+    "example": "The first paragraph of the essay introduces the main argument clearly."
+  },
+  {
+    "id": "second",
+    "word": "second",
+    "pos": "noun",
+    "pl_translation": "sekunda",
+    "en_definition": "a unit of time equal to 1/60th of a minute",
+    "pl_definition": "jednostka czasu równa 1/60 minuty",
+    "example": "Wait just a second while I finish this email."
+  },
+  {
+    "id": "sentence",
+    "word": "sentence",
+    "pos": "noun",
+    "pl_translation": "zdanie",
+    "en_definition": "A set of words that expresses a complete thought, typically containing a subject and predicate.",
+    "pl_definition": "Grupa słów wyrażająca pełną myśl, zazwyczaj zawierająca podmiot i orzeczenie.",
+    "example": "She wrote a complex sentence with multiple clauses for her English assignment."
+  },
+  {
+    "id": "should",
+    "word": "should",
+    "pos": "modal verb",
+    "pl_translation": "powinien/powinna/powinni",
+    "en_definition": "used to indicate obligation, duty, or correctness, typically when criticizing someone's actions",
+    "pl_definition": "używane do wyrażania obowiązku, powinności lub słuszności, zwykle przy krytykowaniu czyichś działań",
+    "example": "You should apologize for what you said."
+  },
+  {
+    "id": "third",
+    "word": "third",
+    "pos": "adjective",
+    "pl_translation": "trzeci",
+    "en_definition": "coming after the second in order or position",
+    "pl_definition": "przychodzący po drugim w kolejności lub pozycji",
+    "example": "She finished in third place in the race."
+  },
+  {
+    "id": "the",
+    "word": "the",
+    "pos": "article",
+    "pl_translation": "ten/ta/to",
+    "en_definition": "definite article used to specify a particular noun",
+    "pl_definition": "rodzajnik określony używany do określenia konkretnego rzeczownika",
+    "example": "The cat is sleeping on the sofa."
+  },
+  {
+    "id": "this",
+    "word": "this",
+    "pos": "article",
+    "pl_translation": "ten, ta, to",
+    "en_definition": "used to identify a specific person or thing close at hand or being indicated or experienced",
+    "pl_definition": "używane do wskazania konkretnej osoby lub rzeczy znajdującej się blisko lub wskazywanej",
+    "example": "This book is very interesting."
+  }
+]
