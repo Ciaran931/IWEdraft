@@ -74,6 +74,7 @@ header nav a:hover {
 .word {
   cursor: pointer;
   color: black;
+  box-decoration-break: clone;
 }
 
 .word:hover {
@@ -83,7 +84,6 @@ header nav a:hover {
 .word.selected {
   background-color: #ffff99;
   border-radius: 3px;
-  padding: 2px 3px;
 }
 
 /* --------------------------
@@ -92,7 +92,9 @@ header nav a:hover {
 .bilingual-container {
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
   gap: 1.5rem;
+  padding: 20px;
 }
 
 .paragraph {
@@ -116,7 +118,6 @@ header nav a:hover {
 .polish-sentence.sentence-highlight {
   background-color: #d1e4ff;
   border-radius: 3px;
-  padding: 2px 4px;
 }
 
 /* --------------------------

@@ -1,57 +1,516 @@
 [
   {
-    "id": "count",
-    "word": "count",
-    "pos": "verb",
-    "pl_translation": "liczyć",
-    "en_definition": "to determine the total number of items in a set",
-    "pl_definition": "określać całkowitą liczbę przedmiotów w zbiorze",
-    "example": "Please count the number of books on the shelf."
+    "id": "almost",
+    "word": "almost",
+    "pos": "adverb",
+    "pl_translation": "prawie",
+    "en_definition": "nearly but not completely or exactly",
+    "pl_definition": "prawie, niemal, blisko",
+    "example": "I almost finished my homework before dinner."
   },
   {
-    "id": "example",
-    "word": "example",
+    "id": "again",
+    "word": "again",
+    "pos": "adverb",
+    "pl_translation": "znowu",
+    "en_definition": "once more; another time",
+    "pl_definition": "jeszcze raz; ponownie",
+    "example": "I need to read the instructions again."
+  },
+  {
+    "id": "all",
+    "word": "all",
+    "pos": "determiner",
+    "pl_translation": "wszystko, wszyscy, cały",
+    "en_definition": "the whole quantity or extent of a particular group or thing",
+    "pl_definition": "cała ilość lub zakres określonej grupy lub rzeczy",
+    "example": "All students must complete the assignment by Friday."
+  },
+  {
+    "id": "air",
+    "word": "air",
     "pos": "noun",
-    "pl_translation": "przykład",
-    "en_definition": "a representative instance or illustration of a concept or category",
-    "pl_definition": "przykładowa instancja lub ilustracja koncepcji lub kategorii",
-    "example": "This sentence serves as an example of proper grammar usage."
+    "pl_translation": "powietrze",
+    "en_definition": "the invisible gaseous substance surrounding the earth, a mixture mainly of oxygen and nitrogen",
+    "pl_definition": "niewidzialna substancja gazowa otaczająca Ziemię, mieszanina głównie tlenu i azotu",
+    "example": "The fresh morning air felt invigorating as I stepped outside."
+  },
+  {
+    "id": "a",
+    "word": "a",
+    "pos": "article",
+    "pl_translation": "jakiś, pewien, jeden",
+    "en_definition": "indefinite article used before singular countable nouns beginning with a consonant sound",
+    "pl_definition": "nieokreślony przedimek używany przed policzalnymi rzeczownikami w liczbie pojedynczej zaczynającymi się od spółgłoski",
+    "example": "I saw a cat in the garden."
+  },
+  {
+    "id": "an",
+    "word": "an",
+    "pos": "article",
+    "pl_translation": "jakiś, pewien",
+    "en_definition": "indefinite article used before vowel sounds",
+    "pl_definition": "nieokreślony przedimek używany przed dźwiękami samogłoskowymi",
+    "example": "I saw an owl in the tree."
   },
   {
     "id": "and",
     "word": "and",
     "pos": "conjunction",
     "pl_translation": "i",
-    "en_definition": "A word used to connect words, phrases, or clauses, indicating addition or connection.",
-    "pl_definition": "Słowo używane do łączenia wyrazów, fraz lub zdań, wskazujące na dodanie lub połączenie.",
+    "en_definition": "Used to connect words, phrases, or clauses that have the same grammatical function in a construction.",
+    "pl_definition": "Używane do łączenia słów, fraz lub zdań o tej samej funkcji gramatycznej w konstrukcji.",
     "example": "I like apples and oranges."
   },
   {
-    "id": "an",
-    "word": "an",
-    "pos": "article",
-    "pl_translation": "jakiś, pewien (przedimek nieokreślony)",
-    "en_definition": "indefinite article used before words beginning with a vowel sound",
-    "pl_definition": "nieokreślony przedimek używany przed słowami zaczynającymi się od dźwięku samogłoski",
-    "example": "I saw an apple on the table."
+    "id": "another",
+    "word": "another",
+    "pos": "determiner",
+    "pl_translation": "inny, kolejny, jeszcze jeden",
+    "en_definition": "one more of the same kind; an additional person or thing",
+    "pl_definition": "jeszcze jeden tego samego rodzaju; dodatkowa osoba lub rzecz",
+    "example": "I'd like another cup of coffee, please."
   },
   {
-    "id": "as",
-    "word": "as",
+    "id": "any",
+    "word": "any",
+    "pos": "determiner",
+    "pl_translation": "jakikolwiek, żaden, jaki",
+    "en_definition": "used to refer to one or some of a thing or number of things, no matter how much or how many",
+    "pl_definition": "używane do odniesienia się do jednej lub kilku rzeczy, niezależnie od ilości",
+    "example": "Do you have any questions about the assignment?"
+  },
+  {
+    "id": "answered",
+    "word": "answered",
+    "pos": "verb",
+    "pl_translation": "odpowiedział/odpowiedziała/odpowiedziało",
+    "en_definition": "past tense and past participle of answer; responded or replied to a question or statement",
+    "pl_definition": "czas przeszły i imiesłów bierny od czasownika answer; odpowiedział lub odpowiedział na pytanie lub stwierdzenie",
+    "example": "She answered the phone immediately when it rang."
+  },
+  {
+    "id": "arms",
+    "word": "arms",
+    "pos": "noun",
+    "pl_translation": "ramiona, broń",
+    "en_definition": "The upper limbs of the human body from shoulder to hand, or weapons.",
+    "pl_definition": "Górne kończyny ciała ludzkiego od ramienia do dłoni lub broń.",
+    "example": "She crossed her arms and waited patiently."
+  },
+  {
+    "id": "arch",
+    "word": "arch",
+    "pos": "noun",
+    "pl_translation": "łuk",
+    "en_definition": "a curved structure that spans an opening and supports weight",
+    "pl_definition": "zakrzywiona konstrukcja wspierająca ciężar, rozpięta nad otworem",
+    "example": "The ancient Roman aqueduct featured a series of stone arches."
+  },
+  {
+    "id": "at",
+    "word": "at",
+    "pos": "preposition",
+    "pl_translation": "przy, na, w, o",
+    "en_definition": "expressing location or time in relation to a point",
+    "pl_definition": "wyraża lokalizację lub czas w odniesieniu do punktu",
+    "example": "I will meet you at the cafe at 3 PM."
+  },
+  {
+    "id": "because",
+    "word": "because",
     "pos": "conjunction",
-    "pl_translation": "jak, jako, gdy, ponieważ",
-    "en_definition": "used to indicate the manner, degree, or extent of something; also used in comparisons or to introduce clauses",
-    "pl_definition": "używane do wskazania sposobu, stopnia lub zakresu czegoś; także używane w porównaniach lub do wprowadzania zdań podrzędnych",
-    "example": "She works as a teacher in the local school."
+    "pl_translation": "ponieważ",
+    "en_definition": "for the reason that; since",
+    "pl_definition": "ponieważ, dlatego że",
+    "example": "I stayed home because it was raining."
   },
   {
-    "id": "one",
-    "word": "one",
-    "pos": "numeral",
-    "pl_translation": "jeden",
-    "en_definition": "the number 1",
-    "pl_definition": "liczba 1",
-    "example": "I have one apple left."
+    "id": "beautiful",
+    "word": "beautiful",
+    "pos": "adjective",
+    "pl_translation": "piękny",
+    "en_definition": "pleasing the senses or mind aesthetically",
+    "pl_definition": "przyjemny dla zmysłów lub umysłu pod względem estetycznym",
+    "example": "The sunset over the ocean was truly beautiful."
+  },
+  {
+    "id": "below",
+    "word": "below",
+    "pos": "preposition",
+    "pl_translation": "poniżej",
+    "en_definition": "at a lower level or position than something else",
+    "pl_definition": "na niższym poziomie lub w niższej pozycji niż coś innego",
+    "example": "The temperature is below freezing today."
+  },
+  {
+    "id": "between",
+    "word": "between",
+    "pos": "preposition",
+    "pl_translation": "między",
+    "en_definition": "in or into the space that separates two things, people, or places",
+    "pl_definition": "w lub do przestrzeni oddzielającej dwie rzeczy, osoby lub miejsca",
+    "example": "The cat is sleeping between the two pillows on the sofa."
+  },
+  {
+    "id": "broke",
+    "word": "broke",
+    "pos": "adjective",
+    "pl_translation": "spłukany",
+    "en_definition": "having no money; financially ruined",
+    "pl_definition": "bez pieniędzy; zrujnowany finansowo",
+    "example": "After losing his job, he was completely broke and couldn't pay rent."
+  },
+  {
+    "id": "blue",
+    "word": "blue",
+    "pos": "adjective",
+    "pl_translation": "niebieski",
+    "en_definition": "of the color between green and violet in the spectrum; like the sky or deep sea",
+    "pl_definition": "koloru między zielonym a fioletowym w widmie; jak niebo lub głębokie morze",
+    "example": "The sky was a brilliant blue on that sunny afternoon."
+  },
+  {
+    "id": "boats",
+    "word": "boats",
+    "pos": "noun",
+    "pl_translation": "łodzie",
+    "en_definition": "watercraft designed for travel on water, typically smaller than ships",
+    "pl_definition": "jednostki pływające przeznaczone do podróżowania po wodzie, zazwyczaj mniejsze niż statki",
+    "example": "The harbor was filled with colorful boats sailing in the afternoon sun."
+  },
+  {
+    "id": "but",
+    "word": "but",
+    "pos": "conjunction",
+    "pl_translation": "ale",
+    "en_definition": "used to introduce a phrase or clause contrasting with what has already been mentioned",
+    "pl_definition": "używane do wprowadzenia frazy lub zdania przeciwstawnego do wcześniej wspomnianego",
+    "example": "I wanted to go to the party, but I was too tired."
+  },
+  {
+    "id": "clear",
+    "word": "clear",
+    "pos": "adjective",
+    "pl_translation": "jasny",
+    "en_definition": "easy to perceive, understand, or interpret; transparent; free of obstructions",
+    "pl_definition": "łatwy do postrzegania, zrozumienia lub interpretacji; przezroczysty; wolny od przeszkód",
+    "example": "The instructions were clear and easy to follow."
+  },
+  {
+    "id": "called",
+    "word": "called",
+    "pos": "verb",
+    "pl_translation": "nazwany, wezwany",
+    "en_definition": "to give a name to someone or something; to summon or request someone's presence",
+    "pl_definition": "nadawać komuś lub czemuś imię; wzywać kogoś",
+    "example": "They called their new puppy 'Max'."
+  },
+  {
+    "id": "came",
+    "word": "came",
+    "pos": "verb",
+    "pl_translation": "przyszedł/przyszła/przyszło",
+    "en_definition": "past tense of 'come', meaning to move or travel toward or into a place",
+    "pl_definition": "czas przeszły od 'come', oznaczający przybycie lub przemieszczenie się w kierunku miejsca",
+    "example": "She came to the party late last night."
+  },
+  {
+    "id": "course",
+    "word": "course",
+    "pos": "noun",
+    "pl_translation": "kurs",
+    "en_definition": "a direction or route taken or to be taken; a series of lectures or lessons in a particular subject; the path or progress of something over time",
+    "pl_definition": "kierunek lub trasa obrana lub mająca być obrana; seria wykładów lub lekcji z danego przedmiotu; ścieżka lub postęp czegoś w czasie",
+    "example": "The ship changed course to avoid the storm."
+  },
+  {
+    "id": "dear",
+    "word": "dear",
+    "pos": "adjective",
+    "pl_translation": "drogi",
+    "en_definition": "beloved or cherished; expensive",
+    "pl_definition": "kochany, drogi; kosztowny",
+    "example": "She is my dear friend whom I've known since childhood."
+  },
+  {
+    "id": "eastward",
+    "word": "eastward",
+    "pos": "adverb",
+    "pl_translation": "na wschód",
+    "en_definition": "in or toward the east",
+    "pl_definition": "w kierunku wschodnim lub na wschód",
+    "example": "They traveled eastward to reach the coast."
+  },
+  {
+    "id": "drowned",
+    "word": "drowned",
+    "pos": "verb",
+    "pl_translation": "utopić się/utopić",
+    "en_definition": "to die or cause to die from submersion in water or other liquid",
+    "pl_definition": "umrzeć lub spowodować śmierć przez zanurzenie w wodzie lub innej cieczy",
+    "example": "The sailor drowned when his ship sank during the storm."
+  },
+  {
+    "id": "dream",
+    "word": "dream",
+    "pos": "noun, verb",
+    "pl_translation": "sen, marzenie, śnić",
+    "en_definition": "A series of thoughts, images, and sensations occurring in a person's mind during sleep; to experience such thoughts or images.",
+    "pl_definition": "Seria myśli, obrazów i wrażeń pojawiających się w umyśle podczas snu; doświadczać takich myśli lub obrazów.",
+    "example": "Last night I had a strange dream about flying over mountains."
+  },
+  {
+    "id": "face",
+    "word": "face",
+    "pos": "noun",
+    "pl_translation": "twarz",
+    "en_definition": "the front part of the head from the forehead to the chin",
+    "pl_definition": "przednia część głowy od czoła do brody",
+    "example": "She washed her face with cold water."
+  },
+  {
+    "id": "find",
+    "word": "find",
+    "pos": "verb",
+    "pl_translation": "znaleźć",
+    "en_definition": "to discover or locate something through searching or by chance",
+    "pl_definition": "odnaleźć lub odkryć coś poprzez poszukiwania lub przypadkowo",
+    "example": "I need to find my keys before we leave the house."
+  },
+  {
+    "id": "first",
+    "word": "first",
+    "pos": "adjective",
+    "pl_translation": "pierwszy",
+    "en_definition": "coming before all others in time or order; earliest; 1st",
+    "pl_definition": "przychodzący przed wszystkimi innymi w czasie lub kolejności; najwcześniejszy; 1.",
+    "example": "She won first place in the competition."
+  },
+  {
+    "id": "faraglioni",
+    "word": "faraglioni",
+    "pos": "noun",
+    "pl_translation": "faraglioni",
+    "en_definition": "tall, isolated rock formations or sea stacks, typically found along coastlines, especially in the Mediterranean",
+    "pl_definition": "wysokie, izolowane formacje skalne lub morskie kolumny, zwykle występujące wzdłuż wybrzeży, szczególnie na Morzu Śródziemnym",
+    "example": "The faraglioni off the coast of Capri are iconic landmarks that attract many tourists."
+  },
+  {
+    "id": "flames",
+    "word": "flames",
+    "pos": "noun",
+    "pl_translation": "płomienie",
+    "en_definition": "hot, glowing gases produced by burning, or the visible part of a fire",
+    "pl_definition": "gorące, świecące gazy powstające podczas spalania lub widoczna część ognia",
+    "example": "The flames from the campfire danced in the night air."
+  },
+  {
+    "id": "foam",
+    "word": "foam",
+    "pos": "noun",
+    "pl_translation": "piana",
+    "en_definition": "A mass of small bubbles formed on or in liquid, typically by agitation or fermentation.",
+    "pl_definition": "Masa małych bąbelków tworzących się na lub w cieczy, zwykle w wyniku mieszania lub fermentacji.",
+    "example": "The waves crashed against the rocks, creating white foam on the surface of the water."
+  },
+  {
+    "id": "forehead",
+    "word": "forehead",
+    "pos": "noun",
+    "pl_translation": "czoło",
+    "en_definition": "the part of the face above the eyebrows and below the hairline",
+    "pl_definition": "część twarzy nad brwiami i poniżej linii włosów",
+    "example": "She wiped the sweat from her forehead after the long run."
+  },
+  {
+    "id": "forget",
+    "word": "forget",
+    "pos": "verb",
+    "pl_translation": "zapomnieć",
+    "en_definition": "to fail to remember something or someone",
+    "pl_definition": "nie pamiętać czegoś lub kogoś",
+    "example": "I always forget where I put my keys."
+  },
+  {
+    "id": "freshness",
+    "word": "freshness",
+    "pos": "noun",
+    "pl_translation": "świeżość",
+    "en_definition": "the quality of being fresh, new, or recently made",
+    "pl_definition": "jakość bycia świeżym, nowym lub niedawno wykonanym",
+    "example": "The freshness of the morning air invigorated her as she started her run."
+  },
+  {
+    "id": "frightened",
+    "word": "frightened",
+    "pos": "adjective",
+    "pl_translation": "przestraszony",
+    "en_definition": "feeling fear or anxiety; scared",
+    "pl_definition": "odczuwający strach lub niepokój; przestraszony",
+    "example": "The loud noise left the child feeling frightened."
+  },
+  {
+    "id": "galley",
+    "word": "galley",
+    "pos": "noun",
+    "pl_translation": "galera",
+    "en_definition": "A low, flat ship with sails and oars, used especially in ancient and medieval times.",
+    "pl_definition": "Niski, płaski statek z żaglami i wiosłami, używany zwłaszcza w starożytności i średniowieczu.",
+    "example": "The ancient galley was powered by both sails and the labor of rowers."
+  },
+  {
+    "id": "gliding",
+    "word": "gliding",
+    "pos": "noun",
+    "pl_translation": "szybowanie",
+    "en_definition": "the act of moving smoothly and continuously with little effort, as if flying without power",
+    "pl_definition": "akt płynnego i ciągłego poruszania się z niewielkim wysiłkiem, jakby latanie bez napędu",
+    "example": "The bird's graceful gliding through the air was mesmerizing to watch."
+  },
+  {
+    "id": "gold",
+    "word": "gold",
+    "pos": "noun",
+    "pl_translation": "złoto",
+    "en_definition": "A precious yellow metallic element, highly valued for its rarity and use in jewelry and currency.",
+    "pl_definition": "Cenny żółty metal szlachetny, wysoko ceniony za rzadkość i zastosowanie w biżuterii i walucie.",
+    "example": "The Olympic champion received a gold medal for her outstanding performance."
+  },
+  {
+    "id": "green",
+    "word": "green",
+    "pos": "adjective",
+    "pl_translation": "zielony",
+    "en_definition": "of a color between blue and yellow; like grass or emeralds",
+    "pl_definition": "koloru pomiędzy niebieskim a żółtym; jak trawa lub szmaragdy",
+    "example": "The leaves on the trees are bright green in spring."
+  },
+  {
+    "id": "graceful",
+    "word": "graceful",
+    "pos": "adjective",
+    "pl_translation": "wytworny, pełen gracji",
+    "en_definition": "having or showing elegance, beauty, or smoothness in movement or form",
+    "pl_definition": "mający lub wykazujący elegancję, piękno lub płynność w ruchu lub formie",
+    "example": "The ballet dancer's graceful movements captivated the entire audience."
+  },
+  {
+    "id": "grey",
+    "word": "grey",
+    "pos": "adjective",
+    "pl_translation": "szary",
+    "en_definition": "of a color intermediate between black and white; dull or gloomy",
+    "pl_definition": "koloru pośredniego między czarnym a białym; ponury lub szary",
+    "example": "The sky turned grey as the storm approached."
+  },
+  {
+    "id": "half",
+    "word": "half",
+    "pos": "noun",
+    "pl_translation": "połowa",
+    "en_definition": "one of two equal parts of something",
+    "pl_definition": "jedna z dwóch równych części czegoś",
+    "example": "She ate half of the pizza."
+  },
+  {
+    "id": "had",
+    "word": "had",
+    "pos": "verb",
+    "pl_translation": "miał/miała/miało/mieli/miały",
+    "en_definition": "past tense and past participle of 'have', used to indicate possession, experience, or obligation in the past",
+    "pl_definition": "czas przeszły i imiesłów czasu przeszłego od 'mieć', używany do wyrażania posiadania, doświadczenia lub obowiązku w przeszłości",
+    "example": "She had three cats when she lived in the countryside."
+  },
+  {
+    "id": "he",
+    "word": "he",
+    "pos": "pronoun",
+    "pl_translation": "on",
+    "en_definition": "Third person singular masculine pronoun used to refer to a male person or animal previously mentioned or easily identified.",
+    "pl_definition": "Zaimek osobowy trzeciej osoby liczby pojedynczej rodzaju męskiego, używany w odniesieniu do mężczyzny lub zwierzęcia płci męskiej.",
+    "example": "He is going to the store to buy some groceries."
+  },
+  {
+    "id": "hand",
+    "word": "hand",
+    "pos": "noun",
+    "pl_translation": "ręka",
+    "en_definition": "The end part of a person's arm beyond the wrist, including the palm, fingers, and thumb, used for grasping and holding.",
+    "pl_definition": "Końcowa część ramienia człowieka za nadgarstkiem, obejmująca dłoń, palce i kciuk, służąca do chwytania i trzymania.",
+    "example": "She raised her hand to ask a question during the lecture."
+  },
+  {
+    "id": "hear",
+    "word": "hear",
+    "pos": "verb",
+    "pl_translation": "słyszeć",
+    "en_definition": "to perceive sound with the ears",
+    "pl_definition": "odbieranie dźwięków za pomocą uszu",
+    "example": "I can hear the birds singing outside my window."
+  },
+  {
+    "id": "her",
+    "word": "her",
+    "pos": "pronoun",
+    "pl_translation": "jej",
+    "en_definition": "used as the object of a verb or preposition to refer to a female person or animal previously mentioned or easily identified",
+    "pl_definition": "używane jako dopełnienie czasownika lub przyimka, odnoszące się do wcześniej wspomnianej lub łatwo rozpoznawalnej osoby lub zwierzęcia płci żeńskiej",
+    "example": "I gave her the book yesterday."
+  },
+  {
+    "id": "how",
+    "word": "how",
+    "pos": "adverb",
+    "pl_translation": "jak",
+    "en_definition": "in what way or manner; by what means",
+    "pl_definition": "w jaki sposób; jak",
+    "example": "How did you solve that problem?"
+  },
+  {
+    "id": "i",
+    "word": "i",
+    "pos": "pronoun",
+    "pl_translation": "ja",
+    "en_definition": "first person singular subject pronoun",
+    "pl_definition": "zaimek osobowy pierwszej osoby liczby pojedynczej w funkcji podmiotu",
+    "example": "I went to the store yesterday."
+  },
+  {
+    "id": "his",
+    "word": "his",
+    "pos": "determiner",
+    "pl_translation": "jego",
+    "en_definition": "belonging to or associated with a male person or animal previously mentioned or easily identified",
+    "pl_definition": "należący do lub związany z wcześniej wspomnianą lub łatwo rozpoznawalną osobą lub zwierzęciem płci męskiej",
+    "example": "John forgot his keys at the office."
+  },
+  {
+    "id": "in",
+    "word": "in",
+    "pos": "preposition",
+    "pl_translation": "w",
+    "en_definition": "expressing the situation of being enclosed or surrounded by something; expressing inclusion or involvement",
+    "pl_definition": "wyraża sytuację bycia zamkniętym lub otoczonym przez coś; wyraża włączenie lub zaangażowanie",
+    "example": "The keys are in the drawer."
+  },
+  {
+    "id": "know",
+    "word": "know",
+    "pos": "verb",
+    "pl_translation": "wiedzieć",
+    "en_definition": "to have information or understanding about something",
+    "pl_definition": "mieć informacje lub zrozumienie czegoś",
+    "example": "I know the answer to that question."
+  },
+  {
+    "id": "just",
+    "word": "just",
+    "pos": "adverb",
+    "pl_translation": "właśnie",
+    "en_definition": "exactly or precisely; only; very recently",
+    "pl_definition": "dokładnie lub precyzyjnie; tylko; bardzo niedawno",
+    "example": "I just finished my homework."
   },
   {
     "id": "is",
@@ -66,72 +525,558 @@
     "id": "it",
     "word": "it",
     "pos": "pronoun",
-    "pl_translation": "to",
-    "en_definition": "A third-person singular neuter pronoun used to refer to an inanimate object, animal, concept, or previously mentioned thing.",
-    "pl_definition": "Zaimek osobowy trzeciej osoby liczby pojedynczej rodzaju nijakiego, używany do odnoszenia się do przedmiotów nieożywionych, zwierząt, pojęć lub wcześniej wspomnianych rzeczy.",
-    "example": "I found a book on the table, and it was very interesting."
+    "pl_translation": "ono, to",
+    "en_definition": "A third-person singular neuter pronoun used as the subject or object of a verb, or as the object of a preposition.",
+    "pl_definition": "Zaimek osobowy trzeciej osoby liczby pojedynczej rodzaju nijakiego, używany jako podmiot lub dopełnienie czasownika, lub jako dopełnienie przyimka.",
+    "example": "I found the book and read it yesterday."
   },
   {
-    "id": "paragraph",
-    "word": "paragraph",
+    "id": "lady",
+    "word": "lady",
     "pos": "noun",
-    "pl_translation": "akapit",
-    "en_definition": "A distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering.",
-    "pl_definition": "Wyodrębniony fragment tekstu, zazwyczaj dotyczący jednego tematu, oznaczony nową linią, wcięciem lub numeracją.",
-    "example": "The first paragraph of the essay introduces the main argument clearly."
+    "pl_translation": "dama",
+    "en_definition": "A polite or formal term for a woman, often implying refinement or high social status.",
+    "pl_definition": "Uprzejme lub formalne określenie kobiety, często sugerujące wyrafinowanie lub wysoki status społeczny.",
+    "example": "The lady at the front desk was very helpful with our reservation."
   },
   {
-    "id": "second",
-    "word": "second",
-    "pos": "noun",
-    "pl_translation": "sekunda",
-    "en_definition": "a unit of time equal to 1/60th of a minute",
-    "pl_definition": "jednostka czasu równa 1/60 minuty",
-    "example": "Wait just a second while I finish this email."
+    "id": "like",
+    "word": "like",
+    "pos": "verb",
+    "pl_translation": "lubić",
+    "en_definition": "to enjoy or approve of something",
+    "pl_definition": "lubić coś lub kogoś",
+    "example": "I like to read books in my free time."
   },
   {
-    "id": "sentence",
-    "word": "sentence",
-    "pos": "noun",
-    "pl_translation": "zdanie",
-    "en_definition": "A set of words that expresses a complete thought, typically containing a subject and predicate.",
-    "pl_definition": "Grupa słów wyrażająca pełną myśl, zazwyczaj zawierająca podmiot i orzeczenie.",
-    "example": "She wrote a complex sentence with multiple clauses for her English assignment."
-  },
-  {
-    "id": "should",
-    "word": "should",
-    "pos": "modal verb",
-    "pl_translation": "powinien/powinna/powinni",
-    "en_definition": "used to indicate obligation, duty, or correctness, typically when criticizing someone's actions",
-    "pl_definition": "używane do wyrażania obowiązku, powinności lub słuszności, zwykle przy krytykowaniu czyichś działań",
-    "example": "You should apologize for what you said."
-  },
-  {
-    "id": "third",
-    "word": "third",
+    "id": "last",
+    "word": "last",
     "pos": "adjective",
-    "pl_translation": "trzeci",
-    "en_definition": "coming after the second in order or position",
-    "pl_definition": "przychodzący po drugim w kolejności lub pozycji",
-    "example": "She finished in third place in the race."
+    "pl_translation": "ostatni",
+    "en_definition": "coming after all others in time or order; final",
+    "pl_definition": "przychodzący po wszystkich innych w czasie lub kolejności; ostateczny",
+    "example": "She was the last person to leave the building."
+  },
+  {
+    "id": "little",
+    "word": "little",
+    "pos": "adjective",
+    "pl_translation": "mały",
+    "en_definition": "small in size, amount, or degree",
+    "pl_definition": "mały pod względem rozmiaru, ilości lub stopnia",
+    "example": "She has a little dog that follows her everywhere."
+  },
+  {
+    "id": "man",
+    "word": "man",
+    "pos": "noun",
+    "pl_translation": "mężczyzna",
+    "en_definition": "an adult human male",
+    "pl_definition": "dorosły mężczyzna",
+    "example": "The man walked his dog in the park."
+  },
+  {
+    "id": "mind",
+    "word": "mind",
+    "pos": "noun",
+    "pl_translation": "umysł",
+    "en_definition": "the element of a person that enables them to be aware of the world and their experiences, to think, and to feel; the faculty of consciousness and thought.",
+    "pl_definition": "element osoby, który umożliwia jej świadomość świata i własnych doświadczeń, myślenie i odczuwanie; zdolność świadomości i myślenia.",
+    "example": "She has a brilliant mind for solving complex problems."
+  },
+  {
+    "id": "mine",
+    "word": "mine",
+    "pos": "noun",
+    "pl_translation": "kopalnia",
+    "en_definition": "an excavation in the earth for extracting minerals or other materials",
+    "pl_definition": "wyrobisko w ziemi służące do wydobywania minerałów lub innych materiałów",
+    "example": "The coal mine employed hundreds of workers in the region."
+  },
+  {
+    "id": "minute",
+    "word": "minute",
+    "pos": "noun",
+    "pl_translation": "minuta",
+    "en_definition": "A unit of time equal to sixty seconds or one sixtieth of an hour.",
+    "pl_definition": "Jednostka czasu równa sześćdziesięciu sekundom lub jednej sześćdziesiątej godziny.",
+    "example": "The meeting will start in five minutes."
+  },
+  {
+    "id": "nearly",
+    "word": "nearly",
+    "pos": "adverb",
+    "pl_translation": "prawie",
+    "en_definition": "almost but not completely or exactly",
+    "pl_definition": "prawie, niemal, blisko",
+    "example": "She was nearly finished with her homework when the power went out."
+  },
+  {
+    "id": "no",
+    "word": "no",
+    "pos": "adverb",
+    "pl_translation": "nie",
+    "en_definition": "used to give a negative response or express disagreement, denial, or refusal",
+    "pl_definition": "używane do wyrażenia negatywnej odpowiedzi, sprzeciwu, zaprzeczenia lub odmowy",
+    "example": "When asked if he wanted more coffee, he simply said 'no'."
+  },
+  {
+    "id": "one",
+    "word": "one",
+    "pos": "numeral",
+    "pl_translation": "jeden",
+    "en_definition": "the number 1",
+    "pl_definition": "liczba 1",
+    "example": "I have one apple left in my bag."
+  },
+  {
+    "id": "not",
+    "word": "not",
+    "pos": "adverb",
+    "pl_translation": "nie",
+    "en_definition": "Used to make a word, statement, or phrase negative.",
+    "pl_definition": "Używane do nadania słowu, stwierdzeniu lub frazie znaczenia przeczącego.",
+    "example": "I am not going to the party tonight."
+  },
+  {
+    "id": "of",
+    "word": "of",
+    "pos": "preposition",
+    "pl_translation": "z, od, o",
+    "en_definition": "Indicates relationships such as possession, origin, composition, or association between nouns.",
+    "pl_definition": "Wyraża relacje między rzeczownikami, takie jak przynależność, pochodzenie, skład lub powiązanie.",
+    "example": "The color of the sky is blue."
+  },
+  {
+    "id": "our",
+    "word": "our",
+    "pos": "determiner",
+    "pl_translation": "nasz",
+    "en_definition": "belonging to or associated with the speaker and one or more other people",
+    "pl_definition": "należący do lub związany z mówcą i jedną lub więcej innych osób",
+    "example": "We should bring our own snacks to the party."
+  },
+  {
+    "id": "out",
+    "word": "out",
+    "pos": "adverb",
+    "pl_translation": "na zewnątrz",
+    "en_definition": "away from the inside or center; not in the usual or proper place",
+    "pl_definition": "poza granicami czegoś; na zewnątrz",
+    "example": "She went out to buy groceries."
+  },
+  {
+    "id": "put",
+    "word": "put",
+    "pos": "verb",
+    "pl_translation": "kłaść, stawiać, umieszczać",
+    "en_definition": "to move or place something in a particular position or location",
+    "pl_definition": "przenieść lub umieścić coś w określonym położeniu lub miejscu",
+    "example": "Please put the book on the table."
+  },
+  {
+    "id": "remember",
+    "word": "remember",
+    "pos": "verb",
+    "pl_translation": "pamiętać",
+    "en_definition": "to have or keep in the memory; to recall to mind",
+    "pl_definition": "mieć lub zachować w pamięci; przywołać na myśl",
+    "example": "I remember visiting that museum when I was a child."
+  },
+  {
+    "id": "rock",
+    "word": "rock",
+    "pos": "noun",
+    "pl_translation": "skała",
+    "en_definition": "a large mass of stone forming a hill, cliff, or other natural feature",
+    "pl_definition": "duża masa kamienia tworząca wzgórze, klif lub inną naturalną formację",
+    "example": "The children climbed the large rock at the edge of the beach."
+  },
+  {
+    "id": "robe",
+    "word": "robe",
+    "pos": "noun",
+    "pl_translation": "szata",
+    "en_definition": "A long, loose outer garment, often worn for ceremonial or formal occasions.",
+    "pl_definition": "Długa, luźna szata wierzchnia, często noszona podczas ceremonii lub uroczystych okazji.",
+    "example": "The judge wore a black robe during the court proceedings."
+  },
+  {
+    "id": "room",
+    "word": "room",
+    "pos": "noun",
+    "pl_translation": "pokój",
+    "en_definition": "A part of a building enclosed by walls, floor, and ceiling.",
+    "pl_definition": "Część budynku zamknięta ścianami, podłogą i sufitem.",
+    "example": "She entered the room quietly and sat by the window."
+  },
+  {
+    "id": "said",
+    "word": "said",
+    "pos": "verb",
+    "pl_translation": "powiedział/powiedziała/powiedzieli",
+    "en_definition": "past tense and past participle of say; expressed in words",
+    "pl_definition": "czas przeszły i imiesłów bierny od say; wyrażony słowami",
+    "example": "She said she would arrive by noon."
+  },
+  {
+    "id": "round",
+    "word": "round",
+    "pos": "adjective, noun, verb, adverb, preposition",
+    "pl_translation": "okrągły, runda, zaokrąglić, wokół, około",
+    "en_definition": "Having a circular shape; a stage of competition; to make circular; in a circular direction; surrounding.",
+    "pl_definition": "Mający okrągły kształt; etap zawodów; uczynić okrągłym; w kierunku okrężnym; otaczający.",
+    "example": "The children sat in a round circle to play the game."
+  },
+  {
+    "id": "sat",
+    "word": "sat",
+    "pos": "verb",
+    "pl_translation": "siedział/siedziała/siedziało",
+    "en_definition": "past tense and past participle of sit; to be in a seated position",
+    "pl_definition": "czas przeszły i imiesłów bierny od sit; być w pozycji siedzącej",
+    "example": "She sat quietly in the corner reading a book."
+  },
+  {
+    "id": "sea",
+    "word": "sea",
+    "pos": "noun",
+    "pl_translation": "morze",
+    "en_definition": "a large body of salt water that is partly or fully enclosed by land",
+    "pl_definition": "duży zbiornik słonej wody częściowo lub całkowicie otoczony lądem",
+    "example": "We sailed across the sea to reach the distant island."
+  },
+  {
+    "id": "shaded",
+    "word": "shaded",
+    "pos": "adjective",
+    "pl_translation": "zacieniony",
+    "en_definition": "protected from direct light or sun, or having areas of different darkness",
+    "pl_definition": "chroniony przed bezpośrednim światłem lub słońcem, lub mający obszary o różnej ciemności",
+    "example": "We sat in a shaded area of the garden to escape the midday heat."
+  },
+  {
+    "id": "she",
+    "word": "she",
+    "pos": "pronoun",
+    "pl_translation": "ona",
+    "en_definition": "third person singular feminine pronoun",
+    "pl_definition": "zaimek osobowy trzeciej osoby liczby pojedynczej rodzaju żeńskiego",
+    "example": "She is reading a book in the library."
+  },
+  {
+    "id": "shining",
+    "word": "shining",
+    "pos": "adjective",
+    "pl_translation": "lśniący",
+    "en_definition": "giving out or reflecting bright light",
+    "pl_definition": "wydzielający lub odbijający jasne światło",
+    "example": "The shining sun made the lake sparkle beautifully."
+  },
+  {
+    "id": "so",
+    "word": "so",
+    "pos": "adverb, conjunction",
+    "pl_translation": "tak, więc",
+    "en_definition": "to such a great extent; therefore; in order that",
+    "pl_definition": "w takim stopniu; dlatego; aby",
+    "example": "I was so tired that I fell asleep immediately."
+  },
+  {
+    "id": "sky",
+    "word": "sky",
+    "pos": "noun",
+    "pl_translation": "niebo",
+    "en_definition": "the region of the atmosphere and outer space seen from the Earth",
+    "pl_definition": "obszar atmosfery i przestrzeni kosmicznej widziany z Ziemi",
+    "example": "The sky was clear and blue on our picnic day."
+  },
+  {
+    "id": "softly",
+    "word": "softly",
+    "pos": "adverb",
+    "pl_translation": "delikatnie",
+    "en_definition": "in a gentle, quiet, or smooth manner",
+    "pl_definition": "w sposób delikatny, cichy lub gładki",
+    "example": "She spoke softly to avoid waking the baby."
+  },
+  {
+    "id": "some",
+    "word": "some",
+    "pos": "determiner",
+    "pl_translation": "trochę, kilka, niektórzy",
+    "en_definition": "an unspecified amount or number of something",
+    "pl_definition": "nieokreślona ilość lub liczba czegoś",
+    "example": "I need to buy some apples at the grocery store."
+  },
+  {
+    "id": "still",
+    "word": "still",
+    "pos": "adverb",
+    "pl_translation": "wciąż, nadal",
+    "en_definition": "continuing to happen or exist; without moving or making a sound",
+    "pl_definition": "w dalszym ciągu; bez ruchu lub dźwięku",
+    "example": "The water in the pond was still and reflective in the morning light."
+  },
+  {
+    "id": "story",
+    "word": "story",
+    "pos": "noun",
+    "pl_translation": "opowieść, historia",
+    "en_definition": "A narrative or account of events, either true or fictitious.",
+    "pl_definition": "Narracja lub opis wydarzeń, prawdziwych lub fikcyjnych.",
+    "example": "She told a fascinating story about her travels in Asia."
+  },
+  {
+    "id": "such",
+    "word": "such",
+    "pos": "determiner",
+    "pl_translation": "taki",
+    "en_definition": "used to refer to someone or something of a particular type or quality",
+    "pl_definition": "używane do odnoszenia się do kogoś lub czegoś o określonym typie lub jakości",
+    "example": "I've never seen such a beautiful sunset before."
+  },
+  {
+    "id": "talked",
+    "word": "talked",
+    "pos": "verb",
+    "pl_translation": "rozmawiał/rozmawiała/rozmawiało",
+    "en_definition": "past tense and past participle of talk; to have spoken or conversed",
+    "pl_definition": "czas przeszły i imiesłów bierny od czasownika talk; oznacza, że ktoś mówił lub rozmawiał",
+    "example": "We talked for hours about our favorite books."
   },
   {
     "id": "the",
     "word": "the",
     "pos": "article",
-    "pl_translation": "ten/ta/to",
+    "pl_translation": "ten, ta, to",
     "en_definition": "definite article used to specify a particular noun",
-    "pl_definition": "rodzajnik określony używany do określenia konkretnego rzeczownika",
+    "pl_definition": "rodzajnik określony używany do wskazania konkretnego rzeczownika",
     "example": "The cat is sleeping on the sofa."
   },
   {
-    "id": "this",
-    "word": "this",
-    "pos": "article",
-    "pl_translation": "ten, ta, to",
-    "en_definition": "used to identify a specific person or thing close at hand or being indicated or experienced",
-    "pl_definition": "używane do wskazania konkretnej osoby lub rzeczy znajdującej się blisko lub wskazywanej",
-    "example": "This book is very interesting."
+    "id": "there",
+    "word": "there",
+    "pos": "adverb",
+    "pl_translation": "tam",
+    "en_definition": "in, at, or to that place or position",
+    "pl_definition": "w tym miejscu lub pozycji",
+    "example": "I left my keys over there on the table."
+  },
+  {
+    "id": "that",
+    "word": "that",
+    "pos": "pronoun, determiner, conjunction, adverb",
+    "pl_translation": "tamten, że, taki",
+    "en_definition": "used to refer to a specific person, thing, idea, or situation previously mentioned or understood; introduces a subordinate clause; indicates degree or manner",
+    "pl_definition": "używane do odniesienia się do konkretnej osoby, rzeczy, idei lub sytuacji wcześniej wspomnianej lub zrozumianej; wprowadza zdanie podrzędne; wskazuje stopień lub sposób",
+    "example": "I know that you're busy, but could you help me with this?"
+  },
+  {
+    "id": "themselves",
+    "word": "themselves",
+    "pos": "pronoun",
+    "pl_translation": "siebie, sami, same",
+    "en_definition": "a reflexive pronoun referring back to the subject of the clause, used for emphasis or to indicate that the subject performs the action on themselves",
+    "pl_definition": "zaimek zwrotny odnoszący się do podmiotu zdania, używany dla podkreślenia lub wskazania, że podmiot wykonuje czynność na sobie",
+    "example": "They prepared the entire meal themselves without any help."
+  },
+  {
+    "id": "these",
+    "word": "these",
+    "pos": "determiner",
+    "pl_translation": "te",
+    "en_definition": "plural form of 'this', used to indicate specific people or things that are near in distance or time",
+    "pl_definition": "liczba mnoga od 'this', używana do wskazywania konkretnych osób lub rzeczy bliskich w odległości lub czasie",
+    "example": "These books on the table belong to the library."
+  },
+  {
+    "id": "thing",
+    "word": "thing",
+    "pos": "noun",
+    "pl_translation": "rzecz",
+    "en_definition": "a physical object, concept, or matter of unspecified nature",
+    "pl_definition": "rzecz, przedmiot lub sprawa o nieokreślonej naturze",
+    "example": "I need to buy a few things at the store."
+  },
+  {
+    "id": "thoughts",
+    "word": "thoughts",
+    "pos": "noun",
+    "pl_translation": "myśli",
+    "en_definition": "ideas or opinions produced by thinking, or the process of thinking",
+    "pl_definition": "idee lub opinie powstałe w wyniku myślenia, lub proces myślenia",
+    "example": "Her thoughts on the matter were well-received by the committee."
+  },
+  {
+    "id": "think",
+    "word": "think",
+    "pos": "verb",
+    "pl_translation": "myśleć",
+    "en_definition": "to have a particular opinion, belief, or idea about someone or something",
+    "pl_definition": "mieć określone zdanie, przekonanie lub pomysł na temat kogoś lub czegoś",
+    "example": "I think we should leave early to avoid traffic."
+  },
+  {
+    "id": "they",
+    "word": "they",
+    "pos": "pronoun",
+    "pl_translation": "oni/one (w liczbie mnogiej); on/ona (w liczbie pojedynczej jako zaimek neutralny płciowo)",
+    "en_definition": "Third-person plural pronoun used to refer to multiple people or things, or as a singular pronoun for a person of unspecified or non-binary gender.",
+    "pl_definition": "Zaimek trzeciej osoby liczby mnogiej używany do odnoszenia się do wielu osób lub rzeczy, lub jako zaimek liczby pojedynczej dla osoby o nieokreślonej lub niebinarnej płci.",
+    "example": "They are going to the store to buy groceries for the party."
+  },
+  {
+    "id": "through",
+    "word": "through",
+    "pos": "preposition",
+    "pl_translation": "przez",
+    "en_definition": "moving in one side and out of the other side of an opening, channel, or location; by means of; because of; during the whole period of",
+    "pl_definition": "przemieszczanie się z jednej strony na drugą przez otwór, kanał lub miejsce; za pomocą; z powodu; przez cały okres",
+    "example": "We walked through the forest to reach the lake."
+  },
+  {
+    "id": "very",
+    "word": "very",
+    "pos": "adverb",
+    "pl_translation": "bardzo",
+    "en_definition": "to a high degree; extremely",
+    "pl_definition": "w wysokim stopniu; bardzo",
+    "example": "The coffee was very hot."
+  },
+  {
+    "id": "to",
+    "word": "to",
+    "pos": "preposition",
+    "pl_translation": "do",
+    "en_definition": "Used to indicate direction, purpose, recipient, or relationship between things",
+    "pl_definition": "Używane do wskazania kierunku, celu, odbiorcy lub relacji między rzeczami",
+    "example": "I'm going to the store to buy some milk."
+  },
+  {
+    "id": "us",
+    "word": "us",
+    "pos": "pronoun",
+    "pl_translation": "nas",
+    "en_definition": "the objective case of 'we', referring to the speaker and one or more other people",
+    "pl_definition": "celownik i biernik zaimka 'my', odnoszący się do mówiącego i jednej lub więcej innych osób",
+    "example": "She invited us to her party next weekend."
+  },
+  {
+    "id": "was",
+    "word": "was",
+    "pos": "verb",
+    "pl_translation": "był/była/było",
+    "en_definition": "past tense first and third person singular of 'be'",
+    "pl_definition": "czas przeszły pierwszej i trzeciej osoby liczby pojedynczej czasownika 'być'",
+    "example": "She was happy to see her friends."
+  },
+  {
+    "id": "water",
+    "word": "water",
+    "pos": "noun",
+    "pl_translation": "woda",
+    "en_definition": "A clear, colorless, odorless, and tasteless liquid essential for most plant and animal life.",
+    "pl_definition": "Bezbarwna, bezwonna i bezsmakowa ciecz niezbędna do życia większości roślin i zwierząt.",
+    "example": "I drink at least eight glasses of water every day to stay hydrated."
+  },
+  {
+    "id": "we",
+    "word": "we",
+    "pos": "pronoun",
+    "pl_translation": "my",
+    "en_definition": "first person plural pronoun referring to the speaker and one or more other people",
+    "pl_definition": "zaimek pierwszej osoby liczby mnogiej odnoszący się do mówiącego i jednej lub więcej osób",
+    "example": "We are going to the park this afternoon."
+  },
+  {
+    "id": "well",
+    "word": "well",
+    "pos": "adverb",
+    "pl_translation": "dobrze",
+    "en_definition": "in a good or satisfactory manner",
+    "pl_definition": "w dobry lub zadowalający sposób",
+    "example": "She performed well on the exam."
+  },
+  {
+    "id": "went",
+    "word": "went",
+    "pos": "verb",
+    "pl_translation": "poszedł/poszła/poszli/poszły",
+    "en_definition": "past tense of 'go', meaning to move or travel from one place to another",
+    "pl_definition": "czas przeszły od 'go', oznaczający przemieszczanie się lub podróżowanie z jednego miejsca do drugiego",
+    "example": "She went to the store yesterday to buy groceries."
+  },
+  {
+    "id": "were",
+    "word": "were",
+    "pos": "verb",
+    "pl_translation": "byliśmy/byliście/byli",
+    "en_definition": "past tense plural and second person singular of 'be'",
+    "pl_definition": "czas przeszły liczby mnogiej i drugiej osoby liczby pojedynczej czasownika 'być'",
+    "example": "They were happy to see us yesterday."
+  },
+  {
+    "id": "westward",
+    "word": "westward",
+    "pos": "adverb",
+    "pl_translation": "na zachód",
+    "en_definition": "toward the west",
+    "pl_definition": "w kierunku zachodnim",
+    "example": "They traveled westward across the plains."
+  },
+  {
+    "id": "whispers",
+    "word": "whispers",
+    "pos": "verb",
+    "pl_translation": "szeptać",
+    "en_definition": "to speak very softly or quietly",
+    "pl_definition": "mówić bardzo cicho lub szeptem",
+    "example": "She whispers secrets to her friend during class."
+  },
+  {
+    "id": "white",
+    "word": "white",
+    "pos": "adjective",
+    "pl_translation": "biały",
+    "en_definition": "of the color of milk or fresh snow, due to the reflection of most wavelengths of visible light",
+    "pl_definition": "koloru mleka lub świeżego śniegu, odbijający większość długości fal światła widzialnego",
+    "example": "The white snow covered the entire landscape."
+  },
+  {
+    "id": "with",
+    "word": "with",
+    "pos": "preposition",
+    "pl_translation": "z",
+    "en_definition": "accompanied by or having possession of",
+    "pl_definition": "w towarzystwie lub posiadając coś",
+    "example": "She went to the park with her dog."
+  },
+  {
+    "id": "words",
+    "word": "words",
+    "pos": "noun",
+    "pl_translation": "słowa",
+    "en_definition": "units of language that carry meaning, typically consisting of one or more spoken sounds or their written representation",
+    "pl_definition": "jednostki języka niosące znaczenie, zazwyczaj składające się z jednego lub więcej dźwięków mowy lub ich zapisu pisemnego",
+    "example": "She carefully chose her words to avoid offending anyone during the speech."
+  },
+  {
+    "id": "worn",
+    "word": "worn",
+    "pos": "adjective",
+    "pl_translation": "znoszony",
+    "en_definition": "damaged or showing signs of use from age or wear",
+    "pl_definition": "zniszczony lub noszący ślady użytkowania z powodu wieku lub zużycia",
+    "example": "The old book had worn pages and a faded cover."
+  },
+  {
+    "id": "yes",
+    "word": "yes",
+    "pos": "interjection",
+    "pl_translation": "tak",
+    "en_definition": "used to give an affirmative response or express agreement",
+    "pl_definition": "używane do wyrażenia odpowiedzi twierdzącej lub zgody",
+    "example": "Yes, I would like to go to the park."
   }
 ]
