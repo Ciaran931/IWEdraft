@@ -68,6 +68,37 @@ header nav a:hover {
   line-height: 1.5;
 }
 
+#sidebar-content {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Top line: English word + POS */
+.word-header {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Polish translation line */
+.word-translation {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #007acc;
+}
+
+/* Definitions */
+.word-definitions div {
+  margin-bottom: 4px;
+}
+
+/* Example sentence */
+.word-example {
+  margin-top: 8px;
+  font-style: italic;
+  color: #555;
+}
+
+
 /* --------------------------
    Clickable words
 --------------------------- */
@@ -82,7 +113,7 @@ header nav a:hover {
 }
 
 .word.selected {
-  background-color: #ffff99;
+  background-color: #9f05ff;
   border-radius: 3px;
 }
 
@@ -116,7 +147,7 @@ header nav a:hover {
 /* Sentence highlighting */
 .english-sentence.sentence-highlight,
 .polish-sentence.sentence-highlight {
-  background-color: #d1e4ff;
+  background-color: #deb4ff;
   border-radius: 3px;
 }
 

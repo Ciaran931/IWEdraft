@@ -51,11 +51,16 @@ document.addEventListener("click", e => {
 
 function showSidebar(word) {
   sidebarContent.innerHTML = `
-    <div><strong>Word:</strong> ${word.word}</div><br>
-    <div><strong>Part of Speech:</strong> ${word.pos}</div><br>
-    <div><strong>EN Definition:</strong> ${word.en_definition}</div><br>
-    <div><strong>PL Definition:</strong> ${word.pl_definition}</div><br>
-    <div><strong>Translation:</strong> ${word.pl_translation}</div><br>
-    <div><strong>Example:</strong> <em>${word.example}</em></div>
+    <div class="word-header">
+      <strong>${word.word}</strong> <em>${word.pos}</em>
+    </div>
+    <div class="word-translation">
+     ${word.pl_translation}
+    </div><br>
+    <div class="word-definitions">
+      <div><strong>EN:</strong> ${word.en_definition}</div>
+      <div><strong>PL:</strong> ${word.pl_definition}</div>
+    </div><br>
+    <div class="word-example"><em>${word.example}</em></div>
   `;
 }
