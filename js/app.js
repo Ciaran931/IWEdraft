@@ -55,12 +55,16 @@ function showSidebar(word) {
       <strong>${word.word}</strong> <em>${word.pos}</em>
     </div>
     <div class="word-translation">
-     ${word.pl_translation}
+      ${word.pl_translation}
     </div><br>
     <div class="word-definitions">
       <div><strong>EN:</strong> ${word.en_definition}</div>
       <div><strong>PL:</strong> ${word.pl_definition}</div>
     </div><br>
-    <div class="word-example"><em>${word.example}</em></div>
+    <div class="word-example">
+      <ol>
+        ${word.examples.map(e => `<li>${e}</li>`).join('')}
+      </ol>
+    </div>
   `;
 }

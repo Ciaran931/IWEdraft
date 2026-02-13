@@ -51,10 +51,20 @@ def ai_fill_word(word, api_key):
 - en_definition: concise English definition
 - pl_definition: concise Polish definition
 - pl_translation: Polish translation of the word
-- example: one English example sentence using the word
+- example: three simple English example sentences using the word
 
 Return only JSON like this:
-{{"pos": "...", "en_definition": "...", "pl_definition": "...", "pl_translation": "...", "example": "..."}}"""
+{{
+  "pos": "...",
+  "en_definition": "...",
+  "pl_definition": "...",
+  "pl_translation": "...",
+  "examples": [
+    "Example sentence 1",
+    "Example sentence 2",
+    "Example sentence 3"
+  ]
+}}"""
 
     headers = {
         "Authorization": f"Bearer {api_key}",
