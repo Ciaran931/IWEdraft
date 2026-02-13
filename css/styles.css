@@ -83,7 +83,7 @@ header nav a:hover {
 .word-translation {
   font-size: 15px;
   margin-bottom: 8px;
-  color: #007acc;
+  color: #56009c;
 }
 
 /* Definitions */
@@ -113,7 +113,7 @@ header nav a:hover {
 }
 
 .word.selected {
-  background-color: #9f05ff;
+  background-color: #c66bff;
   border-radius: 3px;
 }
 
@@ -147,7 +147,7 @@ header nav a:hover {
 /* Sentence highlighting */
 .english-sentence.sentence-highlight,
 .polish-sentence.sentence-highlight {
-  background-color: #deb4ff;
+  background-color: #efdbff;
   border-radius: 3px;
 }
 
