@@ -1,184 +1,173 @@
 #!/usr/bin/env python3
+
 import os
 import sys
 import json
 import re
 import requests
-import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
+from bs4 import BeautifulSoup, NavigableString
 
 # --------------------------
-# Tokenization and JSON Setup
+# Tokenization
 # --------------------------
+
 def tokenize(text):
-    """Split text into words (keep apostrophes) and punctuation"""
-    return re.findall(r"\w+['’]?\w*|[^\w\s]", text)
+    return re.findall(r"\w+['’]?\w*", text)
 
 def generate_word_json(tokens):
-    """Create unique word list for words.json"""
-    unique_words = set(token.lower() for token in tokens if re.match(r"\w+", token))
-    word_list = []
-    for word in sorted(unique_words):
-        word_list.append({
+    unique_words = sorted(set(word.lower() for word in tokens))
+    return [
+        {
             "id": word,
             "word": word,
             "pos": "",
             "pl_translation": "",
             "en_definition": "",
             "pl_definition": "",
-            "example": ""
-        })
-    return word_list
+            "example": []
+        }
+        for word in unique_words
+    ]
+
+# --------------------------
+# SAFE HTML WORD WRAPPING
+# --------------------------
 
 def wrap_tokens_html(text):
-    """
-    Wraps words in <span> tags but preserves original spaces, newlines, and punctuation.
-    """
-    def repl(match):
-        word = match.group(0)
-        return f'<span class="word" data-id="{word.lower()}">{word}</span>'
-
-    return re.sub(r"\w+['’]?\w*", repl, text)
+    soup = BeautifulSoup(text, "html.parser")
+    for node in soup.find_all(string=True):
+        if isinstance(node, NavigableString):
+            new_html = re.sub(
+                r"\w+['’]?\w*",
+                lambda m: f'<span class="word" data-id="{m.group(0).lower()}">{m.group(0)}</span>',
+                str(node)
+            )
+            node.replace_with(BeautifulSoup(new_html, "html.parser"))
+    return str(soup)
 
 # --------------------------
-# DeepSeek AI Functions
+# AI WORD DATA
 # --------------------------
+
 def ai_fill_word(word, api_key):
-    """Get word definitions, translations, POS, and example from DeepSeek."""
-    prompt = f"""Provide JSON for the English word '{word}' with the following fields:
-- pos: part of speech (e.g., noun, verb, adjective, article)
-- en_definition: concise English definition
-- pl_definition: concise Polish definition
-- pl_translation: Polish translation of the word
-- example: three simple English example sentences using the word
+    prompt = f"""
+Provide JSON for the English word '{word}':
 
-Return only JSON like this:
-{{
-  "pos": "...",
-  "en_definition": "...",
-  "pl_definition": "...",
-  "pl_translation": "...",
-  "examples": [
-    "Example sentence 1",
-    "Example sentence 2",
-    "Example sentence 3"
-  ]
-}}"""
+pos,
+en_definition,
+pl_definition,
+pl_translation,
+examples (3 short sentences)
 
+Return JSON only.
+"""
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
-
     data = {
         "model": "deepseek-chat",
         "messages": [
-            {"role": "system", "content": "You are a helpful assistant that only outputs JSON."},
+            {"role": "system", "content": "Return JSON only."},
             {"role": "user", "content": prompt}
         ],
-        "max_tokens": 200,
-        "response_format": {"type": "json_object"}
+        "response_format": {"type": "json_object"},
+        "max_tokens": 300
     }
 
     try:
-        response = requests.post("https://api.deepseek.com/chat/completions", headers=headers, json=data)
-        response.raise_for_status()
-        result_text = response.json()["choices"][0]["message"]["content"]
-        return json.loads(result_text)
+        r = requests.post("https://api.deepseek.com/chat/completions", headers=headers, json=data)
+        result = r.json()["choices"][0]["message"]["content"]
+        return json.loads(result)
     except Exception as e:
-        print(f"Error filling word '{word}': {e}")
+        print("AI error:", word, e)
         return {
             "pos": "",
             "en_definition": "",
             "pl_definition": "",
             "pl_translation": "",
-            "example": ""
+            "example": []
         }
 
-def translate_paragraph_to_polish(paragraph, api_key):
-    """Translate an English paragraph into Polish using DeepSeek."""
-    prompt = f"Translate the following English paragraph into Polish, keeping paragraph and sentence structure:\n\n{paragraph}"
+# --------------------------
+# PARALLEL WORD FILL
+# --------------------------
 
+def fill_words_parallel(words, api_key):
+    def worker(entry):
+        data = ai_fill_word(entry["word"], api_key)
+        entry.update(data)
+        return entry
+
+    results = []
+    with ThreadPoolExecutor(max_workers=5) as exe:
+        futures = [exe.submit(worker, w) for w in words]
+        for f in tqdm(as_completed(futures), total=len(futures), desc="Filling words"):
+            results.append(f.result())
+    return results
+
+# --------------------------
+# TRANSLATION
+# --------------------------
+
+def translate_paragraph(paragraph, api_key):
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
-
     data = {
         "model": "deepseek-chat",
         "messages": [
-            {"role": "system", "content": "You are a translation assistant. Respond only with Polish text."},
-            {"role": "user", "content": prompt}
+            {"role": "system", "content": "Translate to Polish."},
+            {"role": "user", "content": paragraph}
         ],
-        "max_tokens": 800
+        "max_tokens": 1000
     }
-
     try:
-        response = requests.post("https://api.deepseek.com/chat/completions", headers=headers, json=data)
-        response.raise_for_status()
-        return response.json()["choices"][0]["message"]["content"].strip()
-    except Exception as e:
-        print(f"Error translating paragraph: {e}")
-        return paragraph  # fallback to English if translation fails
+        r = requests.post("https://api.deepseek.com/chat/completions", headers=headers, json=data)
+        return r.json()["choices"][0]["message"]["content"]
+    except:
+        return paragraph
 
 # --------------------------
-# Parallel AI fill for words
+# SENTENCE SPLIT
 # --------------------------
-def fill_words_parallel(words_json, api_key, max_workers=5):
-    """Fills words in parallel using DeepSeek API with a progress bar."""
-    def worker(word_entry):
-        if not word_entry["en_definition"]:
-            data = ai_fill_word(word_entry["word"], api_key)
-            word_entry.update(data)
-        return word_entry
 
-    results = []
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(worker, word): word for word in words_json}
-        for f in tqdm(as_completed(futures), total=len(futures), desc="Filling words"):
-            try:
-                results.append(f.result())
-            except Exception as e:
-                word = futures[f]["word"]
-                print(f"Error filling word '{word}': {e}")
-    return results
+def split_sentences(text):
+    return re.split(r'(?<=[.!?])\s+', text.strip())
 
 # --------------------------
-# Generate Bilingual HTML
+# HTML GENERATION
 # --------------------------
+
 def generate_bilingual_html(en_text, pl_text):
-    """Create HTML with aligned English and Polish paragraphs and global sentence numbers."""
     html = ['<div class="bilingual-container">']
-
     en_paragraphs = en_text.split("\n\n")
     pl_paragraphs = pl_text.split("\n\n")
+    sentence_id = 1
 
-    sentence_counter = 1  # Global sentence number
+    for i in range(len(en_paragraphs)):
+        html.append(f'<div class="paragraph" data-paragraph="{i+1}">')
 
-    for i, (en_para, pl_para) in enumerate(zip(en_paragraphs, pl_paragraphs), start=1):
-        html.append(f'<div class="paragraph" data-paragraph="{i}">')
-
-        # Wrap English words with spans
-        en_para_wrapped = wrap_tokens_html(en_para)
-
-        # Split into sentences
-        en_sentences = re.split(r'(?<=[.!?])\s+', en_para_wrapped)
-        pl_sentences = re.split(r'(?<=[.!?])\s+', pl_para)
+        en_sentences = split_sentences(en_paragraphs[i])
+        pl_sentences = split_sentences(pl_paragraphs[i])
 
         # English column
         html.append('<div class="english-column">')
-        for en_sentence in en_sentences:
-            html.append(f'<p class="english-sentence" data-sentence="{sentence_counter}">{en_sentence}</p>')
-            sentence_counter += 1
+        for s in en_sentences:
+            wrapped = wrap_tokens_html(s)
+            html.append(f'<div class="english-sentence" data-sentence="{sentence_id}">{wrapped}</div>')
+            sentence_id += 1
         html.append('</div>')
 
-        # Reset counter for Polish? No — use same global number
-        sentence_counter_pl = sentence_counter - len(en_sentences)  # start same as English sentences
+        # Polish column
         html.append('<div class="polish-column">')
-        for pl_sentence in pl_sentences:
-            html.append(f'<p class="polish-sentence" data-sentence="{sentence_counter_pl}">{pl_sentence}</p>')
-            sentence_counter_pl += 1
+        pl_id = sentence_id - len(en_sentences)
+        for s in pl_sentences:
+            html.append(f'<div class="polish-sentence" data-sentence="{pl_id}">{s}</div>')
+            pl_id += 1
         html.append('</div>')
 
         html.append('</div>')  # paragraph
@@ -187,8 +176,9 @@ def generate_bilingual_html(en_text, pl_text):
     return "\n".join(html)
 
 # --------------------------
-# Main Script
+# MAIN
 # --------------------------
+
 def main():
     if len(sys.argv) != 2:
         print("Usage: python generate_story_snippet.py story.txt")
@@ -212,24 +202,31 @@ def main():
     # Generate Polish translation
     print("Translating paragraphs to Polish...")
     en_paragraphs = en_text.split("\n\n")
-    pl_paragraphs = [translate_paragraph_to_polish(p, api_key) for p in tqdm(en_paragraphs, desc="Translating")]
+    pl_paragraphs = [translate_paragraph(p, api_key) for p in tqdm(en_paragraphs, desc="Translating")]
     pl_text = "\n\n".join(pl_paragraphs)
 
     # --------------------------
-    # Tokenize and generate words.json
-    tokens = tokenize(en_text)
-    words_json = generate_word_json(tokens)
+    # Tokenize and generate words.json if not exists
+    words_json_path = os.path.join(output_dir, "words.json")
+    if os.path.exists(words_json_path):
+        print(f"words.json already exists at {words_json_path}, skipping AI word fill.")
+        with open(words_json_path, "r", encoding="utf-8") as f:
+            words = json.load(f)
+    else:
+        print("Tokenizing...")
+        tokens = tokenize(en_text)
+        words = generate_word_json(tokens)
 
-    # Autofill words with AI in parallel
-    print("Filling word definitions via AI...")
-    words_json = fill_words_parallel(words_json, api_key, max_workers=5)
+        print("Filling word definitions via AI...")
+        words = fill_words_parallel(words, api_key)
 
-    # Save words.json
-    json_path = os.path.join(output_dir, "words.json")
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(words_json, f, ensure_ascii=False, indent=2)
+        print("Saving words.json...")
+        with open(words_json_path, "w", encoding="utf-8") as f:
+            json.dump(words, f, ensure_ascii=False, indent=2)
 
+    # --------------------------
     # Generate bilingual HTML
+    print("Generating bilingual HTML...")
     html_content = generate_bilingual_html(en_text, pl_text)
     snippet_path = os.path.join(output_dir, "story-bilingual.html")
     with open(snippet_path, "w", encoding="utf-8") as f:
