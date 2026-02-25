@@ -1,159 +1,165 @@
-<p><em>This Is Why We Can’t Have Nice Things</em></p>
+This is a video about things like cars, phones, and light bulbs—and an actual conspiracy that made them worse.
 
-<p>This is a video about things like cars, phones, and light bulbs—and an actual conspiracy that made them worse.</p>
+I am outside Livermore Fire Station Number 6. Inside, they have the longest continuously operating light bulb in the world. It has been on for 120 years, since 1901. There it is. It’s not even connected to a light switch, but it does have a backup battery and generator.
 
-<p>I am outside Livermore Fire Station Number 6. Inside, they have the longest continuously operating light bulb in the world. It has been on for 120 years, since 1901. There it is. It’s not even connected to a light switch, but it does have a backup battery and generator.</p>
+So the big question is: how has this light bulb lasted so long?
 
-<p>So the big question is: how has this light bulb lasted so long?</p>
+It was manufactured by hand not long after commercial light bulbs were first invented, and yet it has been running for over a million hours—far longer than any light bulb today is designed to last.
 
-<p>It was manufactured by hand not long after commercial light bulbs were first invented, and yet it has been running for over a million hours—far longer than any light bulb today is designed to last.</p>
+A while back, a friend told me a story that someone had invented a light bulb that would last forever years ago, but they never sold it because an everlasting light bulb would make for a terrible business model. You would never have repeat customers, and eventually you would run out of people to sell to.
 
-<p>A while back, a friend told me a story that someone had invented a light bulb that would last forever years ago, but they never sold it because an everlasting light bulb would make for a terrible business model. You would never have repeat customers, and eventually you would run out of people to sell to.</p>
+I thought this sounded ridiculous. If you could make an everlasting light bulb, everyone would buy yours over the competitors’. You could charge high prices and make a lot of money, even if demand eventually dried up.
 
-<p>I thought this sounded ridiculous. If you could make an everlasting light bulb, everyone would buy yours over the competitors’. You could charge high prices and make a lot of money, even if demand eventually dried up.</p>
+I couldn’t imagine that we had better light bulbs in the past and then intentionally made them worse.
 
-<p>I couldn’t imagine that we had better light bulbs in the past and then intentionally made them worse.</p>
+But it turns out I was wrong. At least, sort of.
 
-<p>But it turns out I was wrong. At least, sort of.</p>
+How light bulbs work
 
+Inventing a viable electric light was difficult. The typical incandescent bulb works by passing electric current through a material, heating it until it glows.
 
-<p><em>How light bulbs work</em></p>
+Less than 5% of the electrical energy becomes light. The other 95% is released as heat. These are essentially heat bulbs that give off light as a by-product.
 
-<p>Inventing a viable electric light was difficult. The typical incandescent bulb works by passing electric current through a material, heating it until it glows.</p>
+The filament can reach temperatures of 2,800 Kelvin—about half as hot as the surface of the Sun. At these temperatures, most materials melt. If they don’t melt, they burn.
 
-<p>Less than 5% of the electrical energy becomes light. The other 95% is released as heat. These are essentially heat bulbs that give off light as a by-product.</p>
+In the 1840s, Warren de la Rue solved part of this problem by putting the filament inside a vacuum bulb, removing oxygen.
 
-<p>The filament can reach temperatures of 2,800 Kelvin—about half as hot as the surface of the Sun. At these temperatures, most materials melt. If they don’t melt, they burn.</p>
+By 1879, Thomas Edison created a bulb with a cotton thread filament that lasted 14 hours. Other inventors improved on this using platinum and carbonized materials.
 
-<p>In the 1840s, Warren de la Rue solved part of this problem by putting the filament inside a vacuum bulb, removing oxygen.</p>
+Eventually, tungsten was used because of its extremely high melting point.
 
-<p>By 1879, Thomas Edison created a bulb with a cotton thread filament that lasted 14 hours. Other inventors improved on this using platinum and carbonized materials.</p>
+By the early 1920s, average bulb lifetimes were approaching 2,000 hours, with some lasting 2,500 hours.
 
-<p>Eventually, tungsten was used because of its extremely high melting point.</p>
+Then something changed.
 
-<p>By the early 1920s, average bulb lifetimes were approaching 2,000 hours, with some lasting 2,500 hours.</p>
+The Phoebus Cartel
 
-<p>Then something changed.</p>
+Just before Christmas in 1924, executives from the world’s leading light bulb companies met secretly in Geneva, Switzerland.
 
+These included:
 
-<p><em>The Phoebus Cartel</em></p>
+Philips
 
-<p>Just before Christmas in 1924, executives from the world’s leading light bulb companies met secretly in Geneva, Switzerland.</p>
+General Electric
 
-<p>These included Philips, General Electric, Tokyo Electric, OSRAM, and Associated Electrical Industries.</p>
+Tokyo Electric
 
-<p>They formed what became known as the Phoebus Cartel.</p>
+OSRAM
 
-<p>Their goal was to control the global light bulb market.</p>
+Associated Electrical Industries
 
-<p>The biggest threat they faced was long-lasting bulbs.</p>
+They formed what became known as the Phoebus Cartel.
 
-<p>For example, OSRAM sold 63 million bulbs in 1923—but only 28 million the following year. Their products were lasting too long, reducing repeat sales.</p>
+Their goal was to control the global light bulb market.
 
-<p>So the cartel agreed to reduce bulb lifespan to 1,000 hours—cutting it nearly in half.</p>
+The biggest threat they faced was long-lasting bulbs.
 
+For example, OSRAM sold 63 million bulbs in 1923—but only 28 million the following year. Their products were lasting too long, reducing repeat sales.
 
-<p><em>Enforcing shorter lifespans</em></p>
+So the cartel agreed to reduce bulb lifespan to 1,000 hours—cutting it nearly in half.
 
-<p>Each company had to send sample bulbs for testing.</p>
+Enforcing shorter lifespans
 
-<p>If a bulb lasted longer than 1,000 hours, the company was fined.</p>
+Each company had to send sample bulbs for testing.
 
-<p>If a bulb lasted longer than 3,000 hours, the fine was severe.</p>
+If a bulb lasted longer than 1,000 hours, the company was fined.
 
-<p>There are records showing these fines were actually enforced.</p>
+If a bulb lasted longer than 3,000 hours, the fine was severe.
 
-<p>To make bulbs worse, engineers experimented with thinner filaments and weaker designs.</p>
+There are records showing these fines were actually enforced.
 
-<p>They succeeded.</p>
+To make bulbs worse, engineers experimented with thinner filaments and weaker designs.
 
-<p>By 1934, the average lifespan dropped to about 1,200 hours.</p>
+They succeeded.
 
-<p>Sales increased by 25%.</p>
+By 1934, the average lifespan dropped to about 1,200 hours.
 
-<p>Profits increased.</p>
+Sales increased by 25%.
 
-<p>Consumers had no idea.</p>
+Profits increased.
 
-<p>The cartel claimed they were improving efficiency and standardization—but evidence suggests profit was the real motivation.</p>
+Consumers had no idea.
 
+The cartel claimed they were improving efficiency and standardization—but evidence suggests profit was the real motivation.
 
-<p><em>Why the Livermore bulb lasted so long</em></p>
+Why the Livermore bulb lasted so long
 
-<p>This bulb survived partly because it was made before the cartel.</p>
+This bulb survived partly because it was made before the cartel.
 
-<p>It was also run at very low power—only 4 or 5 watts.</p>
+It was also run at very low power—only 4 or 5 watts.
 
-<p>It was used as a nightlight and was never turned off, reducing stress caused by heating and cooling cycles.</p>
+It was used as a nightlight and was never turned off, reducing stress caused by heating and cooling cycles.
 
+Planned obsolescence today
 
-<p><em>Planned obsolescence today</em></p>
+The cartel eventually collapsed, but its methods survived.
 
-<p>The cartel eventually collapsed, but its methods survived.</p>
+This practice is now called planned obsolescence: designing products to fail sooner.
 
-<p>This practice is now called planned obsolescence: designing products to fail sooner.</p>
+One famous example involved Apple.
 
-<p>One famous example involved Apple.</p>
+In 2003, Casey Neistat discovered that replacing an iPod battery was almost as expensive as buying a new device.
 
-<p>In 2003, Casey Neistat discovered that replacing an iPod battery was almost as expensive as buying a new device.</p>
+Later, Apple slowed older iPhones through software updates.
 
-<p>Later, Apple slowed older iPhones through software updates.</p>
+Apple said it was protecting battery life.
 
-<p>Apple said it was protecting battery life.</p>
+Critics argued it forced consumers to upgrade.
 
-<p>Critics argued it forced consumers to upgrade.</p>
+Apple eventually paid hundreds of millions in settlements.
 
-<p>Apple eventually paid hundreds of millions in settlements.</p>
+Planned obsolescence as economic strategy
 
+Some people argued planned obsolescence was necessary.
 
-<p><em>Planned obsolescence as economic strategy</em></p>
+During the Great Depression, businessman Bernard London proposed that products should have legally fixed lifespans to create jobs.
 
-<p>Some people argued planned obsolescence was necessary.</p>
+There was even a movie about this idea: The Man in the White Suit (1951).
 
-<p>During the Great Depression, businessman Bernard London proposed that products should have legally fixed lifespans to create jobs.</p>
+In the film, a scientist invents a perfect, indestructible fabric.
 
-<p>There was even a movie about this idea: The Man in the White Suit (1951).</p>
+Factory owners and workers panic, fearing job losses.
 
-<p>In the film, a scientist invents a perfect, indestructible fabric.</p>
+They try to destroy the invention.
 
-<p>Factory owners and workers panic, fearing job losses.</p>
+Something similar happened in real life with nylon stockings.
 
-<p>They try to destroy the invention.</p>
+They were so durable that manufacturers later weakened them to increase sales.
 
-<p>Something similar happened in real life with nylon stockings.</p>
+Psychological obsolescence
 
-<p>They were so durable that manufacturers later weakened them to increase sales.</p>
+Companies also make products obsolete through design changes.
 
+Henry Ford originally wanted cars to last forever.
 
-<p><em>Psychological obsolescence</em></p>
+But General Motors introduced annual style changes.
 
-<p>Companies also make products obsolete through design changes.</p>
+Different colors.
 
-<p>Henry Ford originally wanted cars to last forever.</p>
+New designs.
 
-<p>But General Motors introduced annual style changes.</p>
+The goal was to make last year’s model feel outdated.
 
-<p>Different colors. New designs.</p>
+This encouraged customers to buy new cars—even when their old ones still worked.
 
-<p>The goal was to make last year’s model feel outdated.</p>
+Apple uses similar strategies today.
 
-<p>This encouraged customers to buy new cars—even when their old ones still worked.</p>
+New colors.
 
-<p>Apple uses similar strategies today.</p>
+New styles.
 
-<p>New colors. New styles. Minor improvements.</p>
+Minor improvements.
 
-<p>Fashion influences technology.</p>
+Fashion influences technology.
 
+The future: LED bulbs
 
-<p><em>The future: LED bulbs</em></p>
+Finally, technology has created truly long-lasting light bulbs.
 
-<p>Finally, technology has created truly long-lasting light bulbs.</p>
+LED bulbs use one-tenth the energy.
 
-<p>LED bulbs use one-tenth the energy.</p>
+They last 10 to 50 times longer.
 
-<p>They last 10 to 50 times longer.</p>
+You may sell your house before needing to replace one.
 
-<p>You may sell your house before needing to replace one.</p>
-
-<p>We may finally have achieved the everlasting light bulb.</p>
+We may finally have achieved the everlasting light bulb.
