@@ -30,6 +30,7 @@ export default function SettingsPage() {
 
   async function handleSave(e: React.FormEvent) {
     e.preventDefault()
+    if (!user) return
     setSaving(true)
     setError(null)
 
@@ -53,7 +54,7 @@ export default function SettingsPage() {
 
       <div className="bg-white border border-border rounded-lg p-6 mb-4">
         <h2 className="font-medium text-ink mb-4">Account</h2>
-        <p className="text-sm text-muted mb-4">{user.email}</p>
+        <p className="text-sm text-muted mb-4">{user?.email}</p>
 
         <form onSubmit={handleSave} className="space-y-4">
           <div>
