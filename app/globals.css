@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-ink;
+  }
+
+  body {
+    @apply bg-paper font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .word {
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 0.1s;
+  }
+
+  .word:hover {
+    text-decoration: underline;
+  }
+
+  .word.selected {
+    background-color: rgb(167 139 250); /* violet-400 */
+    padding: 0 2px;
+  }
+
+  .sentence-highlight {
+    background-color: rgb(237 233 254); /* violet-100 */
+    border-radius: 3px;
+  }
+}
