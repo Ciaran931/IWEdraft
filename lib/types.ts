@@ -113,6 +113,17 @@ export interface GrammarTreeLevel {
   children: GrammarTreeCategory[]
 }
 
+export interface TextQuestion {
+  id: string
+  text_id: string
+  question_type: 'comprehension' | 'discussion'
+  question: string
+  options: string[] | null
+  correct_index: number | null
+  explanation: string | null
+  sort_order: number
+}
+
 export type Rating = 0 | 1 | 2 | 3
 
 export interface CardStatusMap {

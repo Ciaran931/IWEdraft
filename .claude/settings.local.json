@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wsl -d Ubuntu-24.04 -e bash -c \"cd /home/ccamp/IWEdraft && npm install 2>&1\")",
+      "Bash(wsl -d Ubuntu-24.04 -e bash -c \"cd /home/ccamp/IWEdraft && npm show next@14 version 2>&1 | tail -1\")",
+      "Bash(wsl -d Ubuntu-24.04 -e bash -c \"cd /home/ccamp/IWEdraft && npm install next@14.2.35 --save 2>&1 | tail -5\")",
+      "Bash(wsl -d Ubuntu-24.04 -e bash -c \"sed -n ''45,60p'' /home/ccamp/IWEdraft/components/grammar/Mindmap.tsx\")",
+      "Read(///wsl.localhost/Ubuntu-24.04/home/ccamp/**)",
+      "Read(//c/Users/ccamp/**)",
+      "Bash(wsl -d Ubuntu-24.04 -- bash -c \"mkdir -p /home/ccamp/IWEdraft/data/texts/{morning-routine,market-trip,language-learning,digital-revolution,memory-identity} /home/ccamp/IWEdraft/data/vocab /home/ccamp/IWEdraft/data/grammar\")",
+      "Bash(npx next build)"
+    ]
+  }
+}

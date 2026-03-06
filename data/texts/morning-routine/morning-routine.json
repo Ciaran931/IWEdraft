@@ -1,0 +1,32 @@
+{
+  "id": "morning-routine",
+  "title": "A Morning in the City",
+  "level": "A1",
+  "grammar_lesson_id": null,
+  "paragraphs": [
+    {
+      "id": 1,
+      "sentences": [
+        "My name is Anna and I live in Warsaw.",
+        "Every morning I wake up at seven o'clock.",
+        "I drink coffee and eat bread with butter."
+      ]
+    },
+    {
+      "id": 2,
+      "sentences": [
+        "Then I get dressed and walk to the bus stop.",
+        "The bus takes me to work in fifteen minutes.",
+        "I work in a small office near the river."
+      ]
+    },
+    {
+      "id": 3,
+      "sentences": [
+        "My colleagues are friendly and we work well together.",
+        "At lunchtime I eat a sandwich in the park.",
+        "In the evening I go home and read a book."
+      ]
+    }
+  ]
+}

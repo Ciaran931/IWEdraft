@@ -1,0 +1,32 @@
+{
+  "id": "market-trip",
+  "title": "Shopping at the Market",
+  "level": "A2",
+  "grammar_lesson_id": null,
+  "paragraphs": [
+    {
+      "id": 1,
+      "sentences": [
+        "On Saturday mornings, Tom always goes to the local market.",
+        "He enjoys looking at the fresh vegetables and colourful fruit.",
+        "Last week he bought tomatoes, onions, and a big bag of apples."
+      ]
+    },
+    {
+      "id": 2,
+      "sentences": [
+        "The market seller told him that the apples came from a nearby village.",
+        "Tom was happy because they were cheaper than in the supermarket.",
+        "He also found some honey and decided to try it."
+      ]
+    },
+    {
+      "id": 3,
+      "sentences": [
+        "When he got home, he cooked a big pot of vegetable soup.",
+        "His family thought it was delicious.",
+        "Now he goes to the market every weekend."
+      ]
+    }
+  ]
+}

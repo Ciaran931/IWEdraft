@@ -665,7 +665,7 @@ def main():
     parser.add_argument("--title", required=True, help="Display title of the text")
     parser.add_argument("--level", required=True, choices=["A1", "A2", "B1", "B2", "C1", "C2"], help="CEFR level")
     parser.add_argument("--grammar-lesson", default=None, help="Optional grammar_lesson_id to link to")
-    parser.add_argument("--output-dir", default="./output", help="Output directory (default: ./output)")
+    parser.add_argument("--output-dir", default="./data/texts", help="Output directory (default: ./data/texts)")
     parser.add_argument("--skip-overrides", action="store_true", help="Skip context-specific override detection")
     parser.add_argument("--skip-questions", action="store_true", help="Skip comprehension + discussion question generation")
 

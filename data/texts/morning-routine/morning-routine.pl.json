@@ -1,0 +1,30 @@
+{
+  "text_id": "morning-routine",
+  "language_code": "pl",
+  "paragraphs": [
+    {
+      "id": 1,
+      "sentences": [
+        "Mam na imię Anna i mieszkam w Warszawie.",
+        "Każdego ranka wstaję o siódmej.",
+        "Piję kawę i jem chleb z masłem."
+      ]
+    },
+    {
+      "id": 2,
+      "sentences": [
+        "Potem ubieram się i idę na przystanek autobusowy.",
+        "Autobus dowozi mnie do pracy w piętnaście minut.",
+        "Pracuję w małym biurze niedaleko rzeki."
+      ]
+    },
+    {
+      "id": 3,
+      "sentences": [
+        "Moi współpracownicy są mili i dobrze nam się współpracuje.",
+        "W porze lunchu jem kanapkę w parku.",
+        "Wieczorem wracam do domu i czytam książkę."
+      ]
+    }
+  ]
+}

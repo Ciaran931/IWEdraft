@@ -1,0 +1,439 @@
+[
+  {
+    "id": "able",
+    "word": "able",
+    "pos": "adjective",
+    "en_definition": "having the power, skill, or means to do something",
+    "examples": ["She was able to finish the project on time.", "Are you able to come tomorrow?"],
+    "translations": { "pl": { "word": "zdolny, w stanie", "definition": "mający możliwość lub umiejętność zrobienia czegoś" } }
+  },
+  {
+    "id": "begin",
+    "word": "begin",
+    "pos": "verb",
+    "en_definition": "to start doing or experiencing something",
+    "examples": ["Let's begin the meeting.", "She began to read the letter."],
+    "translations": { "pl": { "word": "zaczynać", "definition": "rozpoczynać coś" } }
+  },
+  {
+    "id": "carry",
+    "word": "carry",
+    "pos": "verb",
+    "en_definition": "to hold and move something from one place to another",
+    "examples": ["He carried the box upstairs.", "Can you carry this bag for me?"],
+    "translations": { "pl": { "word": "nieść, nosić", "definition": "trzymać i przenosić coś z miejsca na miejsce" } }
+  },
+  {
+    "id": "decide",
+    "word": "decide",
+    "pos": "verb",
+    "en_definition": "to make a choice after thinking about the options",
+    "examples": ["I can't decide what to eat.", "She decided to move abroad."],
+    "translations": { "pl": { "word": "decydować", "definition": "dokonywać wyboru po rozważeniu opcji" } }
+  },
+  {
+    "id": "early",
+    "word": "early",
+    "pos": "adverb",
+    "en_definition": "before the usual or expected time",
+    "examples": ["He woke up early.", "The train arrived early."],
+    "translations": { "pl": { "word": "wcześnie", "definition": "przed zwykłą lub oczekiwaną porą" } }
+  },
+  {
+    "id": "family",
+    "word": "family",
+    "pos": "noun",
+    "en_definition": "a group of people related by blood or marriage",
+    "examples": ["My family lives in a small town.", "She has a large family."],
+    "translations": { "pl": { "word": "rodzina", "definition": "grupa osób spokrewnionych lub związanych małżeństwem" } }
+  },
+  {
+    "id": "garden",
+    "word": "garden",
+    "pos": "noun",
+    "en_definition": "a piece of land next to a house where flowers and plants grow",
+    "examples": ["She grows tomatoes in her garden.", "The children played in the garden."],
+    "translations": { "pl": { "word": "ogród", "definition": "kawałek ziemi przy domu, gdzie rosną kwiaty i rośliny" } }
+  },
+  {
+    "id": "happy",
+    "word": "happy",
+    "pos": "adjective",
+    "en_definition": "feeling or showing pleasure and contentment",
+    "examples": ["She felt happy after hearing the news.", "He has a happy smile."],
+    "translations": { "pl": { "word": "szczęśliwy", "definition": "odczuwający lub wyrażający przyjemność i zadowolenie" } }
+  },
+  {
+    "id": "idea",
+    "word": "idea",
+    "pos": "noun",
+    "en_definition": "a thought or suggestion about a possible course of action",
+    "examples": ["That's a great idea!", "I have an idea for the project."],
+    "translations": { "pl": { "word": "pomysł", "definition": "myśl lub propozycja dotycząca możliwego działania" } }
+  },
+  {
+    "id": "job",
+    "word": "job",
+    "pos": "noun",
+    "en_definition": "paid work that a person does regularly",
+    "examples": ["She found a new job.", "His job is very demanding."],
+    "translations": { "pl": { "word": "praca, zawód", "definition": "płatne zajęcie wykonywane regularnie" } }
+  },
+  {
+    "id": "keep",
+    "word": "keep",
+    "pos": "verb",
+    "en_definition": "to continue to have or hold something; to maintain",
+    "examples": ["Keep the change.", "She keeps her room tidy."],
+    "translations": { "pl": { "word": "trzymać, zachowywać", "definition": "nadal posiadać coś; utrzymywać" } }
+  },
+  {
+    "id": "learn",
+    "word": "learn",
+    "pos": "verb",
+    "en_definition": "to gain knowledge or skill through study or experience",
+    "examples": ["I want to learn Spanish.", "She learned to drive last summer."],
+    "translations": { "pl": { "word": "uczyć się", "definition": "zdobywać wiedzę lub umiejętność poprzez naukę lub doświadczenie" } }
+  },
+  {
+    "id": "market",
+    "word": "market",
+    "pos": "noun",
+    "en_definition": "a place where goods are bought and sold",
+    "examples": ["We buy vegetables at the market.", "The market opens at 8 a.m."],
+    "translations": { "pl": { "word": "targ, rynek", "definition": "miejsce, gdzie kupuje się i sprzedaje towary" } }
+  },
+  {
+    "id": "name",
+    "word": "name",
+    "pos": "noun",
+    "en_definition": "a word or phrase that identifies a person, place, or thing",
+    "examples": ["What is your name?", "The name of the city is Prague."],
+    "translations": { "pl": { "word": "imię, nazwa", "definition": "słowo lub fraza identyfikująca osobę, miejsce lub rzecz" } }
+  },
+  {
+    "id": "open",
+    "word": "open",
+    "pos": "verb",
+    "en_definition": "to move something so that it is no longer closed; to begin",
+    "examples": ["Open the window, please.", "The shop opens at nine."],
+    "translations": { "pl": { "word": "otwierać", "definition": "poruszać coś tak, by nie było zamknięte; zaczynać" } }
+  },
+  {
+    "id": "people",
+    "word": "people",
+    "pos": "noun",
+    "en_definition": "human beings in general; more than one person",
+    "examples": ["Many people came to the concert.", "People need clean water."],
+    "translations": { "pl": { "word": "ludzie", "definition": "istoty ludzkie ogólnie; więcej niż jedna osoba" } }
+  },
+  {
+    "id": "question",
+    "word": "question",
+    "pos": "noun",
+    "en_definition": "a sentence used to request information",
+    "examples": ["Can I ask you a question?", "That's a difficult question."],
+    "translations": { "pl": { "word": "pytanie", "definition": "zdanie używane do uzyskania informacji" } }
+  },
+  {
+    "id": "read",
+    "word": "read",
+    "pos": "verb",
+    "en_definition": "to look at written words and understand their meaning",
+    "examples": ["I read a book every week.", "Can you read this sign?"],
+    "translations": { "pl": { "word": "czytać", "definition": "patrzeć na napisane słowa i rozumieć ich znaczenie" } }
+  },
+  {
+    "id": "small",
+    "word": "small",
+    "pos": "adjective",
+    "en_definition": "little in size; not large",
+    "examples": ["They live in a small house.", "She has small hands."],
+    "translations": { "pl": { "word": "mały", "definition": "niewielki rozmiarem; nie duży" } }
+  },
+  {
+    "id": "time",
+    "word": "time",
+    "pos": "noun",
+    "en_definition": "the ongoing progression of events from past to future",
+    "examples": ["What time is it?", "We don't have much time."],
+    "translations": { "pl": { "word": "czas", "definition": "ciągły postęp zdarzeń od przeszłości do przyszłości" } }
+  },
+  {
+    "id": "understand",
+    "word": "understand",
+    "pos": "verb",
+    "en_definition": "to know or grasp the meaning of something",
+    "examples": ["I understand the problem now.", "Do you understand Polish?"],
+    "translations": { "pl": { "word": "rozumieć", "definition": "znać lub pojmować znaczenie czegoś" } }
+  },
+  {
+    "id": "very",
+    "word": "very",
+    "pos": "adverb",
+    "en_definition": "to a high degree; extremely",
+    "examples": ["It's very cold today.", "She is very kind."],
+    "translations": { "pl": { "word": "bardzo", "definition": "w wysokim stopniu; niezwykle" } }
+  },
+  {
+    "id": "water",
+    "word": "water",
+    "pos": "noun",
+    "en_definition": "a clear liquid that falls as rain and is used for drinking",
+    "examples": ["Can I have a glass of water?", "The water in the lake is clean."],
+    "translations": { "pl": { "word": "woda", "definition": "przezroczysty płyn, który spada jako deszcz i służy do picia" } }
+  },
+  {
+    "id": "year",
+    "word": "year",
+    "pos": "noun",
+    "en_definition": "a period of 365 or 366 days",
+    "examples": ["She is ten years old.", "I've lived here for two years."],
+    "translations": { "pl": { "word": "rok", "definition": "okres 365 lub 366 dni" } }
+  },
+  {
+    "id": "zero",
+    "word": "zero",
+    "pos": "noun",
+    "en_definition": "the number 0; nothing in quantity",
+    "examples": ["The temperature dropped to zero.", "Start counting from zero."],
+    "translations": { "pl": { "word": "zero", "definition": "liczba 0; nic pod względem ilości" } }
+  },
+  {
+    "id": "about",
+    "word": "about",
+    "pos": "preposition",
+    "en_definition": "on the subject of; concerning",
+    "examples": ["Tell me about your holiday.", "The book is about history."],
+    "translations": { "pl": { "word": "o, na temat", "definition": "dotyczący czegoś; w sprawie" } }
+  },
+  {
+    "id": "between",
+    "word": "between",
+    "pos": "preposition",
+    "en_definition": "in the space separating two things",
+    "examples": ["The shop is between the bank and the café.", "Choose between the two."],
+    "translations": { "pl": { "word": "między, pomiędzy", "definition": "w przestrzeni rozdzielającej dwie rzeczy" } }
+  },
+  {
+    "id": "change",
+    "word": "change",
+    "pos": "verb",
+    "en_definition": "to make or become different",
+    "examples": ["The weather can change quickly.", "She changed her mind."],
+    "translations": { "pl": { "word": "zmieniać", "definition": "czynić innym lub stawać się innym" } }
+  },
+  {
+    "id": "different",
+    "word": "different",
+    "pos": "adjective",
+    "en_definition": "not the same as another or each other",
+    "examples": ["These two books are very different.", "She tried a different approach."],
+    "translations": { "pl": { "word": "inny, różny", "definition": "nie taki sam jak inny; odmienny" } }
+  },
+  {
+    "id": "enough",
+    "word": "enough",
+    "pos": "adjective",
+    "en_definition": "as much or as many as required",
+    "examples": ["There is enough food for everyone.", "He didn't study enough."],
+    "translations": { "pl": { "word": "wystarczający, dość", "definition": "tyle, ile jest potrzebne" } }
+  },
+  {
+    "id": "friend",
+    "word": "friend",
+    "pos": "noun",
+    "en_definition": "a person you know well and like",
+    "examples": ["She is my best friend.", "I met a friend for coffee."],
+    "translations": { "pl": { "word": "przyjaciel", "definition": "osoba, którą dobrze znasz i lubisz" } }
+  },
+  {
+    "id": "great",
+    "word": "great",
+    "pos": "adjective",
+    "en_definition": "very large or important; wonderful",
+    "examples": ["She did a great job.", "It was a great experience."],
+    "translations": { "pl": { "word": "wspaniały, wielki", "definition": "bardzo duży lub ważny; cudowny" } }
+  },
+  {
+    "id": "help",
+    "word": "help",
+    "pos": "verb",
+    "en_definition": "to give assistance or support to someone",
+    "examples": ["Can you help me with this?", "She helped her neighbour."],
+    "translations": { "pl": { "word": "pomagać", "definition": "udzielać komuś pomocy lub wsparcia" } }
+  },
+  {
+    "id": "important",
+    "word": "important",
+    "pos": "adjective",
+    "en_definition": "having great significance or value",
+    "examples": ["Education is very important.", "That's an important decision."],
+    "translations": { "pl": { "word": "ważny", "definition": "mający duże znaczenie lub wartość" } }
+  },
+  {
+    "id": "just",
+    "word": "just",
+    "pos": "adverb",
+    "en_definition": "a very short time ago; only; exactly",
+    "examples": ["I just arrived.", "It's just around the corner."],
+    "translations": { "pl": { "word": "właśnie, tylko", "definition": "bardzo niedawno; jedynie; dokładnie" } }
+  },
+  {
+    "id": "know",
+    "word": "know",
+    "pos": "verb",
+    "en_definition": "to be aware of something through observation or information",
+    "examples": ["I know the answer.", "Do you know her?"],
+    "translations": { "pl": { "word": "wiedzieć, znać", "definition": "być świadomym czegoś dzięki obserwacji lub informacji" } }
+  },
+  {
+    "id": "live",
+    "word": "live",
+    "pos": "verb",
+    "en_definition": "to have one's home in a particular place; to be alive",
+    "examples": ["I live in London.", "She lived to be ninety."],
+    "translations": { "pl": { "word": "mieszkać, żyć", "definition": "mieć dom w określonym miejscu; być żywym" } }
+  },
+  {
+    "id": "money",
+    "word": "money",
+    "pos": "noun",
+    "en_definition": "coins and banknotes used to buy things",
+    "examples": ["She doesn't have enough money.", "Money can't buy happiness."],
+    "translations": { "pl": { "word": "pieniądze", "definition": "monety i banknoty używane do kupowania" } }
+  },
+  {
+    "id": "new",
+    "word": "new",
+    "pos": "adjective",
+    "en_definition": "recently made or discovered; not existing before",
+    "examples": ["She bought a new car.", "Is there any new information?"],
+    "translations": { "pl": { "word": "nowy", "definition": "niedawno zrobiony lub odkryty; nieistniejący wcześniej" } }
+  },
+  {
+    "id": "old",
+    "word": "old",
+    "pos": "adjective",
+    "en_definition": "having lived for many years; not new",
+    "examples": ["The building is very old.", "He is an old friend of mine."],
+    "translations": { "pl": { "word": "stary", "definition": "żyjący od wielu lat; nie nowy" } }
+  },
+  {
+    "id": "place",
+    "word": "place",
+    "pos": "noun",
+    "en_definition": "a particular position or area",
+    "examples": ["This is a beautiful place.", "Is this the right place?"],
+    "translations": { "pl": { "word": "miejsce", "definition": "określona pozycja lub obszar" } }
+  },
+  {
+    "id": "run",
+    "word": "run",
+    "pos": "verb",
+    "en_definition": "to move quickly on foot",
+    "examples": ["He runs every morning.", "The children ran across the park."],
+    "translations": { "pl": { "word": "biegać", "definition": "poruszać się szybko na nogach" } }
+  },
+  {
+    "id": "school",
+    "word": "school",
+    "pos": "noun",
+    "en_definition": "a place where children go to learn",
+    "examples": ["My children go to the local school.", "School starts at eight thirty."],
+    "translations": { "pl": { "word": "szkoła", "definition": "miejsce, gdzie dzieci uczą się" } }
+  },
+  {
+    "id": "think",
+    "word": "think",
+    "pos": "verb",
+    "en_definition": "to use the mind to form ideas or opinions",
+    "examples": ["I think it will rain today.", "What do you think about this?"],
+    "translations": { "pl": { "word": "myśleć", "definition": "używać umysłu do tworzenia pomysłów lub opinii" } }
+  },
+  {
+    "id": "use",
+    "word": "use",
+    "pos": "verb",
+    "en_definition": "to employ something for a purpose",
+    "examples": ["Can I use your phone?", "She uses public transport."],
+    "translations": { "pl": { "word": "używać", "definition": "stosować coś w jakimś celu" } }
+  },
+  {
+    "id": "want",
+    "word": "want",
+    "pos": "verb",
+    "en_definition": "to desire or wish for something",
+    "examples": ["I want a cup of tea.", "She wants to travel the world."],
+    "translations": { "pl": { "word": "chcieć", "definition": "pragnąć lub życzyć sobie czegoś" } }
+  },
+  {
+    "id": "work",
+    "word": "work",
+    "pos": "verb",
+    "en_definition": "to do a job or task; to function",
+    "examples": ["She works in a hospital.", "The machine doesn't work."],
+    "translations": { "pl": { "word": "pracować", "definition": "wykonywać pracę lub zadanie; funkcjonować" } }
+  },
+  {
+    "id": "world",
+    "word": "world",
+    "pos": "noun",
+    "en_definition": "the earth and all the people on it",
+    "examples": ["She wants to travel the world.", "It's the biggest city in the world."],
+    "translations": { "pl": { "word": "świat", "definition": "ziemia i wszyscy ludzie na niej" } }
+  },
+  {
+    "id": "good",
+    "word": "good",
+    "pos": "adjective",
+    "en_definition": "to be desired or approved of; of high quality",
+    "examples": ["This is a good book.", "She's good at cooking."],
+    "translations": { "pl": { "word": "dobry", "definition": "pożądany lub aprobowany; wysokiej jakości" } }
+  },
+  {
+    "id": "give-up",
+    "word": "give up",
+    "pos": "phrasal_verb",
+    "en_definition": "to stop trying to do something; to surrender",
+    "examples": ["Don't give up on your dreams.", "He gave up smoking last year."],
+    "trigger_words": ["give", "up"],
+    "translations": { "pl": { "word": "poddawać się, rezygnować", "definition": "przestać próbować; kapitulować" } }
+  },
+  {
+    "id": "take-off",
+    "word": "take off",
+    "pos": "phrasal_verb",
+    "en_definition": "to remove clothing; (of an aircraft) to leave the ground",
+    "examples": ["The plane took off on time.", "Take off your shoes at the door."],
+    "trigger_words": ["take", "off"],
+    "translations": { "pl": { "word": "startować, zdejmować", "definition": "usuwać odzież; (o samolocie) oderwać się od ziemi" } }
+  },
+  {
+    "id": "look-after",
+    "word": "look after",
+    "pos": "phrasal_verb",
+    "en_definition": "to take care of someone or something",
+    "examples": ["She looks after her younger brother.", "Who will look after the dog while we're away?"],
+    "trigger_words": ["look", "after"],
+    "translations": { "pl": { "word": "opiekować się", "definition": "dbać o kogoś lub coś" } }
+  },
+  {
+    "id": "find-out",
+    "word": "find out",
+    "pos": "phrasal_verb",
+    "en_definition": "to discover information or a fact",
+    "examples": ["I need to find out what time the train leaves.", "She found out the truth."],
+    "trigger_words": ["find", "out"],
+    "translations": { "pl": { "word": "dowiedzieć się", "definition": "odkryć informację lub fakt" } }
+  },
+  {
+    "id": "make-up",
+    "word": "make up",
+    "pos": "phrasal_verb",
+    "en_definition": "to invent a story; to reconcile after a disagreement",
+    "examples": ["He made up an excuse.", "They argued but made up the next day."],
+    "trigger_words": ["make", "up"],
+    "translations": { "pl": { "word": "wymyślać, godzić się", "definition": "wymyślać historię; godzić się po kłótni" } }
+  }
+]

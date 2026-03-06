@@ -1,0 +1,40 @@
+{
+  "id": "language-learning",
+  "title": "Learning a New Language",
+  "level": "B1",
+  "grammar_lesson_id": null,
+  "paragraphs": [
+    {
+      "id": 1,
+      "sentences": [
+        "Learning a foreign language is one of the most rewarding challenges a person can take on.",
+        "Research shows that people who speak more than one language have stronger memories and better problem-solving skills.",
+        "However, many learners give up before they reach a comfortable level of fluency."
+      ]
+    },
+    {
+      "id": 2,
+      "sentences": [
+        "One of the most effective methods is called comprehensible input.",
+        "This approach means reading and listening to content that is just slightly above your current level.",
+        "When you understand most of what you hear or read, your brain absorbs the language naturally."
+      ]
+    },
+    {
+      "id": 3,
+      "sentences": [
+        "Consistency matters more than long study sessions.",
+        "Even thirty minutes of daily practice will lead to steady improvement over time.",
+        "The key is to find content you genuinely enjoy, so that learning feels less like work."
+      ]
+    },
+    {
+      "id": 4,
+      "sentences": [
+        "Speaking with native speakers is valuable, but do not be afraid of making mistakes.",
+        "Every error is a chance to learn something new.",
+        "With patience and the right approach, anyone can become fluent in a foreign language."
+      ]
+    }
+  ]
+}

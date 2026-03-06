@@ -1,0 +1,154 @@
+[
+  {
+    "id": "psp-q1",
+    "lesson_id": "present-simple-positive",
+    "question": "Which sentence is correct?",
+    "options": ["She work every day.", "She works every day.", "She working every day.", "She is work every day."],
+    "correct_index": 1,
+    "explanation": "In the present simple, we add -s to the verb for he/she/it: \"She works\"."
+  },
+  {
+    "id": "psp-q2",
+    "lesson_id": "present-simple-positive",
+    "question": "Which sentence uses the present simple correctly?",
+    "options": ["I am go to school.", "I goes to school.", "I go to school.", "I going to school."],
+    "correct_index": 2,
+    "explanation": "With \"I\", the verb stays in its base form: \"I go\"."
+  },
+  {
+    "id": "psp-q3",
+    "lesson_id": "present-simple-positive",
+    "question": "\"He ___ three languages.\" Choose the correct form.",
+    "options": ["speak", "speaking", "speaks", "is speak"],
+    "correct_index": 2,
+    "explanation": "\"He\" is third person singular, so we add -s: \"speaks\"."
+  },
+  {
+    "id": "psp-q4",
+    "lesson_id": "present-simple-positive",
+    "question": "Which time expression is most commonly used with the present simple?",
+    "options": ["right now", "at this moment", "every day", "yesterday"],
+    "correct_index": 2,
+    "explanation": "\"Every day\" indicates a routine or habit, which is a core use of the present simple."
+  },
+  {
+    "id": "psn-q1",
+    "lesson_id": "present-simple-negative",
+    "question": "Which sentence is correct?",
+    "options": ["He don't work on Sundays.", "He doesn't works on Sundays.", "He doesn't work on Sundays.", "He not works on Sundays."],
+    "correct_index": 2,
+    "explanation": "For he/she/it we use \"doesn't\" + base form: \"doesn't work\"."
+  },
+  {
+    "id": "psn-q2",
+    "lesson_id": "present-simple-negative",
+    "question": "\"They ___ understand the question.\" Choose the correct form.",
+    "options": ["doesn't", "not", "don't", "isn't"],
+    "correct_index": 2,
+    "explanation": "For they/we/you/I we use \"don't\"."
+  },
+  {
+    "id": "psn-q3",
+    "lesson_id": "present-simple-negative",
+    "question": "Which sentence has an error?",
+    "options": ["I don't like rain.", "She doesn't eat fish.", "He doesn't plays football.", "We don't live here."],
+    "correct_index": 2,
+    "explanation": "After \"doesn't\", the verb must be in base form: \"doesn't play\" (not \"plays\")."
+  },
+  {
+    "id": "psn-q4",
+    "lesson_id": "present-simple-negative",
+    "question": "\"She ___ drive.\" (make negative)",
+    "options": ["don't drive", "doesn't drive", "doesn't drives", "isn't drive"],
+    "correct_index": 1,
+    "explanation": "\"She\" uses \"doesn't\" followed by the base form \"drive\"."
+  },
+  {
+    "id": "psq-q1",
+    "lesson_id": "present-simple-questions",
+    "question": "Which question is correct?",
+    "options": ["Does he lives here?", "Does he live here?", "Do he lives here?", "Is he live here?"],
+    "correct_index": 1,
+    "explanation": "\"Does\" is used for he/she/it, followed by the base form \"live\"."
+  },
+  {
+    "id": "psq-q2",
+    "lesson_id": "present-simple-questions",
+    "question": "\"___ they work on Saturdays?\"",
+    "options": ["Does", "Is", "Are", "Do"],
+    "correct_index": 3,
+    "explanation": "\"They\" uses \"Do\" to form questions."
+  },
+  {
+    "id": "psq-q3",
+    "lesson_id": "present-simple-questions",
+    "question": "Where does the question word go?",
+    "options": ["At the end", "In the middle", "Before the subject", "After the verb"],
+    "correct_index": 2,
+    "explanation": "The question word (what, where, when, etc.) goes at the beginning: \"Where do you live?\""
+  },
+  {
+    "id": "art-q1",
+    "lesson_id": "articles",
+    "question": "\"She is ___ engineer.\" Which article is correct?",
+    "options": ["a", "an", "the", "no article"],
+    "correct_index": 1,
+    "explanation": "\"Engineer\" starts with a vowel sound /\u025b/, so we use \"an\"."
+  },
+  {
+    "id": "art-q2",
+    "lesson_id": "articles",
+    "question": "\"I have ___ cat. ___ cat is black.\" Choose the correct pair.",
+    "options": ["the / a", "a / the", "a / a", "the / the"],
+    "correct_index": 1,
+    "explanation": "First mention: \"a cat\" (new, unspecific). Second mention: \"the cat\" (now specific, already mentioned)."
+  },
+  {
+    "id": "art-q3",
+    "lesson_id": "articles",
+    "question": "\"___ water is important for life.\" Which article?",
+    "options": ["A", "An", "The", "No article"],
+    "correct_index": 3,
+    "explanation": "General uncountable nouns like \"water\" take no article when used in a general sense."
+  },
+  {
+    "id": "art-q4",
+    "lesson_id": "articles",
+    "question": "\"This is ___ university.\" Which article is correct?",
+    "options": ["an", "a", "the", "no article"],
+    "correct_index": 1,
+    "explanation": "\"University\" starts with a /j/ sound (consonant), so we use \"a\", not \"an\"."
+  },
+  {
+    "id": "pln-q1",
+    "lesson_id": "plural-nouns",
+    "question": "What is the plural of \"church\"?",
+    "options": ["churchs", "churches", "churchies", "church"],
+    "correct_index": 1,
+    "explanation": "Nouns ending in -ch add -es: church \u2192 churches."
+  },
+  {
+    "id": "pln-q2",
+    "lesson_id": "plural-nouns",
+    "question": "What is the plural of \"city\"?",
+    "options": ["citys", "city's", "cities", "cityes"],
+    "correct_index": 2,
+    "explanation": "Nouns ending in consonant + y change -y to -ies: city \u2192 cities."
+  },
+  {
+    "id": "pln-q3",
+    "lesson_id": "plural-nouns",
+    "question": "Which is the correct plural of \"child\"?",
+    "options": ["childs", "childes", "children", "childre"],
+    "correct_index": 2,
+    "explanation": "\"Child\" has an irregular plural: children."
+  },
+  {
+    "id": "pln-q4",
+    "lesson_id": "plural-nouns",
+    "question": "What is the plural of \"box\"?",
+    "options": ["box's", "boxies", "boxs", "boxes"],
+    "correct_index": 3,
+    "explanation": "Nouns ending in -x add -es: box \u2192 boxes."
+  }
+]

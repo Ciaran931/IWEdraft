@@ -1,0 +1,75 @@
+[
+  {
+    "id": "present-simple-positive",
+    "title": "Present Simple \u2014 Positive Statements",
+    "level": "A1",
+    "category": "Tenses",
+    "order": 1,
+    "explanation": [
+      { "type": "text", "content": "We use the present simple to talk about habits, routines, facts, and things that are generally true." },
+      { "type": "example", "english": "I drink coffee every morning.", "translation": "Pij\u0119 kaw\u0119 ka\u017cdego ranka." },
+      { "type": "example", "english": "She works in a hospital.", "translation": "Ona pracuje w szpitalu." },
+      { "type": "rule", "content": "For he / she / it: add -s or -es to the verb. (work \u2192 works, go \u2192 goes, watch \u2192 watches)" },
+      { "type": "example", "english": "He lives in London.", "translation": "On mieszka w Londynie." },
+      { "type": "text", "content": "Time expressions often used with the present simple: always, usually, often, sometimes, never, every day, on Mondays." }
+    ]
+  },
+  {
+    "id": "present-simple-negative",
+    "title": "Present Simple \u2014 Negative Statements",
+    "level": "A1",
+    "category": "Tenses",
+    "order": 2,
+    "explanation": [
+      { "type": "text", "content": "To make a negative sentence in the present simple, use \"do not\" (don't) or \"does not\" (doesn't) before the base form of the verb." },
+      { "type": "rule", "content": "I / You / We / They \u2192 don't + verb. He / She / It \u2192 doesn't + verb." },
+      { "type": "example", "english": "I don't eat meat.", "translation": "Nie jem mi\u0119sa." },
+      { "type": "example", "english": "She doesn't like coffee.", "translation": "Ona nie lubi kawy." },
+      { "type": "text", "content": "Important: the main verb always stays in the base form after don't / doesn't \u2014 never add -s." }
+    ]
+  },
+  {
+    "id": "present-simple-questions",
+    "title": "Present Simple \u2014 Questions",
+    "level": "A1",
+    "category": "Tenses",
+    "order": 3,
+    "explanation": [
+      { "type": "text", "content": "To make a yes/no question in the present simple, put \"Do\" or \"Does\" at the start of the sentence." },
+      { "type": "rule", "content": "Do + I/you/we/they + verb? Does + he/she/it + verb?" },
+      { "type": "example", "english": "Do you speak English?", "translation": "Czy m\u00f3wisz po angielsku?" },
+      { "type": "example", "english": "Does she live in Paris?", "translation": "Czy ona mieszka w Pary\u017cu?" },
+      { "type": "text", "content": "For wh- questions (what, where, when, why, who, how), put the question word first: Where do you live?" }
+    ]
+  },
+  {
+    "id": "articles",
+    "title": "Articles (a / an / the)",
+    "level": "A1",
+    "category": "Nouns",
+    "order": 4,
+    "explanation": [
+      { "type": "text", "content": "English has three articles: \"a\", \"an\", and \"the\". They tell us whether a noun is specific or general." },
+      { "type": "rule", "content": "Use \"a\" before consonant sounds: a cat, a book, a university. Use \"an\" before vowel sounds: an apple, an hour, an umbrella." },
+      { "type": "example", "english": "I saw a dog in the park.", "translation": "Widzia\u0142em psa w parku." },
+      { "type": "rule", "content": "Use \"the\" when both the speaker and listener know which thing is being talked about, or when something has been mentioned before." },
+      { "type": "example", "english": "I bought a book. The book was very interesting.", "translation": "Kupi\u0142em ksi\u0105\u017ck\u0119. Ksi\u0105\u017cka by\u0142a bardzo ciekawa." },
+      { "type": "text", "content": "Use no article (zero article) for general plural nouns: \"Dogs are friendly.\" and for most names of countries, cities, and people." }
+    ]
+  },
+  {
+    "id": "plural-nouns",
+    "title": "Plural Nouns",
+    "level": "A1",
+    "category": "Nouns",
+    "order": 5,
+    "explanation": [
+      { "type": "text", "content": "Most English nouns form the plural by adding -s. However, there are several patterns and irregular forms to learn." },
+      { "type": "rule", "content": "Regular: add -s \u2192 cat \u2192 cats, book \u2192 books, day \u2192 days." },
+      { "type": "rule", "content": "Nouns ending in -s, -sh, -ch, -x, -z: add -es \u2192 bus \u2192 buses, church \u2192 churches, box \u2192 boxes." },
+      { "type": "rule", "content": "Nouns ending in consonant + -y: change -y to -ies \u2192 city \u2192 cities, baby \u2192 babies." },
+      { "type": "example", "english": "There are three cities I want to visit.", "translation": "S\u0105 trzy miasta, kt\u00f3re chc\u0119 odwiedzi\u0107." },
+      { "type": "rule", "content": "Irregular plurals must be memorised: man \u2192 men, woman \u2192 women, child \u2192 children, foot \u2192 feet, tooth \u2192 teeth." }
+    ]
+  }
+]

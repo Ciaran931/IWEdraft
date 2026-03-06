@@ -1,0 +1,39 @@
+{
+  "id": "digital-revolution",
+  "title": "The Digital Revolution",
+  "level": "B2",
+  "grammar_lesson_id": null,
+  "paragraphs": [
+    {
+      "id": 1,
+      "sentences": [
+        "Over the past three decades, digital technology has transformed almost every aspect of human life.",
+        "The way we communicate, work, shop, and even think has been profoundly shaped by the internet and the devices we carry.",
+        "While these changes have brought enormous benefits, they have also introduced serious challenges that societies are still struggling to address."
+      ]
+    },
+    {
+      "id": 2,
+      "sentences": [
+        "The rise of social media has connected billions of people across the globe, enabling the rapid spread of ideas and information.",
+        "Yet the same platforms that brought communities together have also been used to spread misinformation and amplify political polarisation.",
+        "Algorithms designed to maximise engagement tend to reward content that triggers strong emotional reactions, often at the expense of accuracy."
+      ]
+    },
+    {
+      "id": 3,
+      "sentences": [
+        "In the workplace, automation and artificial intelligence are reshaping entire industries.",
+        "Jobs that once required years of training can now be performed by software, raising difficult questions about employment and economic inequality.",
+        "At the same time, new categories of work have emerged that simply did not exist a generation ago."
+      ]
+    },
+    {
+      "id": 4,
+      "sentences": [
+        "The digital revolution is not a single event but an ongoing process.",
+        "How its benefits are distributed and its harms are mitigated will depend on the choices made by individuals, companies, and governments in the years ahead."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "text_id": "digital-revolution",
+  "language_code": "pl",
+  "paragraphs": [
+    {
+      "id": 1,
+      "sentences": [
+        "W ciągu ostatnich trzech dekad technologia cyfrowa zmieniła niemal każdy aspekt życia człowieka.",
+        "Sposób, w jaki komunikujemy się, pracujemy, robimy zakupy, a nawet myślimy, został głęboko ukształtowany przez internet i urządzenia, które nosimy.",
+        "Chociaż te zmiany przyniosły ogromne korzyści, wiążą się też z poważnymi wyzwaniami."
+      ]
+    },
+    {
+      "id": 2,
+      "sentences": [
+        "Wzrost mediów społecznościowych połączył miliardy ludzi na całym świecie.",
+        "Jednak te same platformy, które zbliżyły społeczności, były też używane do szerzenia dezinformacji i polaryzacji politycznej.",
+        "Algorytmy zaprojektowane tak, by maksymalizować zaangażowanie, nagradzają treści wywołujące silne emocje, często kosztem rzetelności."
+      ]
+    },
+    {
+      "id": 3,
+      "sentences": [
+        "W miejscu pracy automatyzacja i sztuczna inteligencja przekształcają całe branże.",
+        "Zawody, które niegdyś wymagały lat szkolenia, mogą być teraz wykonywane przez oprogramowanie.",
+        "Jednocześnie pojawiły się nowe kategorie pracy, które po prostu nie istniały pokolenie temu."
+      ]
+    },
+    {
+      "id": 4,
+      "sentences": [
+        "Rewolucja cyfrowa nie jest pojedynczym wydarzeniem, lecz trwającym procesem.",
+        "To, jak jej korzyści są dystrybuowane i jak ograniczane są jej szkody, zależy od wyborów dokonywanych przez jednostki, firmy i rządy."
+      ]
+    }
+  ]
+}

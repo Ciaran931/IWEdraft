@@ -1,0 +1,40 @@
+{
+  "id": "memory-identity",
+  "title": "Memory and Identity",
+  "level": "C1",
+  "grammar_lesson_id": null,
+  "paragraphs": [
+    {
+      "id": 1,
+      "sentences": [
+        "Our memories are not merely recordings of past events; they are the very foundation upon which we construct our sense of self.",
+        "Without the continuity of memory, the coherent narrative we call identity would dissolve into a series of disconnected moments.",
+        "This intimate relationship between recollection and selfhood has fascinated philosophers and psychologists for centuries."
+      ]
+    },
+    {
+      "id": 2,
+      "sentences": [
+        "The philosopher John Locke argued that personal identity is constituted entirely by memory.",
+        "On his account, a person at one time is the same person as a person at an earlier time if and only if the former can remember the experiences of the latter.",
+        "Though this view has been challenged on many grounds, it captures something intuitively compelling about the role of memory in personal continuity."
+      ]
+    },
+    {
+      "id": 3,
+      "sentences": [
+        "Modern neuroscience complicates the picture considerably.",
+        "Memory is not a faithful archive but a reconstructive process, vulnerable to distortion, suggestion, and decay.",
+        "Each time we recall an event, we subtly alter it, incorporating new information and the emotional colouring of the present moment."
+      ]
+    },
+    {
+      "id": 4,
+      "sentences": [
+        "This malleability of memory raises profound questions about authenticity and self-knowledge.",
+        "If the stories we tell about ourselves are, to some degree, fictions we have constructed and revised over time, what remains of the stable self we take ourselves to be?",
+        "Perhaps identity is less a fixed essence than an ongoing act of imaginative synthesis."
+      ]
+    }
+  ]
+}

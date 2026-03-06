@@ -3,7 +3,8 @@
 import { useState, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import WordPanel from './WordPanel'
-import type { Text, TextTranslation, VocabWord, TextWordOverride, User } from '@/lib/types'
+import ComprehensionQuiz from './ComprehensionQuiz'
+import type { Text, TextTranslation, TextQuestion, VocabWord, TextWordOverride, User } from '@/lib/types'
 
 interface ClickedWord {
   wordId: string
@@ -21,9 +22,11 @@ interface Props {
   text: Text
   translation: TextTranslation | null
   user: User | null
+  comprehensionQuestions: TextQuestion[]
+  discussionQuestions: TextQuestion[]
 }
 
-export default function BilingualReader({ text, translation, user }: Props) {
+export default function BilingualReader({ text, translation, user, comprehensionQuestions, discussionQuestions }: Props) {
   const supabase = createClient()
 
   const [clicked, setClicked] = useState<ClickedWord | null>(null)
@@ -176,18 +179,30 @@ export default function BilingualReader({ text, translation, user }: Props) {
       {activeTab === 'understand' && (
         <div className="flex-1 overflow-y-auto p-8 max-w-2xl">
           <h2 className="font-serif text-xl mb-6">Comprehension Questions</h2>
-          <p className="text-muted italic text-sm">
-            Comprehension questions for this text are coming soon.
-          </p>
+          {comprehensionQuestions.length === 0 ? (
+            <p className="text-muted italic text-sm">
+              Comprehension questions for this text are coming soon.
+            </p>
+          ) : (
+            <ComprehensionQuiz questions={comprehensionQuestions} />
+          )}
         </div>
       )}
 
       {activeTab === 'discuss' && (
         <div className="flex-1 overflow-y-auto p-8 max-w-2xl">
           <h2 className="font-serif text-xl mb-6">Discussion Questions</h2>
-          <p className="text-muted italic text-sm">
-            Discussion questions for this text are coming soon.
-          </p>
+          {discussionQuestions.length === 0 ? (
+            <p className="text-muted italic text-sm">
+              Discussion questions for this text are coming soon.
+            </p>
+          ) : (
+            <ol className="space-y-4 list-decimal list-inside">
+              {discussionQuestions.map(q => (
+                <li key={q.id} className="text-ink leading-relaxed">{q.question}</li>
+              ))}
+            </ol>
+          )}
         </div>
       )}
     </div>

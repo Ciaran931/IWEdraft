@@ -1,0 +1,30 @@
+{
+  "text_id": "market-trip",
+  "language_code": "pl",
+  "paragraphs": [
+    {
+      "id": 1,
+      "sentences": [
+        "W sobotnie poranki Tom zawsze chodzi na lokalny targ.",
+        "Lubi oglądać świeże warzywa i kolorowe owoce.",
+        "W zeszłym tygodniu kupił pomidory, cebulę i duży worek jabłek."
+      ]
+    },
+    {
+      "id": 2,
+      "sentences": [
+        "Sprzedawca powiedział mu, że jabłka pochodzą z pobliskiej wsi.",
+        "Tom był zadowolony, bo były tańsze niż w supermarkecie.",
+        "Znalazł też miód i postanowił go spróbować."
+      ]
+    },
+    {
+      "id": 3,
+      "sentences": [
+        "Kiedy wrócił do domu, ugotował duży garnek zupy warzywnej.",
+        "Jego rodzina uznała, że jest pyszna.",
+        "Teraz chodzi na targ każdy weekend."
+      ]
+    }
+  ]
+}
