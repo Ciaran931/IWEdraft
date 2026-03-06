@@ -23,7 +23,7 @@ export default function SettingsPage() {
   const { user, signOut } = useAuth()
   const supabase = createClient()
 
-  const [languageCode, setLanguageCode] = useState(user.language_code)
+  const [languageCode, setLanguageCode] = useState(user?.language_code ?? 'pl')
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [error, setError] = useState<string | null>(null)
