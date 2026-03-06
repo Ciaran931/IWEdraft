@@ -1,0 +1,46 @@
+[
+  {
+    "text_id": "the-inner-workings-of-zara",
+    "word_id": "churn",
+    "en_definition": "To produce or manufacture something rapidly and in large quantities, often with a focus on speed and efficiency.",
+    "translations": {
+      "pl": {
+        "word": "produkować szybko",
+        "definition": "Szybko i w dużych ilościach wytwarzać coś, często z naciskiem na szybkość i wydajność."
+      }
+    }
+  },
+  {
+    "text_id": "the-inner-workings-of-zara",
+    "word_id": "crown",
+    "en_definition": "The top position or highest honor in a competition or field, often used metaphorically to indicate supremacy or leadership.",
+    "translations": {
+      "pl": {
+        "word": "korona",
+        "definition": "Najwyższe miejsce lub zaszczyt w konkursie lub dziedzinie, często używane metaforycznie do wskazania supremacji lub przywództwa."
+      }
+    }
+  },
+  {
+    "text_id": "the-inner-workings-of-zara",
+    "word_id": "run",
+    "en_definition": "To manage, control, or be in charge of an organization, operation, or event.",
+    "translations": {
+      "pl": {
+        "word": "zarządzać",
+        "definition": "Kierować, kontrolować lub być odpowiedzialnym za organizację, operację lub wydarzenie."
+      }
+    }
+  },
+  {
+    "text_id": "the-inner-workings-of-zara",
+    "word_id": "show",
+    "en_definition": "The main event, performance, or dominant aspect, often used metaphorically to refer to something that is central or in control.",
+    "translations": {
+      "pl": {
+        "word": "przedstawienie",
+        "definition": "Główne wydarzenie, występ lub dominujący aspekt, często używane metaforycznie w odniesieniu do czegoś, co jest centralne lub kontrolujące."
+      }
+    }
+  }
+]

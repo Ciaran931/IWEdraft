@@ -292,7 +292,7 @@ def fill_phrasal_verb_definitions(phrasal_verbs, api_key):
 # STEP 1: BUILD SOURCE TEXT JSON
 # ──────────────────────────────────────────────
 
-def build_text_json(text_id, title, level, raw_text, grammar_lesson_id=None):
+def build_text_json(text_id, title, level, raw_text, grammar_lesson_id=None, category="graded"):
     """
     Convert raw English text into the platform's text JSON format.
 
@@ -301,6 +301,7 @@ def build_text_json(text_id, title, level, raw_text, grammar_lesson_id=None):
         "id": "war-of-the-worlds",
         "title": "War of the Worlds",
         "level": "B1",
+        "category": "graded",
         "grammar_lesson_id": null,
         "paragraphs": [
             { "id": 1, "sentences": ["Sentence one.", "Sentence two."] }
@@ -321,6 +322,7 @@ def build_text_json(text_id, title, level, raw_text, grammar_lesson_id=None):
         "id": text_id,
         "title": title,
         "level": level,
+        "category": category,
         "grammar_lesson_id": grammar_lesson_id,
         "paragraphs": paragraphs
     }
@@ -663,7 +665,8 @@ def main():
     )
     parser.add_argument("input_file", help="Path to the .txt file containing English text (paragraphs separated by blank lines)")
     parser.add_argument("--title", required=True, help="Display title of the text")
-    parser.add_argument("--level", required=True, choices=["A1", "A2", "B1", "B2", "C1", "C2"], help="CEFR level")
+    parser.add_argument("--level", required=True, choices=["A1", "A2", "B1", "B2", "C1", "C2", "Native"], help="CEFR level or 'Native' for immersion content")
+    parser.add_argument("--category", default="graded", choices=["graded", "immersion"], help="Content category (default: graded)")
     parser.add_argument("--grammar-lesson", default=None, help="Optional grammar_lesson_id to link to")
     parser.add_argument("--output-dir", default="./data/texts", help="Output directory (default: ./data/texts)")
     parser.add_argument("--skip-overrides", action="store_true", help="Skip context-specific override detection")
@@ -695,7 +698,7 @@ def main():
 
     # ── STEP 1: Source text JSON ──
     print("\n📄 Building source text JSON...")
-    text_data = build_text_json(text_id, args.title, args.level, raw_text, args.grammar_lesson)
+    text_data = build_text_json(text_id, args.title, args.level, raw_text, args.grammar_lesson, args.category)
     text_path = os.path.join(output_dir, f"{text_id}.json")
     with open(text_path, "w", encoding="utf-8") as f:
         json.dump(text_data, f, ensure_ascii=False, indent=2)

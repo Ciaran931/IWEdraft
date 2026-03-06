@@ -8,9 +8,45 @@ const LEVEL_COLORS: Record<string, string> = {
   B2: 'bg-blue-100 text-blue-800',
   C1: 'bg-purple-100 text-purple-800',
   C2: 'bg-purple-100 text-purple-800',
+  Native: 'bg-amber-100 text-amber-800',
 }
 
 const LEVELS = ['All', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2']
+
+type TextRow = {
+  id: string
+  title: string
+  level: string
+  category: string
+  paragraphs: { id: number; sentences: string[] }[]
+}
+
+function TextCard({ text }: { text: TextRow }) {
+  const firstSentence = text.paragraphs?.[0]?.sentences?.[0] ?? ''
+  const excerpt =
+    firstSentence.length > 80 ? firstSentence.slice(0, 80) + '…' : firstSentence
+
+  return (
+    <Link
+      href={`/input/${text.id}`}
+      className="block bg-white border border-border rounded-lg p-5 hover:border-terracotta transition-colors group"
+    >
+      <div className="flex items-start justify-between gap-3 mb-2">
+        <h2 className="font-serif text-base text-ink group-hover:text-terracotta transition-colors">
+          {text.title}
+        </h2>
+        <span
+          className={`flex-shrink-0 text-xs font-semibold px-2 py-0.5 rounded ${
+            LEVEL_COLORS[text.level] ?? 'bg-gray-100 text-gray-700'
+          }`}
+        >
+          {text.level}
+        </span>
+      </div>
+      {excerpt && <p className="text-sm text-muted leading-relaxed">{excerpt}</p>}
+    </Link>
+  )
+}
 
 export default async function InputPage({
   searchParams,
@@ -20,37 +56,20 @@ export default async function InputPage({
   const supabase = createClient()
   const activeLevel = searchParams.level || 'All'
 
-  let query = supabase
+  const { data: texts, error } = await supabase
     .from('texts')
-    .select('id, title, level, paragraphs')
+    .select('id, title, level, category, paragraphs')
     .order('level')
 
-  if (activeLevel !== 'All') {
-    query = query.eq('level', activeLevel)
-  }
+  const graded = (texts as TextRow[] | null)?.filter(t => t.category !== 'immersion') ?? []
+  const immersion = (texts as TextRow[] | null)?.filter(t => t.category === 'immersion') ?? []
 
-  const { data: texts, error } = await query
+  const filteredGraded =
+    activeLevel === 'All' ? graded : graded.filter(t => t.level === activeLevel)
 
   return (
     <div className="p-6 max-w-5xl mx-auto w-full">
       <h1 className="font-serif text-2xl mb-6">Reading Library</h1>
-
-      {/* Level filter pills */}
-      <div className="flex flex-wrap gap-2 mb-6">
-        {LEVELS.map(level => (
-          <Link
-            key={level}
-            href={level === 'All' ? '/input' : `/input?level=${level}`}
-            className={`px-3 py-1 rounded-full text-sm font-medium border transition-colors ${
-              activeLevel === level
-                ? 'bg-terracotta text-white border-terracotta'
-                : 'bg-white text-muted border-border hover:border-terracotta hover:text-terracotta'
-            }`}
-          >
-            {level}
-          </Link>
-        ))}
-      </div>
 
       {error && (
         <div className="bg-red-50 border border-red-200 text-red-700 rounded px-4 py-3 text-sm mb-4">
@@ -58,45 +77,51 @@ export default async function InputPage({
         </div>
       )}
 
-      {/* Text grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {texts?.map(text => {
-          const firstSentence =
-            text.paragraphs?.[0]?.sentences?.[0] ?? ''
-          const excerpt =
-            firstSentence.length > 80
-              ? firstSentence.slice(0, 80) + '…'
-              : firstSentence
+      {/* Graded Readers */}
+      <section className="mb-10">
+        <div className="flex flex-wrap items-center gap-3 mb-4">
+          <h2 className="font-serif text-lg text-ink">Graded Readers</h2>
+          <div className="flex flex-wrap gap-2">
+            {LEVELS.map(level => (
+              <Link
+                key={level}
+                href={level === 'All' ? '/input' : `/input?level=${level}`}
+                className={`px-3 py-1 rounded-full text-sm font-medium border transition-colors ${
+                  activeLevel === level
+                    ? 'bg-terracotta text-white border-terracotta'
+                    : 'bg-white text-muted border-border hover:border-terracotta hover:text-terracotta'
+                }`}
+              >
+                {level}
+              </Link>
+            ))}
+          </div>
+        </div>
 
-          return (
-            <Link
-              key={text.id}
-              href={`/input/${text.id}`}
-              className="block bg-white border border-border rounded-lg p-5 hover:border-terracotta transition-colors group"
-            >
-              <div className="flex items-start justify-between gap-3 mb-2">
-                <h2 className="font-serif text-base text-ink group-hover:text-terracotta transition-colors">
-                  {text.title}
-                </h2>
-                <span
-                  className={`flex-shrink-0 text-xs font-semibold px-2 py-0.5 rounded ${
-                    LEVEL_COLORS[text.level] ?? 'bg-gray-100 text-gray-700'
-                  }`}
-                >
-                  {text.level}
-                </span>
-              </div>
-              {excerpt && <p className="text-sm text-muted leading-relaxed">{excerpt}</p>}
-            </Link>
-          )
-        })}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {filteredGraded.map(text => <TextCard key={text.id} text={text} />)}
+          {filteredGraded.length === 0 && (
+            <p className="text-muted col-span-2 py-8 text-center">
+              No texts found at this level.
+            </p>
+          )}
+        </div>
+      </section>
 
-        {texts?.length === 0 && (
-          <p className="text-muted col-span-2 py-8 text-center">
-            No texts found at this level.
-          </p>
-        )}
-      </div>
+      {/* Immersion */}
+      {immersion.length > 0 && (
+        <section>
+          <div className="mb-4">
+            <h2 className="font-serif text-lg text-ink">Immersion</h2>
+            <p className="text-sm text-muted mt-1">
+              Native-level content — read for exposure, not study.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {immersion.map(text => <TextCard key={text.id} text={text} />)}
+          </div>
+        </section>
+      )}
     </div>
   )
 }

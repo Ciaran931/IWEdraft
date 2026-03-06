@@ -33,6 +33,7 @@ export interface Text {
   id: string
   title: string
   level: string
+  category: 'graded' | 'immersion'
   grammar_lesson_id?: string
   paragraphs: TextParagraph[]
 }

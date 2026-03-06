@@ -1,0 +1,67 @@
+{
+  "text_id": "the-inner-workings-of-zara",
+  "comprehension": [
+    {
+      "question": "Where is Zara's headquarters located according to the text?",
+      "options": [
+        "Madrid, Spain",
+        "A rural corner of northern Spain",
+        "New York, USA",
+        "A major European capital"
+      ],
+      "correct_index": 1,
+      "explanation": "The text states that while one might expect Zara's headquarters to be in Madrid, it is actually located in a rural corner of northern Spain."
+    },
+    {
+      "question": "What term was given to Zara by the New York Times when they opened a store in New York?",
+      "options": [
+        "Fashion innovator",
+        "Fast fashion creator",
+        "Retail giant",
+        "Luxury alternative"
+      ],
+      "correct_index": 1,
+      "explanation": "The text explicitly mentions that Zara is widely considered the creator of fast fashion, a label given to them by the New York Times when they opened a store in New York."
+    },
+    {
+      "question": "What percentage of overall sales does Zara represent among Inditex's top six brands?",
+      "options": [
+        "About 30%",
+        "About 50%",
+        "About 70%",
+        "About 90%"
+      ],
+      "correct_index": 2,
+      "explanation": "The text specifies that when looking at the six top brands of Inditex, Zara represents about 70% of overall sales."
+    },
+    {
+      "question": "How does Zara's marketing spend compare to typical fashion retailers?",
+      "options": [
+        "It is significantly higher",
+        "It is about the same",
+        "It is under 1% of sales, which is lower",
+        "It focuses only on digital advertising"
+      ],
+      "correct_index": 2,
+      "explanation": "The text indicates that marketing is under 1% of sales for Inditex, while typical fashion retailers have marketing spends that are materially higher, in the low to mid-single digit proportion of sales."
+    },
+    {
+      "question": "What is described as the biggest difference between Zara and its rivals?",
+      "options": [
+        "Its advertising strategy",
+        "Its product pricing",
+        "Its approach to logistics",
+        "Its use of celebrity endorsements"
+      ],
+      "correct_index": 2,
+      "explanation": "The text states that the biggest difference between Zara and its rivals is its approach to logistics, contrasting it with companies reliant on Asian factories."
+    }
+  ],
+  "discussion": [
+    "How do Zara's contradictions (like being based in rural Spain while drawing inspiration from runway fashion) contribute to its unique identity and success?",
+    "In what ways has fast fashion, as pioneered by Zara, changed your own shopping habits or those of people you know?",
+    "Do you think Zara's minimal advertising strategy could work for other companies, or is it specific to their business model?",
+    "Considering the environmental impact mentioned, how do you balance the appeal of affordable, trendy clothing with concerns about sustainability?",
+    "What challenges might Zara face in maintaining its success as competition and consumer awareness about fast fashion's effects grow?"
+  ]
+}
