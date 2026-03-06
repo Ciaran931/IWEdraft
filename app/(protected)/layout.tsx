@@ -18,9 +18,9 @@ export default async function ProtectedLayout({ children }: { children: React.Re
 
   return (
     <AuthProvider user={profile}>
-      <div className="min-h-screen flex flex-col bg-paper">
+      <div className="h-screen flex flex-col bg-paper">
         <Navbar />
-        <main className="flex-1 flex flex-col">{children}</main>
+        <main className="flex-1 flex flex-col overflow-y-auto">{children}</main>
       </div>
     </AuthProvider>
   )
