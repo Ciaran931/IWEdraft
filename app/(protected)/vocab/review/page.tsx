@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import VocabReviewSession from '@/components/vocab/VocabReviewSession'
 import Link from 'next/link'
+import type { SrsCard } from '@/lib/types'
 
 export default async function VocabReviewPage({
   searchParams,
@@ -14,9 +15,16 @@ export default async function VocabReviewPage({
   } = await supabase.auth.getUser()
   if (!authUser) return null
 
+  const { data: profile } = await supabase
+    .from('users')
+    .select('language_code')
+    .eq('id', authUser.id)
+    .single()
+  const language = profile?.language_code ?? 'pl'
+
   let query = supabase
     .from('srs_cards')
-    .select('*, vocab_words(*)')
+    .select('*')
     .eq('user_id', authUser.id)
     .eq('card_type', 'vocab')
     .lte('due_date', new Date().toISOString())
@@ -26,7 +34,7 @@ export default async function VocabReviewPage({
     query = query.eq('deck_id', searchParams.deck)
   }
 
-  const { data: cards, error } = await query
+  const { data: rawCards, error } = await query
 
   if (error) {
     return (
@@ -34,6 +42,18 @@ export default async function VocabReviewPage({
         <p className="text-red-600">Something went wrong. Please try again.</p>
       </div>
     )
+  }
+
+  // Two-step: fetch vocab_words separately (content_id has no FK constraint)
+  let cards: SrsCard[] = rawCards ?? []
+  if (cards.length > 0) {
+    const wordIds = Array.from(new Set(cards.map(c => c.content_id)))
+    const { data: words } = await supabase
+      .from('vocab_words')
+      .select('*')
+      .in('id', wordIds)
+    const wordMap = new Map(words?.map(w => [w.id, w]) ?? [])
+    cards = cards.map(card => ({ ...card, vocab_words: wordMap.get(card.content_id) }))
   }
 
   if (!cards || cards.length === 0) {
@@ -51,5 +71,5 @@ export default async function VocabReviewPage({
     )
   }
 
-  return <VocabReviewSession cards={cards} userId={authUser.id} />
+  return <VocabReviewSession cards={cards} userId={authUser.id} language={language} />
 }

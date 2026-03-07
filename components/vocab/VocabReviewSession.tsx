@@ -16,9 +16,11 @@ const RATING_BUTTONS: { rating: Rating; label: string; color: string }[] = [
 export default function VocabReviewSession({
   cards,
   userId,
+  language,
 }: {
   cards: SrsCard[]
   userId: string
+  language: string
 }) {
   const router = useRouter()
   const supabase = createClient()
@@ -104,6 +106,12 @@ export default function VocabReviewSession({
             <p className="text-muted">Loading…</p>
           )}
 
+          {current.source_sentence && (
+            <p className="mt-4 text-sm italic text-muted border-l-2 border-terracotta-muted pl-3 text-left max-w-xs">
+              {current.source_sentence}
+            </p>
+          )}
+
           {!flipped && (
             <button
               onClick={() => setFlipped(true)}
@@ -119,8 +127,7 @@ export default function VocabReviewSession({
           <div className="bg-sidebar border border-border rounded-xl p-6 mb-4 space-y-3">
             <div>
               <p className="text-terracotta font-medium text-lg">
-                {word.translations?.[current.vocab_words?.id ?? '']?.word
-                  ?? 'Translation unavailable'}
+                {word.translations?.[language]?.word ?? word.word}
               </p>
             </div>
 
@@ -132,12 +139,6 @@ export default function VocabReviewSession({
                 </span>
               </p>
             </div>
-
-            {current.source_sentence && (
-              <div className="text-sm italic text-muted border-l-2 border-terracotta-muted pl-3">
-                {current.source_sentence}
-              </div>
-            )}
           </div>
         )}
       </div>

@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
-import type { GrammarQuestion } from '@/lib/types'
+import { applySrs } from '@/lib/srs'
+import type { GrammarQuestion, Rating } from '@/lib/types'
 
 interface QuizState {
   questionIdx: number
@@ -48,7 +49,7 @@ export default function QuizComponent({
       // Quiz done — save grammar cards to SRS if logged in
       if (userId) {
         setSaving(true)
-        await saveGrammarCards()
+        await saveGrammarProgress()
         setSaving(false)
       }
       setFinished(true)
@@ -62,7 +63,14 @@ export default function QuizComponent({
     }
   }
 
-  async function saveGrammarCards() {
+  async function saveGrammarProgress() {
+    const ratio = state.score / questions.length
+    let rating: Rating
+    if (ratio <= 0.25) rating = 0
+    else if (ratio <= 0.5) rating = 1
+    else if (ratio <= 0.75) rating = 2
+    else rating = 3
+
     // Get or create grammar deck
     let deckId: string
     const { data: existingDeck } = await supabase
@@ -89,28 +97,30 @@ export default function QuizComponent({
       deckId = newDeck.id
     }
 
-    // For each question, insert if not already present
-    for (const q of questions) {
-      const { data: existing } = await supabase
-        .from('srs_cards')
-        .select('id')
-        .eq('user_id', userId)
-        .eq('content_id', q.id)
-        .maybeSingle()
+    // Check if an SRS card for this lesson already exists
+    const { data: existing } = await supabase
+      .from('srs_cards')
+      .select('*')
+      .eq('user_id', userId)
+      .eq('content_id', lessonId)
+      .eq('card_type', 'grammar')
+      .maybeSingle()
 
-      if (!existing) {
-        await supabase.from('srs_cards').insert({
-          user_id: userId,
-          card_type: 'grammar',
-          content_id: q.id,
-          deck_id: deckId,
-          status: 'learning',
-          due_date: new Date().toISOString(),
-          ease_factor: 2.5,
-          interval: 1,
-          repetitions: 0,
-        })
-      }
+    if (existing) {
+      const update = applySrs(existing, rating)
+      await supabase.from('srs_cards').update(update).eq('id', existing.id)
+    } else {
+      const update = applySrs(
+        { ease_factor: 2.5, interval: 1, repetitions: 0 } as any,
+        rating,
+      )
+      await supabase.from('srs_cards').insert({
+        user_id: userId,
+        card_type: 'grammar',
+        content_id: lessonId,
+        deck_id: deckId,
+        ...update,
+      })
     }
   }
 
@@ -124,11 +134,11 @@ export default function QuizComponent({
           <>
             <p className="text-muted text-sm mb-4">
               {state.score === questions.length
-                ? 'Perfect! These questions have been added to your grammar reviews.'
-                : 'Good effort! Review cards have been added to your SRS queue.'}
+                ? 'Perfect! Your progress has been saved.'
+                : 'Good effort! Your progress has been saved.'}
             </p>
-            <a href="/grammar/review" className="text-terracotta text-sm hover:underline">
-              Review grammar cards →
+            <a href="/grammar" className="text-terracotta text-sm hover:underline">
+              Back to Grammar →
             </a>
           </>
         ) : (

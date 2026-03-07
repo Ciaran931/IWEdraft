@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import StreakCounter from '@/components/dashboard/StreakCounter'
 import VocabDonut from '@/components/dashboard/VocabDonut'
-import MindmapWrapper from '@/components/grammar/MindmapWrapper'
+import GrammarGrid from '@/components/grammar/GrammarGrid'
 import Link from 'next/link'
 
 export default async function DashboardPage() {
@@ -43,15 +43,10 @@ export default async function DashboardPage() {
     if (s in statusCounts) statusCounts[s]++
   })
 
-  // Build lessonId → status map for mindmap
+  // Build lessonId → status map for grammar grid
   const grammarStatusMap: Record<string, string> = {}
   grammarCards?.forEach(card => {
-    const existing = grammarStatusMap[card.content_id]
-    // Use worst status (new/learning beats review beats mature)
-    const rank = { new: 0, learning: 0, review: 1, mature: 2 }
-    if (!existing || rank[card.status as keyof typeof rank] < rank[existing as keyof typeof rank]) {
-      grammarStatusMap[card.content_id] = card.status
-    }
+    grammarStatusMap[card.content_id] = card.status
   })
 
   return (
@@ -91,7 +86,7 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      {/* Grammar Mindmap */}
+      {/* Grammar Grid */}
       <div className="bg-white border border-border rounded-lg p-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-serif text-lg">Grammar Progress</h2>
@@ -99,7 +94,7 @@ export default async function DashboardPage() {
             Open Grammar →
           </Link>
         </div>
-        <MindmapWrapper statusMap={grammarStatusMap} />
+        <GrammarGrid statusMap={grammarStatusMap} />
       </div>
     </div>
   )

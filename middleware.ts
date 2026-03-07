@@ -30,8 +30,7 @@ export async function middleware(request: NextRequest) {
   const isProtected =
     pathname.startsWith('/dashboard') ||
     pathname.startsWith('/settings') ||
-    pathname === '/vocab/review' ||
-    pathname === '/grammar/review'
+    pathname === '/vocab/review'
 
   if (user && isAuthPage) {
     return NextResponse.redirect(new URL('/dashboard', request.url))

@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
-import MindmapWrapper from '@/components/grammar/MindmapWrapper'
 import { GRAMMAR_TREE } from '@/lib/grammar-tree'
+import GrammarGrid from '@/components/grammar/GrammarGrid'
 import Link from 'next/link'
 
 const LEVEL_COLORS: Record<string, string> = {
@@ -22,7 +22,7 @@ export default async function GrammarPage() {
   const grammarCardsResult = authUser
     ? await supabase
         .from('srs_cards')
-        .select('content_id, status')
+        .select('content_id, status, due_date')
         .eq('user_id', authUser.id)
         .eq('card_type', 'grammar')
     : { data: null }
@@ -32,13 +32,14 @@ export default async function GrammarPage() {
     .from('grammar_lessons')
     .select('id, title, level, category')
 
-  // Build lessonId → status map (worst status wins)
+  // Build lessonId → status map
   const statusMap: Record<string, string> = {}
+  const dueSet = new Set<string>()
+  const now = new Date().toISOString()
   grammarCards?.forEach(card => {
-    const rank = { new: 0, learning: 0, review: 1, mature: 2 }
-    const existing = statusMap[card.content_id]
-    if (!existing || rank[card.status as keyof typeof rank] < rank[existing as keyof typeof rank]) {
-      statusMap[card.content_id] = card.status
+    statusMap[card.content_id] = card.status
+    if (card.due_date && card.due_date <= now) {
+      dueSet.add(card.content_id)
     }
   })
 
@@ -48,10 +49,10 @@ export default async function GrammarPage() {
     <div className="p-6 max-w-6xl mx-auto w-full">
       <h1 className="font-serif text-2xl mb-6">Grammar</h1>
 
-      {/* Mindmap */}
-      <div className="bg-white border border-border rounded-lg p-6 mb-8">
-        <h2 className="font-serif text-lg mb-4">Progress Map</h2>
-        <MindmapWrapper statusMap={statusMap} />
+      {/* Compact grid overview */}
+      <div className="bg-white border border-border rounded-lg p-4 mb-8">
+        <h2 className="font-serif text-lg mb-3">Progress</h2>
+        <GrammarGrid statusMap={statusMap} />
       </div>
 
       {/* Lesson list grouped by level */}
@@ -78,6 +79,7 @@ export default async function GrammarPage() {
                     if (child.type !== 'leaf') return null
                     const hasContent = lessonSet.has(child.id)
                     const status = statusMap[child.id]
+                    const isDue = dueSet.has(child.id)
                     const statusDot = status === 'mature'
                       ? 'bg-mindmap-green'
                       : status
@@ -96,7 +98,12 @@ export default async function GrammarPage() {
                         <span className="truncate text-ink group-hover:text-terracotta transition-colors">
                           {child.label}
                         </span>
-                        {!hasContent && (
+                        {isDue && (
+                          <span className="ml-auto text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-terracotta/10 text-terracotta flex-shrink-0">
+                            Due
+                          </span>
+                        )}
+                        {!hasContent && !isDue && (
                           <span className="ml-auto text-xs text-muted flex-shrink-0">Soon</span>
                         )}
                       </Link>

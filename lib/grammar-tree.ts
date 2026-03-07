@@ -171,38 +171,3 @@ export function getAllLessonIds(): string[] {
   return ids
 }
 
-/** Get all leaves as flat list with level info for D3 hierarchy */
-export function getFlatLessons(): Array<{ id: string; label: string; level: string; category: string }> {
-  const lessons: Array<{ id: string; label: string; level: string; category: string }> = []
-  for (const level of GRAMMAR_TREE) {
-    for (const cat of level.children) {
-      for (const child of cat.children) {
-        if (child.type === 'leaf') {
-          lessons.push({ id: child.id, label: child.label, level: level.level, category: cat.label })
-        }
-      }
-    }
-  }
-  return lessons
-}
-
-/** Build a D3-compatible hierarchy object */
-export function getHierarchyData() {
-  return {
-    id: 'root',
-    label: 'Grammar',
-    children: GRAMMAR_TREE.map(level => ({
-      id: level.level,
-      label: level.level,
-      children: level.children.map(cat => ({
-        id: `${level.level}-${cat.label}`,
-        label: cat.label,
-        children: cat.children.map(child =>
-          child.type === 'leaf'
-            ? { id: child.id, label: child.label, value: 1 }
-            : child
-        ),
-      })),
-    })),
-  }
-}
