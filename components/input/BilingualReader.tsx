@@ -38,12 +38,9 @@ export default function BilingualReader({ text, translation, user, comprehension
   const [activeTab, setActiveTab] = useState<'read' | 'understand' | 'discuss'>('read')
   const [tooltipLocked, setTooltipLocked] = useState(false)
   const [tooltipAnchorRect, setTooltipAnchorRect] = useState<{ top: number; left: number; width: number; height: number } | null>(null)
-  const [mobileLang, setMobileLang] = useState<0 | 1>(0)
 
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
-  const touchStartX = useRef<number | null>(null)
-  const touchStartY = useRef<number | null>(null)
   const justDismissedRef = useRef(false)
 
   function dismissTooltip() {
@@ -115,32 +112,6 @@ export default function BilingualReader({ text, translation, user, comprehension
     [supabase, text.id, isMobile]
   )
 
-  function handleTouchStart(e: React.TouchEvent) {
-    touchStartX.current = e.touches[0].clientX
-    touchStartY.current = e.touches[0].clientY
-  }
-
-  function handleTouchEnd(e: React.TouchEvent) {
-    if (touchStartX.current === null || touchStartY.current === null) return
-    const deltaX = e.changedTouches[0].clientX - touchStartX.current
-    const deltaY = e.changedTouches[0].clientY - touchStartY.current
-    touchStartX.current = null
-    touchStartY.current = null
-    const SWIPE_THRESHOLD = 50
-    // Only treat as swipe if movement is more horizontal than vertical
-    if (Math.abs(deltaX) < SWIPE_THRESHOLD || Math.abs(deltaX) < Math.abs(deltaY)) return
-    if (deltaX < 0 && mobileLang === 0) {
-      setMobileLang(1)
-      if (tooltipLocked) {
-        setTooltipLocked(false)
-        setTooltipAnchorRect(null)
-        setWordData(null)
-      }
-    } else if (deltaX > 0 && mobileLang === 1) {
-      setMobileLang(0)
-    }
-  }
-
   function renderSentence(sentence: string, paraId: number, sentenceId: number) {
     const isThisSentenceHighlighted =
       clicked?.paraId === paraId && clicked?.sentenceId === sentenceId
@@ -193,7 +164,7 @@ export default function BilingualReader({ text, translation, user, comprehension
           </button>
         ))}
 
-        <div className="ml-auto px-4 hidden md:block">
+        <div className="ml-auto px-4">
           <button
             onClick={() => setHideTranslation(h => !h)}
             className={`text-xs px-3 py-1.5 rounded border transition-colors ${
@@ -223,36 +194,37 @@ export default function BilingualReader({ text, translation, user, comprehension
             />
           </div>
 
-          {/* Mobile: single scroll, swipe to toggle language */}
+          {/* Mobile: interleaved paragraphs */}
           <div className="md:hidden flex-1 overflow-hidden flex flex-col">
             <div
               ref={scrollContainerRef}
               className="flex-1 overflow-y-auto relative p-6"
-              style={{ touchAction: 'pan-y' }}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
             >
               {text.paragraphs.map(para => (
                 <div key={para.id} className="mb-8">
-                  {mobileLang === 0
-                    ? para.sentences.map((sentence, sIdx) =>
-                        renderSentence(sentence, para.id, sIdx + 1)
+                  {para.sentences.map((sentence, sIdx) =>
+                    renderSentence(sentence, para.id, sIdx + 1)
+                  )}
+                  {!hideTranslation && translation?.paragraphs
+                    .find(p => p.id === para.id)
+                    ?.sentences.map((sentence, sIdx) => {
+                      const sentenceId = sIdx + 1
+                      const isHighlighted =
+                        clicked?.paraId === para.id && clicked?.sentenceId === sentenceId
+                      return (
+                        <p
+                          key={`tr-${sentenceId}`}
+                          className={`mb-2 leading-relaxed text-sm text-terracotta-muted transition-colors rounded px-0.5 ${
+                            isHighlighted ? 'sentence-highlight' : ''
+                          }`}
+                        >
+                          {sentence}
+                        </p>
                       )
-                    : translation?.paragraphs
-                        .find(p => p.id === para.id)
-                        ?.sentences.map((sentence, sIdx) => (
-                          <p
-                            key={sIdx + 1}
-                            className={`mb-2 leading-relaxed text-muted transition-colors rounded px-0.5 ${
-                              clicked?.paraId === para.id && clicked?.sentenceId === sIdx + 1 ? 'sentence-highlight' : ''
-                            }`}
-                          >
-                            {sentence}
-                          </p>
-                        ))}
+                    })}
                 </div>
               ))}
-              {mobileLang === 0 && tooltipAnchorRect && clicked && (
+              {tooltipAnchorRect && clicked && (
                 <MobileWordTooltip
                   ref={tooltipRef}
                   wordData={wordData}
@@ -264,11 +236,6 @@ export default function BilingualReader({ text, translation, user, comprehension
                   onDismiss={dismissTooltip}
                 />
               )}
-            </div>
-            {/* Dot indicator */}
-            <div className="flex justify-center gap-2 py-2 bg-paper border-t border-border">
-              <span className={`w-2 h-2 rounded-full ${mobileLang === 0 ? 'bg-terracotta' : 'bg-border'}`} />
-              <span className={`w-2 h-2 rounded-full ${mobileLang === 1 ? 'bg-terracotta' : 'bg-border'}`} />
             </div>
           </div>
 
@@ -314,32 +281,39 @@ export default function BilingualReader({ text, translation, user, comprehension
       )}
 
       {activeTab === 'understand' && (
-        <div className="flex-1 overflow-y-auto p-8 max-w-2xl">
-          <h2 className="font-serif text-xl mb-6">Comprehension Questions</h2>
-          {comprehensionQuestions.length === 0 ? (
-            <p className="text-muted italic text-sm">
-              Comprehension questions for this text are coming soon.
-            </p>
-          ) : (
-            <ComprehensionQuiz questions={comprehensionQuestions} />
-          )}
+        <div className="flex-1 overflow-y-auto no-scrollbar p-8">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-serif text-xl mb-6 text-center">Comprehension Questions</h2>
+            {comprehensionQuestions.length === 0 ? (
+              <p className="text-muted italic text-sm">
+                Comprehension questions for this text are coming soon.
+              </p>
+            ) : (
+              <ComprehensionQuiz questions={comprehensionQuestions} />
+            )}
+          </div>
         </div>
       )}
 
       {activeTab === 'discuss' && (
-        <div className="flex-1 overflow-y-auto p-8 max-w-2xl">
-          <h2 className="font-serif text-xl mb-6">Discussion Questions</h2>
+        <div className="flex-1 overflow-y-auto no-scrollbar p-8">
+          <div className="max-w-2xl mx-auto">
+          <h2 className="font-serif text-xl mb-6 text-center">Discussion Questions</h2>
           {discussionQuestions.length === 0 ? (
-            <p className="text-muted italic text-sm">
+            <p className="text-muted italic text-sm text-center">
               Discussion questions for this text are coming soon.
             </p>
           ) : (
-            <ol className="space-y-4 list-decimal list-inside">
-              {discussionQuestions.map(q => (
-                <li key={q.id} className="text-ink leading-relaxed">{q.question}</li>
+            <div className="space-y-5">
+              {discussionQuestions.map((q, i) => (
+                <div key={q.id} className="bg-white rounded border border-border/60 shadow-sm px-6 py-5">
+                  <p className="font-serif text-sm text-muted text-center">{i + 1}.</p>
+                  <p className="mt-1 text-ink leading-relaxed">{q.question}</p>
+                </div>
               ))}
-            </ol>
+            </div>
           )}
+          </div>
         </div>
       )}
     </div>

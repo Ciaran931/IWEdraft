@@ -112,9 +112,6 @@ export default function Navbar() {
           </Link>
         )}
       </nav>
-
-      {/* Mobile bottom padding spacer */}
-      <div className="md:hidden h-16" />
     </>
   )
 }

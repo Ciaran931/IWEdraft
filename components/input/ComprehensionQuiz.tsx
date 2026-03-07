@@ -23,9 +23,10 @@ export default function ComprehensionQuiz({ questions }: Props) {
         const isCorrect = selected === q.correct_index
 
         return (
-          <div key={q.id} className="border border-border rounded-lg p-5 bg-paper">
-            <p className="font-medium text-ink mb-4">
-              {qIdx + 1}. {q.question}
+          <div key={q.id} className="bg-white rounded border border-border/60 shadow-sm px-6 py-5">
+            <p className="font-serif text-sm text-muted text-center">{qIdx + 1}.</p>
+            <p className="mt-1 font-medium text-ink mb-4">
+              {q.question}
             </p>
 
             <div className="space-y-2">

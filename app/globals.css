@@ -28,12 +28,14 @@
   }
 
   .word.selected {
-    background-color: rgb(167 139 250); /* violet-400 */
+    background-color: #2E7D8C; /* deep teal */
+    color: white;
     padding: 0 2px;
+    margin: 0 -2px;
   }
 
   .sentence-highlight {
-    background-color: rgb(237 233 254); /* violet-100 */
+    background-color: rgba(46, 125, 140, 0.1); /* deep teal at 10% */
     border-radius: 3px;
   }
 
