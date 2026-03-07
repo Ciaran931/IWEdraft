@@ -1,9 +1,11 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import WordPanel from './WordPanel'
+import MobileWordTooltip from './MobileWordTooltip'
 import ComprehensionQuiz from './ComprehensionQuiz'
+import { useIsMobile } from '@/hooks/useIsMobile'
 import type { Text, TextTranslation, TextQuestion, VocabWord, TextWordOverride, User } from '@/lib/types'
 
 interface ClickedWord {
@@ -28,15 +30,75 @@ interface Props {
 
 export default function BilingualReader({ text, translation, user, comprehensionQuestions, discussionQuestions }: Props) {
   const supabase = createClient()
+  const isMobile = useIsMobile()
 
   const [clicked, setClicked] = useState<ClickedWord | null>(null)
   const [wordData, setWordData] = useState<WordData | null>(null)
   const [hideTranslation, setHideTranslation] = useState(false)
   const [activeTab, setActiveTab] = useState<'read' | 'understand' | 'discuss'>('read')
+  const [tooltipLocked, setTooltipLocked] = useState(false)
+  const [tooltipAnchorRect, setTooltipAnchorRect] = useState<{ top: number; left: number; width: number; height: number } | null>(null)
+  const [mobileLang, setMobileLang] = useState<0 | 1>(0)
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const tooltipRef = useRef<HTMLDivElement>(null)
+  const touchStartX = useRef<number | null>(null)
+  const touchStartY = useRef<number | null>(null)
+  const justDismissedRef = useRef(false)
+
+  function dismissTooltip() {
+    setTooltipLocked(false)
+    setTooltipAnchorRect(null)
+    setClicked(null)
+    setWordData(null)
+  }
+
+  // Outside-click listener in capture phase to prevent word clicks while tooltip is open
+  useEffect(() => {
+    if (!tooltipLocked) return
+    function handler(e: MouseEvent | TouchEvent) {
+      if (tooltipRef.current && tooltipRef.current.contains(e.target as Node)) return
+      if (e.type === 'touchstart') {
+        // Don't block touch events — let swipe gestures pass through
+        justDismissedRef.current = true
+        dismissTooltip()
+        return
+      }
+      // For mouse: block to prevent word click
+      e.preventDefault()
+      e.stopPropagation()
+      dismissTooltip()
+    }
+    document.addEventListener('mousedown', handler, true)
+    document.addEventListener('touchstart', handler, true)
+    return () => {
+      document.removeEventListener('mousedown', handler, true)
+      document.removeEventListener('touchstart', handler, true)
+    }
+  }, [tooltipLocked])
 
   const handleWordClick = useCallback(
-    async (wordId: string, paraId: number, sentenceId: number, sentence: string) => {
+    async (wordId: string, paraId: number, sentenceId: number, sentence: string, event?: React.MouseEvent) => {
+      if (isMobile && justDismissedRef.current) {
+        justDismissedRef.current = false
+        return
+      }
+
       setClicked({ wordId, paraId, sentenceId, sentence })
+      setWordData(null)
+
+      if (isMobile && event && scrollContainerRef.current) {
+        const wordEl = event.currentTarget as HTMLElement
+        const containerRect = scrollContainerRef.current.getBoundingClientRect()
+        const wordRect = wordEl.getBoundingClientRect()
+        setTooltipAnchorRect({
+          top: wordRect.bottom - containerRect.top + scrollContainerRef.current.scrollTop,
+          left: wordRect.left - containerRect.left,
+          width: wordRect.width,
+          height: wordRect.height,
+        })
+        setTooltipLocked(true)
+      }
 
       const [{ data: word }, { data: override }] = await Promise.all([
         supabase.from('vocab_words').select('*').eq('id', wordId).maybeSingle(),
@@ -50,8 +112,34 @@ export default function BilingualReader({ text, translation, user, comprehension
 
       setWordData(word ? { word: word as VocabWord, override: override as TextWordOverride | null } : null)
     },
-    [supabase, text.id]
+    [supabase, text.id, isMobile]
   )
+
+  function handleTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
+  }
+
+  function handleTouchEnd(e: React.TouchEvent) {
+    if (touchStartX.current === null || touchStartY.current === null) return
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current
+    const deltaY = e.changedTouches[0].clientY - touchStartY.current
+    touchStartX.current = null
+    touchStartY.current = null
+    const SWIPE_THRESHOLD = 50
+    // Only treat as swipe if movement is more horizontal than vertical
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD || Math.abs(deltaX) < Math.abs(deltaY)) return
+    if (deltaX < 0 && mobileLang === 0) {
+      setMobileLang(1)
+      if (tooltipLocked) {
+        setTooltipLocked(false)
+        setTooltipAnchorRect(null)
+        setWordData(null)
+      }
+    } else if (deltaX > 0 && mobileLang === 1) {
+      setMobileLang(0)
+    }
+  }
 
   function renderSentence(sentence: string, paraId: number, sentenceId: number) {
     const isThisSentenceHighlighted =
@@ -77,7 +165,7 @@ export default function BilingualReader({ text, translation, user, comprehension
             <span
               key={i}
               className={`word${isSelected ? ' selected' : ''}`}
-              onClick={() => handleWordClick(wordId, paraId, sentenceId, sentence)}
+              onClick={(e) => handleWordClick(wordId, paraId, sentenceId, sentence, e)}
             >
               {part}
             </span>
@@ -94,7 +182,7 @@ export default function BilingualReader({ text, translation, user, comprehension
         {(['read', 'understand', 'discuss'] as const).map(tab => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab)}
+            onClick={() => { dismissTooltip(); setActiveTab(tab) }}
             className={`px-5 py-3 text-sm font-medium capitalize border-b-2 transition-colors ${
               activeTab === tab
                 ? 'border-terracotta text-terracotta'
@@ -105,7 +193,7 @@ export default function BilingualReader({ text, translation, user, comprehension
           </button>
         ))}
 
-        <div className="ml-auto px-4">
+        <div className="ml-auto px-4 hidden md:block">
           <button
             onClick={() => setHideTranslation(h => !h)}
             className={`text-xs px-3 py-1.5 rounded border transition-colors ${
@@ -135,8 +223,57 @@ export default function BilingualReader({ text, translation, user, comprehension
             />
           </div>
 
-          {/* Bilingual text */}
-          <div className="flex-1 overflow-y-auto">
+          {/* Mobile: single scroll, swipe to toggle language */}
+          <div className="md:hidden flex-1 overflow-hidden flex flex-col">
+            <div
+              ref={scrollContainerRef}
+              className="flex-1 overflow-y-auto relative p-6"
+              style={{ touchAction: 'pan-y' }}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              {text.paragraphs.map(para => (
+                <div key={para.id} className="mb-8">
+                  {mobileLang === 0
+                    ? para.sentences.map((sentence, sIdx) =>
+                        renderSentence(sentence, para.id, sIdx + 1)
+                      )
+                    : translation?.paragraphs
+                        .find(p => p.id === para.id)
+                        ?.sentences.map((sentence, sIdx) => (
+                          <p
+                            key={sIdx + 1}
+                            className={`mb-2 leading-relaxed text-muted transition-colors rounded px-0.5 ${
+                              clicked?.paraId === para.id && clicked?.sentenceId === sIdx + 1 ? 'sentence-highlight' : ''
+                            }`}
+                          >
+                            {sentence}
+                          </p>
+                        ))}
+                </div>
+              ))}
+              {mobileLang === 0 && tooltipAnchorRect && clicked && (
+                <MobileWordTooltip
+                  ref={tooltipRef}
+                  wordData={wordData}
+                  languageCode={user?.language_code ?? 'en'}
+                  textId={text.id}
+                  userId={user?.id ?? null}
+                  sentence={clicked.sentence}
+                  anchorRect={tooltipAnchorRect}
+                  onDismiss={dismissTooltip}
+                />
+              )}
+            </div>
+            {/* Dot indicator */}
+            <div className="flex justify-center gap-2 py-2 bg-paper border-t border-border">
+              <span className={`w-2 h-2 rounded-full ${mobileLang === 0 ? 'bg-terracotta' : 'bg-border'}`} />
+              <span className={`w-2 h-2 rounded-full ${mobileLang === 1 ? 'bg-terracotta' : 'bg-border'}`} />
+            </div>
+          </div>
+
+          {/* Desktop: side-by-side layout */}
+          <div className="hidden md:block flex-1 overflow-y-auto relative">
             <div className="p-6 max-w-5xl">
               {text.paragraphs.map(para => (
                 <div key={para.id} className={`mb-8 ${hideTranslation ? '' : 'grid grid-cols-2 gap-8'}`}>

@@ -36,4 +36,23 @@
     background-color: rgb(237 233 254); /* violet-100 */
     border-radius: 3px;
   }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .word-tooltip-arrow {
+    position: absolute;
+    top: -6px;
+    left: 16px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid var(--color-border, #e5e7eb);
+  }
 }
