@@ -16,10 +16,12 @@ export default function QuizComponent({
   questions,
   userId,
   lessonId,
+  onFinish,
 }: {
   questions: GrammarQuestion[]
   userId: string | null
   lessonId: string
+  onFinish?: (score: number, total: number) => void
 }) {
   const supabase = createClient()
   const [state, setState] = useState<QuizState>({
@@ -130,7 +132,21 @@ export default function QuizComponent({
         <p className="font-serif text-xl mb-2">
           {state.score} / {questions.length}
         </p>
-        {userId ? (
+        {onFinish ? (
+          <>
+            <p className="text-muted text-sm mb-4">
+              {state.score === questions.length
+                ? 'Perfect!'
+                : 'Good effort!'}
+            </p>
+            <button
+              onClick={() => onFinish(state.score, questions.length)}
+              className="bg-terracotta text-white px-4 py-2 rounded text-sm font-medium hover:bg-terracotta-light transition-colors"
+            >
+              Next Lesson →
+            </button>
+          </>
+        ) : userId ? (
           <>
             <p className="text-muted text-sm mb-4">
               {state.score === questions.length

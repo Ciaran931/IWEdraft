@@ -18,7 +18,7 @@ export default async function DashboardPage() {
       supabase.from('users').select('streak_days').eq('id', authUser.id).single(),
       supabase
         .from('srs_cards')
-        .select('id', { count: 'exact' })
+        .select('id, card_type')
         .eq('user_id', authUser.id)
         .lte('due_date', new Date().toISOString()),
       supabase
@@ -34,7 +34,9 @@ export default async function DashboardPage() {
     ])
 
   const streakDays = profile?.streak_days ?? 0
-  const dueCount = dueCards?.length ?? 0
+  const dueVocabCount = dueCards?.filter(c => c.card_type === 'vocab').length ?? 0
+  const dueGrammarCount = dueCards?.filter(c => c.card_type === 'grammar').length ?? 0
+  const dueCount = dueVocabCount + dueGrammarCount
 
   // Build vocab status counts
   const statusCounts = { new: 0, learning: 0, review: 0, mature: 0 }
@@ -61,12 +63,20 @@ export default async function DashboardPage() {
           <p className="text-xs text-muted uppercase tracking-wide mb-1">Due Today</p>
           <p className="font-serif text-3xl text-ink">{dueCount}</p>
           <p className="text-xs text-muted mt-1">cards to review</p>
-          {dueCount > 0 && (
+          {dueVocabCount > 0 && (
             <Link
               href="/vocab/review"
               className="mt-3 inline-block text-xs text-terracotta hover:underline"
             >
-              Start reviewing →
+              Review vocab ({dueVocabCount}) →
+            </Link>
+          )}
+          {dueGrammarCount > 0 && (
+            <Link
+              href="/grammar/review"
+              className="mt-3 inline-block text-xs text-terracotta hover:underline ml-3"
+            >
+              Review grammar ({dueGrammarCount}) →
             </Link>
           )}
         </div>

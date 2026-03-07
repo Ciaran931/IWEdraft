@@ -49,6 +49,20 @@ export default async function GrammarPage() {
     <div className="p-6 max-w-6xl mx-auto w-full">
       <h1 className="font-serif text-2xl mb-6">Grammar</h1>
 
+      {dueSet.size > 0 && (
+        <div className="bg-terracotta/5 border border-terracotta/20 rounded-lg px-4 py-3 mb-6 flex items-center justify-between">
+          <p className="text-sm text-ink">
+            You have <span className="font-semibold">{dueSet.size}</span> grammar lesson{dueSet.size !== 1 ? 's' : ''} due for review
+          </p>
+          <Link
+            href="/grammar/review"
+            className="bg-terracotta text-white px-3 py-1.5 rounded text-sm font-medium hover:bg-terracotta-light transition-colors flex-shrink-0"
+          >
+            Start review →
+          </Link>
+        </div>
+      )}
+
       {/* Compact grid overview */}
       <div className="bg-white border border-border rounded-lg p-4 mb-8">
         <h2 className="font-serif text-lg mb-3">Progress</h2>
