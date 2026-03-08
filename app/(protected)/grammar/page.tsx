@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { GRAMMAR_TREE } from '@/lib/grammar-tree'
 import GrammarGrid from '@/components/grammar/GrammarGrid'
+import GrammarReviewList from '@/components/grammar/GrammarReviewList'
 import Link from 'next/link'
 
 const LEVEL_COLORS: Record<string, string> = {
@@ -22,7 +23,7 @@ export default async function GrammarPage() {
   const grammarCardsResult = authUser
     ? await supabase
         .from('srs_cards')
-        .select('content_id, status, due_date')
+        .select('content_id, status, due_date, last_reviewed_at')
         .eq('user_id', authUser.id)
         .eq('card_type', 'grammar')
     : { data: null }
@@ -31,6 +32,10 @@ export default async function GrammarPage() {
   const { data: lessons } = await supabase
     .from('grammar_lessons')
     .select('id, title, level, category')
+
+  // Build lessonId → lesson lookup
+  const lessonLookup: Record<string, { title: string; level: string }> = {}
+  lessons?.forEach(l => { lessonLookup[l.id] = { title: l.title, level: l.level } })
 
   // Build lessonId → status map
   const statusMap: Record<string, string> = {}
@@ -43,25 +48,33 @@ export default async function GrammarPage() {
     }
   })
 
+  // Build review list items sorted by due date (due now first)
+  const reviewItems = (grammarCards ?? [])
+    .filter(card => lessonLookup[card.content_id])
+    .map(card => ({
+      lessonId: card.content_id,
+      title: lessonLookup[card.content_id].title,
+      level: lessonLookup[card.content_id].level,
+      status: card.status,
+      lastReviewedAt: card.last_reviewed_at ?? null,
+      dueDate: card.due_date,
+    }))
+    .sort((a, b) => {
+      const aDue = new Date(a.dueDate) <= new Date(now)
+      const bDue = new Date(b.dueDate) <= new Date(now)
+      if (aDue && !bDue) return -1
+      if (!aDue && bDue) return 1
+      return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime()
+    })
+
   const lessonSet = new Set(lessons?.map(l => l.id) ?? [])
 
   return (
     <div className="p-6 max-w-6xl mx-auto w-full">
       <h1 className="font-serif text-2xl mb-6">Grammar</h1>
 
-      {dueSet.size > 0 && (
-        <div className="bg-terracotta/5 border border-terracotta/20 rounded-lg px-4 py-3 mb-6 flex items-center justify-between">
-          <p className="text-sm text-ink">
-            You have <span className="font-semibold">{dueSet.size}</span> grammar lesson{dueSet.size !== 1 ? 's' : ''} due for review
-          </p>
-          <Link
-            href="/grammar/review"
-            className="bg-terracotta text-white px-3 py-1.5 rounded text-sm font-medium hover:bg-terracotta-light transition-colors flex-shrink-0"
-          >
-            Start review →
-          </Link>
-        </div>
-      )}
+      {/* My Reviews section */}
+      <GrammarReviewList items={reviewItems} />
 
       {/* Compact grid overview */}
       <div className="bg-white border border-border rounded-lg p-4 mb-8">

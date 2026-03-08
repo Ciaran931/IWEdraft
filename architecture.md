@@ -10,8 +10,8 @@ Input with Ease is a web-based English language learning platform designed aroun
 Core Sections
 Input — A library of readable texts in bilingual format (English + learner's native language)
 Vocab — A flashcard system powered by an SRS engine, with premade and custom decks
-Grammar — Structured lessons from A1 to C2, with quiz-based SRS and a visual mindmap
-Dashboard — A home screen showing progress, streak, and the grammar mindmap
+Grammar — Structured lessons from A1 to C2, with quiz-based SRS and a progress grid
+Dashboard — A home screen showing progress, streak, and grammar overview
 
 Tech Stack
 Layer
@@ -23,9 +23,6 @@ React-based, handles routing, SSR, and component architecture cleanly
 Backend / Auth / DB
 Supabase
 Provides auth, PostgreSQL database, and real-time capabilities
-Mindmap Visualisation
-D3.js (SVG)
-Generates organic stained-glass layout from grammar tree data
 SRS Algorithm
 SM-2 (custom implementation)
 Open algorithm; basis of Anki; well-understood and effective
@@ -521,7 +518,7 @@ Optional: reads a companion comprehensible input text (tagged with grammar_lesso
 Takes the multiple choice quiz at the bottom
 Score shown with explanations for incorrect answers
 Each quiz question inserted into srs_cards as a grammar card (if not already present)
-Mindmap cell for that lesson updates from grey to orange
+Grid cell for that lesson updates from grey to orange
 
 Grammar SRS — Quiz as Flashcard
 Grammar cards review exactly like they were originally taken — as a multiple choice question. The student sees the question and four options. After answering they rate difficulty. There is no blank flashcard format for grammar.
@@ -533,56 +530,21 @@ Build the lesson renderer against these
 Once structure is locked, use AI assistance to draft remaining lessons at scale
 A1/A2 will have approximately 30–50 modules each. B1 upward progressively fewer
 
-8. Grammar Mindmap
-Overview
-The mindmap is the visual centrepiece of the Grammar section and Dashboard. It displays all grammar modules from A1 to C2 as an SVG panel resembling stained glass — organic shapes colour-coded by the student's SRS progress.
+8. Grammar Progress Grid
+The grammar progress grid (GrammarGrid.tsx) displays all grammar lessons as a compact grid of colour-coded cells. Each cell represents one lesson and is coloured by the student's SRS progress:
 
 Colour States
-Colour
-Status
-Meaning
-Grey
-No card exists
-Student hasn't attempted this lesson yet
-Orange
-status: 'learning'
-Lesson completed, card in active review
-Green
-status: 'mature'
-Card interval > 21 days — confidently learned
+- Grey (#D0D0D0) — Not attempted (no srs_card exists)
+- Orange (#E8A850) — Learning (status: 'new' or 'learning')
+- Green (#6BBF6B) — Mature (status: 'mature')
 
-
-Data Structure
-The mindmap is driven by a tree structure. The visual never stores its own state — it reads live from srs_cards and renders accordingly.
-
-Grammar Tree:
-  Root
-  ├── A1
-  │   ├── Tenses
-  │   │   ├── Present Simple Positive  ← leaf = one lesson
-  │   │   └── Present Simple Negative
-  │   └── Nouns
-  │       └── Articles
-  ├── A2 ...
-  └── C2 ...
-
-Node colour logic:
-  no srs_card row for this lesson  →  grey
-  srs_card.status = 'new' or 'learning'  →  orange
-  srs_card.status = 'mature'  →  green
-
-Rendering — D3.js SVG
-D3.js generates the layout from the grammar tree data
-Each cell is an SVG polygon styled with fill colour based on lesson status
-Clicking a cell navigates to that grammar lesson
-Smooth CSS transitions when colour state changes after a review
-Fully responsive — scales cleanly at any viewport size
+The grid reads live from srs_cards and renders accordingly. Clicking a cell navigates to the grammar lesson. The grid is shown on both the Grammar page and the Dashboard.
 
 9. Dashboard
 V1 Contents
 The dashboard is the student's home screen. For V1 it displays:
 Streak counter — days studied consecutively
-Grammar mindmap — live progress visualisation (same component as Grammar section)
+Grammar progress grid — colour-coded overview of lesson status
 Vocab progress — donut chart by card status (New / Learning / Review / Mature)
 Cards due today — count of SRS reviews waiting across both Vocab and Grammar
 
@@ -600,7 +562,7 @@ SELECT status, COUNT(*) FROM srs_cards
 WHERE user_id = :uid AND card_type = 'vocab'
 GROUP BY status
 
--- Grammar progress for mindmap
+-- Grammar progress for grid
 SELECT content_id, status FROM srs_cards
 WHERE user_id = :uid AND card_type = 'grammar'
 
@@ -666,10 +628,9 @@ Quiz component
 Grammar cards inserted into SRS on lesson completion
 Grammar card review UI (multiple choice format)
 
-Phase 5 — Mindmap + Dashboard
-D3.js grammar tree layout
-SVG stained-glass mindmap with live colour states
-Dashboard: streak, mindmap, vocab donut, due count
+Phase 5 — Grammar Grid + Dashboard
+Grammar progress grid with live colour states
+Dashboard: streak, grammar grid, vocab donut, due count
 
 13. Explicitly Deferred (Post-V1)
 Feature
@@ -719,8 +680,8 @@ Flashcard definition
 Context-specific override if available, global definition as fallback
 Grammar lessons
 Freely accessible, no locking
-Mindmap rendering
-D3.js SVG, live colour from srs_cards status
+Grammar visualisation
+Progress grid, live colour from srs_cards status
 Lesson content
 JSON-driven, single renderer component for all lessons
 
@@ -745,7 +706,7 @@ No
 Registration form (email, password, native language picker)
 No
 /dashboard
-Home screen: streak, mindmap, vocab donut, due count
+Home screen: streak, grammar grid, vocab donut, due count
 Yes
 /input
 Text library listing page with level filter
@@ -760,7 +721,7 @@ Yes
 Flashcard review session (filters by deck via query param ?deck=id)
 Yes
 /grammar
-Grammar section home: mindmap + lesson list grouped by level
+Grammar section home: progress grid + lesson list grouped by level
 Yes
 /grammar/[lesson-id]
 Lesson content + quiz at bottom
@@ -790,7 +751,7 @@ app/
       page.tsx            // Deck listing
       review/page.tsx     // Review session
     grammar/
-      page.tsx            // Mindmap + lesson list
+      page.tsx            // Progress grid + lesson list
       [lessonId]/page.tsx // Lesson + quiz
       review/page.tsx     // Grammar review session
     settings/page.tsx
@@ -811,7 +772,7 @@ components/
   vocab/Flashcard.tsx
   grammar/LessonRenderer.tsx
   grammar/QuizComponent.tsx
-  grammar/Mindmap.tsx      // D3.js stained-glass SVG
+  grammar/GrammarGrid.tsx  // Colour-coded progress grid
   dashboard/StreakCounter.tsx
   dashboard/VocabDonut.tsx
   ui/                      // Shared UI primitives (buttons, cards, modals)
@@ -934,25 +895,6 @@ The flashcard review session, quiz state, word panel data, and sentence highligh
 3. Server Components for Initial Data
 Text library listings, lesson content, and dashboard stats are fetched in server components and passed as props. No client-side state needed for read-only data.
 
-6. Mindmap Layout Specification
-The stained-glass mindmap should be built using a D3.js Voronoi treemap. This produces the irregular, organic cell shapes that resemble stained glass panels. Each cell represents one grammar lesson.
-Algorithm
-Use the d3-voronoi-treemap library (npm: d3-voronoi-treemap)
-Input: the grammar tree as hierarchical data, with leaf nodes being individual lessons
-D3 computes a Voronoi tessellation weighted by a uniform value (all lessons equal size)
-Each cell is rendered as an SVG <path> element with rounded corners (use a clip path or corner rounding on the polygon)
-Cells are grouped visually by CEFR level (A1 cells cluster together, A2 together, etc.)
-Visual Styling
-Cell fill colour is determined by lesson status (grey #D0D0D0 = not attempted, orange #E8A850 = learning, green #6BBF6B = mature)
-Cell stroke: 2px white (#FFFFFF) to create the stained-glass leading effect
-Each cell has a small text label showing the lesson title, sized to fit within the cell
-On hover: cell brightens slightly (filter: brightness(1.1)) and shows a tooltip with full lesson title + status
-On click: navigate to /grammar/[lesson-id]
-Responsive Behaviour
-Render the SVG with a viewBox and let it scale to fill its container. On mobile, the mindmap should be horizontally scrollable if it becomes too small to read. Minimum readable width: 600px.
-Colour Logic Per Lesson
-A lesson may have multiple quiz questions, each becoming its own srs_card. To determine the lesson’s colour on the mindmap, use the worst status among its cards. If any card is in ‘learning’ or ‘new’, the lesson is orange. Only when every card for that lesson is ‘mature’ does the lesson turn green. If no cards exist for the lesson, it is grey.
-
 
 7. Business Logic Clarifications
 Deck Assignment for “Add to Flashcards”
@@ -977,7 +919,7 @@ On sub-pages (e.g., /input/[text-id] or /grammar/[lesson-id]), show a back arrow
 
 9. Loading, Empty, and Error States
 Loading
-Use skeleton loaders (grey pulsing rectangles matching the layout shape) for all data-dependent content. Never show a blank page. The mindmap should show grey placeholder cells while loading.
+Use skeleton loaders (grey pulsing rectangles matching the layout shape) for all data-dependent content. Never show a blank page. The grammar grid should show grey placeholder cells while loading.
 Empty States (one message per context)
 Context
 Message
@@ -992,7 +934,7 @@ Vocab deck listing: no custom deck yet
 Flashcard review: queue empty
 “No cards due right now. Come back later!” with a button back to /vocab
 Grammar: no lessons attempted
-All mindmap cells show grey. No special message needed — the grey state IS the empty state
+All grid cells show grey. No special message needed — the grey state IS the empty state
 
 Error States
 If a Supabase query fails, show a simple inline error banner: “Something went wrong. Please try again.” with a retry button. Do not crash the page. Log the error to the browser console.
@@ -1015,7 +957,7 @@ Required seed data:
 3–5 text_word_overrides entries demonstrating context-specific definitions
 1 premade deck (“100 Most Common Words”) containing the first 50 vocab words as srs_cards
 5 grammar lessons (all A1): Present Simple Positive, Present Simple Negative, Present Simple Questions, Articles, Plural Nouns. Each with 3–5 explanation blocks and 4–5 quiz questions
-A complete grammar tree JSON file at lib/grammar-tree.ts that defines the full CEFR hierarchy (A1 through C2) with categories and lesson slugs. Lessons without content yet should still appear in the tree (they will render as grey cells on the mindmap and link to a “Lesson coming soon” placeholder page)
+A complete grammar tree JSON file at lib/grammar-tree.ts that defines the full CEFR hierarchy (A1 through C2) with categories and lesson slugs. Lessons without content yet should still appear in the tree (they will render as grey cells on the grid and link to a “Lesson coming soon” placeholder page)
 
 12. Environment & Deployment
 Environment Variables (.env.local)
@@ -1036,7 +978,6 @@ Node.js: 18 or later
 Next.js: 14 (App Router)
 @supabase/supabase-js: latest
 @supabase/ssr: latest
-d3: latest + d3-voronoi-treemap: latest
 tailwindcss: latest
 TypeScript: strict mode enabled
 
@@ -1076,6 +1017,6 @@ Vocab review session loads due cards, flips them, and accepts ratings
 Rating a card updates its due_date (verifiable in Supabase dashboard)
 Grammar lesson renders explanation blocks and quiz
 Completing a quiz creates grammar srs_cards
-Mindmap renders with cells and correct colours based on card status
+Grammar grid renders with cells and correct colours based on card status
 Dashboard shows streak, due count, and vocab donut chart
 Navigation works on both desktop and mobile widths

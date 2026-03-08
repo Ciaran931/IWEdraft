@@ -96,7 +96,12 @@ export default async function VocabPage() {
             >
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <h2 className="font-medium text-ink truncate">{deck.name}</h2>
+                  <Link
+                    href={`/vocab/${deck.id}`}
+                    className="font-medium text-ink truncate hover:text-terracotta transition-colors"
+                  >
+                    {deck.name}
+                  </Link>
                   <span className="text-xs text-muted border border-border rounded px-1.5 py-0.5 capitalize">
                     {deck.deck_type}
                   </span>
