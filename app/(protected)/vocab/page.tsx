@@ -29,9 +29,8 @@ export default async function VocabPage() {
   const { data: decks } = await supabase
     .from('srs_decks')
     .select('*')
-    .eq('deck_type', 'custom')
-    .eq('user_id', authUser.id)
-    .order('created_at')
+    .or(`and(deck_type.eq.premade,user_id.is.null),and(deck_type.eq.custom,user_id.eq.${authUser.id})`)
+    .order('deck_type')
 
   const { data: cardCounts } = await supabase
     .from('srs_cards')
