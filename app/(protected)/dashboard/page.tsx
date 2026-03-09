@@ -92,10 +92,15 @@ export default async function DashboardPage() {
   // Build 30-day forecast buckets
   const forecastBuckets: { date: string; count: number }[] = []
   const bucketMap = new Map<string, number>()
+  const todayKey = new Date().toISOString().slice(0, 10)
+
   forecastCards?.forEach(card => {
-    const day = card.due_date.slice(0, 10) // YYYY-MM-DD
-    bucketMap.set(day, (bucketMap.get(day) ?? 0) + 1)
+    const day = card.due_date.slice(0, 10)
+    // Overdue cards (before today) count as today
+    const key = day < todayKey ? todayKey : day
+    bucketMap.set(key, (bucketMap.get(key) ?? 0) + 1)
   })
+
   for (let i = 0; i < 30; i++) {
     const d = new Date()
     d.setDate(d.getDate() + i)
@@ -193,7 +198,7 @@ export default async function DashboardPage() {
       </details>
 
       {/* SRS Forecast */}
-      {forecastBuckets.some(b => b.count > 0) && (
+      {(forecastCards?.length ?? 0) > 0 && (
         <div className="bg-surface border border-border rounded-lg p-6 mb-8">
           <h2 className="font-serif text-lg mb-4">Upcoming Reviews</h2>
           <SrsForecast buckets={forecastBuckets} />
