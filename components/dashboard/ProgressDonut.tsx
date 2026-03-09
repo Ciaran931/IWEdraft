@@ -69,9 +69,6 @@ export default function ProgressDonut({
             strokeLinecap="butt"
           />
         ))}
-        <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="middle" fontSize="14" fontWeight="600" fill="rgb(var(--color-ink))">
-          {total}
-        </text>
       </svg>
 
       <div className="space-y-1">
