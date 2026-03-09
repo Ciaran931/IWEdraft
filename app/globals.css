@@ -57,22 +57,22 @@
     --color-word-selected: 78 170 185;
     --color-word-highlight: 78 170 185;
 
-    --color-rating-again-bg: 90 40 30;
-    --color-rating-again-text: 232 160 140;
-    --color-rating-again-hover: 110 50 38;
-    --color-rating-again-border: 120 60 45;
-    --color-rating-hard-bg: 90 70 30;
-    --color-rating-hard-text: 240 200 120;
-    --color-rating-hard-hover: 110 85 38;
-    --color-rating-hard-border: 120 90 45;
-    --color-rating-good-bg: 30 60 80;
-    --color-rating-good-text: 140 200 230;
-    --color-rating-good-hover: 38 75 100;
-    --color-rating-good-border: 45 85 110;
-    --color-rating-easy-bg: 30 70 40;
-    --color-rating-easy-text: 140 220 155;
-    --color-rating-easy-hover: 38 85 50;
-    --color-rating-easy-border: 45 95 58;
+    --color-rating-again-bg: 70 46 38;
+    --color-rating-again-text: 230 145 120;
+    --color-rating-again-hover: 84 56 46;
+    --color-rating-again-border: 135 85 68;
+    --color-rating-hard-bg: 70 56 34;
+    --color-rating-hard-text: 238 195 110;
+    --color-rating-hard-hover: 84 68 42;
+    --color-rating-hard-border: 135 108 58;
+    --color-rating-good-bg: 38 54 68;
+    --color-rating-good-text: 128 192 226;
+    --color-rating-good-hover: 46 66 84;
+    --color-rating-good-border: 76 128 168;
+    --color-rating-easy-bg: 38 60 44;
+    --color-rating-easy-text: 128 210 148;
+    --color-rating-easy-hover: 46 74 54;
+    --color-rating-easy-border: 76 150 96;
   }
 
   html {
