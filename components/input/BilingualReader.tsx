@@ -306,7 +306,7 @@ export default function BilingualReader({ text, translation, user, comprehension
           ) : (
             <div className="space-y-5">
               {discussionQuestions.map((q, i) => (
-                <div key={q.id} className="bg-surface rounded border border-border/60 shadow-sm px-6 py-5">
+                <div key={q.id} className="paper-texture bg-surface rounded border border-border/60 shadow-sm px-6 py-5">
                   <p className="font-serif text-sm text-muted text-center">{i + 1}.</p>
                   <p className="mt-1 text-ink leading-relaxed">{q.question}</p>
                 </div>
