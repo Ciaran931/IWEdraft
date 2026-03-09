@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 
 interface GrammarReviewItem {
@@ -42,10 +45,16 @@ function isDueNow(dateStr: string) {
   return new Date(dateStr) <= new Date()
 }
 
+const VISIBLE_COUNT = 3
+
 export default function GrammarReviewList({ items }: { items: GrammarReviewItem[] }) {
+  const [expanded, setExpanded] = useState(false)
+
   if (items.length === 0) return null
 
   const dueNowCount = items.filter(i => isDueNow(i.dueDate)).length
+  const visible = expanded ? items : items.slice(0, VISIBLE_COUNT)
+  const hasMore = items.length > VISIBLE_COUNT
 
   return (
     <div className="bg-surface border border-border rounded-lg p-4 mb-8">
@@ -62,7 +71,7 @@ export default function GrammarReviewList({ items }: { items: GrammarReviewItem[
       </div>
 
       <div className="divide-y divide-border">
-        {items.map(item => {
+        {visible.map(item => {
           const due = isDueNow(item.dueDate)
 
           return (
@@ -104,6 +113,15 @@ export default function GrammarReviewList({ items }: { items: GrammarReviewItem[
           )
         })}
       </div>
+
+      {hasMore && (
+        <button
+          onClick={() => setExpanded(e => !e)}
+          className="mt-3 text-sm text-terracotta hover:underline transition-colors"
+        >
+          {expanded ? 'Show less' : `Show all (${items.length})`}
+        </button>
+      )}
     </div>
   )
 }
