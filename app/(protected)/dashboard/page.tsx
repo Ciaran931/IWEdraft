@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import StreakCounter from '@/components/dashboard/StreakCounter'
 import ProgressDonut from '@/components/dashboard/ProgressDonut'
 import SrsForecast from '@/components/dashboard/SrsForecast'
+import StatusHelpButton from '@/components/dashboard/StatusHelpButton'
 import GrammarGrid from '@/components/grammar/GrammarGrid'
 import Link from 'next/link'
 
@@ -118,7 +119,10 @@ export default async function DashboardPage() {
         <StreakCounter days={streakDays} />
 
         <div className="bg-surface border border-border rounded-lg p-4">
-          <p className="text-xs text-muted uppercase tracking-wide mb-3">Vocab Progress</p>
+          <div className="flex items-center justify-between mb-3">
+            <p className="text-xs text-muted uppercase tracking-wide">Vocab Progress</p>
+            <StatusHelpButton />
+          </div>
           {Object.values(statusCounts).every(v => v === 0) ? (
             <p className="text-sm text-muted">
               <Link href="/input" className="text-terracotta hover:underline">
@@ -143,7 +147,10 @@ export default async function DashboardPage() {
         </div>
 
         <div className="col-span-2 md:col-span-1 bg-surface border border-border rounded-lg p-4">
-          <p className="text-xs text-muted uppercase tracking-wide mb-3">Grammar Progress</p>
+          <div className="flex items-center justify-between mb-3">
+            <p className="text-xs text-muted uppercase tracking-wide">Grammar Progress</p>
+            <StatusHelpButton />
+          </div>
           {Object.values(grammarStatusCounts).every(v => v === 0) ? (
             <p className="text-sm text-muted">
               Start{' '}
@@ -169,34 +176,6 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      {/* SRS status guide */}
-      <details className="mb-8 text-sm">
-        <summary className="text-muted cursor-pointer hover:text-ink transition-colors">
-          What do the statuses mean?
-        </summary>
-        <div className="mt-2 grid grid-cols-2 md:grid-cols-4 gap-3">
-          <div className="bg-surface border border-border rounded p-3">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-srs-new mr-1.5 align-middle" />
-            <span className="font-medium text-ink">New</span>
-            <p className="text-xs text-muted mt-1">Not yet studied. Waiting for your first review.</p>
-          </div>
-          <div className="bg-surface border border-border rounded p-3">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-srs-learning mr-1.5 align-middle" />
-            <span className="font-medium text-ink">Learning</span>
-            <p className="text-xs text-muted mt-1">Recently started. Short review intervals while it sticks.</p>
-          </div>
-          <div className="bg-surface border border-border rounded p-3">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-srs-review mr-1.5 align-middle" />
-            <span className="font-medium text-ink">Review</span>
-            <p className="text-xs text-muted mt-1">Graduated from learning. Reviewed on a growing schedule.</p>
-          </div>
-          <div className="bg-surface border border-border rounded p-3">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-srs-mature mr-1.5 align-middle" />
-            <span className="font-medium text-ink">Mature</span>
-            <p className="text-xs text-muted mt-1">Well known. Long intervals — you&apos;ve got this one down.</p>
-          </div>
-        </div>
-      </details>
 
       {/* SRS Forecast */}
       {(forecastCards?.length ?? 0) > 0 && (
