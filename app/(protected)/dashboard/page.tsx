@@ -11,7 +11,31 @@ export default async function DashboardPage() {
     data: { user: authUser },
   } = await supabase.auth.getUser()
 
-  if (!authUser) return null
+  if (!authUser) {
+    return (
+      <div className="p-6 max-w-6xl mx-auto w-full">
+        <h1 className="font-serif text-2xl mb-2">Welcome to Input With Ease</h1>
+        <p className="text-muted mb-6">
+          Build your English through comprehensible input. Read texts at your level, discover new
+          vocabulary in context, and track your progress with spaced repetition.
+        </p>
+        <div className="flex gap-4">
+          <Link
+            href="/input"
+            className="inline-block bg-terracotta text-white px-5 py-2 rounded hover:opacity-90"
+          >
+            Start Reading
+          </Link>
+          <Link
+            href="/login"
+            className="inline-block border border-border px-5 py-2 rounded text-ink hover:bg-gray-50"
+          >
+            Sign in
+          </Link>
+        </div>
+      </div>
+    )
+  }
 
   const [{ data: profile }, { data: dueCards }, { data: vocabStatus }, { data: grammarCards }] =
     await Promise.all([
