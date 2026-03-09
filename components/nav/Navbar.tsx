@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useAuth } from '@/app/(protected)/AuthProvider'
 import {
-  HomeIcon,
   BookOpenIcon,
   RectangleStackIcon,
   AcademicCapIcon,
@@ -14,7 +13,6 @@ import {
 import ThemeToggle from './ThemeToggle'
 
 const NAV_ITEMS = [
-  { href: '/dashboard', label: 'Dashboard', Icon: HomeIcon },
   { href: '/input', label: 'Input', Icon: BookOpenIcon },
   { href: '/vocab', label: 'Vocab', Icon: RectangleStackIcon },
   { href: '/grammar', label: 'Grammar', Icon: AcademicCapIcon },
@@ -32,7 +30,7 @@ export default function Navbar() {
     <>
       {/* Desktop top navbar */}
       <nav className="hidden md:flex items-center justify-between px-6 py-0 bg-paper border-b border-border">
-        <Link href="/" className="font-serif font-bold text-lg text-ink py-3 hover:text-terracotta transition-colors">Input With Ease</Link>
+        <Link href="/dashboard" className="font-serif font-bold text-lg text-ink py-3 hover:text-terracotta transition-colors">Input With Ease</Link>
 
         <div className="flex items-center">
           {NAV_ITEMS.map(({ href, label }) => (
