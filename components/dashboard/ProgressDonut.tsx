@@ -31,7 +31,7 @@ export default function ProgressDonut({
   const strokeWidth = 14
 
   // Build arc segments
-  let cumulativeAngle = -90 // start at top
+  let cumulativeAngle = 0 // start at top (polarToCartesian already offsets -90°)
   const segments = statuses
     .filter(s => (counts[s] ?? 0) > 0)
     .map(s => {
@@ -64,7 +64,7 @@ export default function ProgressDonut({
             key={seg.key}
             d={arcPath(cx, cy, r, seg.start, seg.end)}
             fill="none"
-            stroke={STATUS_COLORS[seg.key]}
+            style={{ stroke: STATUS_COLORS[seg.key] }}
             strokeWidth={strokeWidth}
             strokeLinecap="butt"
           />
