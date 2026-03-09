@@ -238,29 +238,6 @@ async function seed() {
     else console.log(`  ${grammarQs.length} grammar questions inserted`)
   }
 
-  // --- Premade Deck ---
-  console.log('Creating premade deck...')
-  const { error: deckError } = await supabase
-    .from('srs_decks')
-    .upsert(
-      {
-        name: '100 Most Common Words',
-        deck_type: 'premade',
-        language_code: 'en',
-        is_locked: false,
-        user_id: null,
-      },
-      { onConflict: 'id', ignoreDuplicates: true }
-    )
-    .select('id')
-    .single()
-
-  if (deckError && !deckError.message.includes('duplicate')) {
-    console.error('srs_decks error:', deckError.message)
-  } else {
-    console.log('  Premade deck created')
-  }
-
   console.log('\nSeed complete!')
 }
 
