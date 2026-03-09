@@ -6,6 +6,7 @@ import WordPanel from './WordPanel'
 import MobileWordTooltip from './MobileWordTooltip'
 import ComprehensionQuiz from './ComprehensionQuiz'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import Link from 'next/link'
 import type { Text, TextTranslation, TextQuestion, VocabWord, TextWordOverride, User } from '@/lib/types'
 
 interface ClickedWord {
@@ -148,34 +149,43 @@ export default function BilingualReader({ text, translation, user, comprehension
 
   return (
     <div className="flex flex-col flex-1 overflow-hidden">
-      {/* Tab bar */}
-      <div className="flex items-center border-b border-border bg-paper flex-shrink-0">
+      {/* Header row */}
+      <div className="flex items-center px-6 py-2 flex-shrink-0">
+        <Link href="/input" className="text-muted hover:text-ink transition-colors text-sm">
+          ← Library
+        </Link>
+        <span className="text-border mx-2">|</span>
+        <h1 className="font-serif text-base text-ink truncate">{text.title}</h1>
+        <span className="text-xs px-2 py-0.5 rounded bg-sidebar text-muted border border-border ml-auto">
+          {text.level}
+        </span>
+        <button
+          onClick={() => setHideTranslation(h => !h)}
+          className={`ml-3 text-xs px-3 py-1.5 rounded border transition-colors ${
+            hideTranslation
+              ? 'bg-terracotta text-white border-terracotta'
+              : 'bg-paper text-muted border-border hover:border-terracotta'
+          }`}
+        >
+          {hideTranslation ? 'Focus ON' : 'Focus'}
+        </button>
+      </div>
+
+      {/* Tab selector */}
+      <div className="flex justify-center gap-4 px-6 pb-3 flex-shrink-0">
         {(['read', 'understand', 'discuss'] as const).map(tab => (
           <button
             key={tab}
             onClick={() => { dismissTooltip(); setActiveTab(tab) }}
-            className={`px-5 py-3 text-sm font-medium capitalize border-b-2 transition-colors ${
+            className={`px-6 py-2 text-sm font-medium capitalize rounded border transition-colors ${
               activeTab === tab
-                ? 'border-terracotta text-terracotta'
-                : 'border-transparent text-muted hover:text-ink'
+                ? 'bg-terracotta text-white border-terracotta'
+                : 'bg-surface text-muted border-border hover:text-ink hover:border-ink'
             }`}
           >
             {tab}
           </button>
         ))}
-
-        <div className="ml-auto px-4">
-          <button
-            onClick={() => setHideTranslation(h => !h)}
-            className={`text-xs px-3 py-1.5 rounded border transition-colors ${
-              hideTranslation
-                ? 'bg-terracotta text-white border-terracotta'
-                : 'bg-paper text-muted border-border hover:border-terracotta'
-            }`}
-          >
-            {hideTranslation ? 'Focus ON' : 'Focus'}
-          </button>
-        </div>
       </div>
 
       {activeTab === 'read' && (
