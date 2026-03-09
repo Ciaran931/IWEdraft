@@ -149,43 +149,42 @@ export default function BilingualReader({ text, translation, user, comprehension
 
   return (
     <div className="flex flex-col flex-1 overflow-hidden">
-      {/* Header row */}
-      <div className="flex items-center px-6 py-2 flex-shrink-0">
+      {/* Header bar */}
+      <div className="flex items-center px-6 py-2 border-b border-border flex-shrink-0">
         <Link href="/input" className="text-muted hover:text-ink transition-colors text-sm">
           ← Library
         </Link>
         <span className="text-border mx-2">|</span>
         <h1 className="font-serif text-base text-ink truncate">{text.title}</h1>
-        <span className="text-xs px-2 py-0.5 rounded bg-sidebar text-muted border border-border ml-auto">
-          {text.level}
-        </span>
-        <button
-          onClick={() => setHideTranslation(h => !h)}
-          className={`ml-3 text-xs px-3 py-1.5 rounded border transition-colors ${
-            hideTranslation
-              ? 'bg-terracotta text-white border-terracotta'
-              : 'bg-paper text-muted border-border hover:border-terracotta'
-          }`}
-        >
-          {hideTranslation ? 'Focus ON' : 'Focus'}
-        </button>
-      </div>
 
-      {/* Tab selector */}
-      <div className="flex justify-center gap-4 px-6 pb-3 flex-shrink-0">
-        {(['read', 'understand', 'discuss'] as const).map(tab => (
+        <div className="flex items-center gap-2 ml-auto">
+          {(['read', 'understand', 'discuss'] as const).map(tab => (
+            <button
+              key={tab}
+              onClick={() => { dismissTooltip(); setActiveTab(tab) }}
+              className={`px-4 py-1.5 text-xs font-medium capitalize rounded border transition-colors ${
+                activeTab === tab
+                  ? 'bg-terracotta text-white border-terracotta'
+                  : 'bg-surface text-muted border-border hover:text-ink hover:border-ink'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+          <span className="text-xs px-2 py-0.5 rounded bg-sidebar text-muted border border-border">
+            {text.level}
+          </span>
           <button
-            key={tab}
-            onClick={() => { dismissTooltip(); setActiveTab(tab) }}
-            className={`px-6 py-2 text-sm font-medium capitalize rounded border transition-colors ${
-              activeTab === tab
+            onClick={() => setHideTranslation(h => !h)}
+            className={`text-xs px-3 py-1.5 rounded border transition-colors ${
+              hideTranslation
                 ? 'bg-terracotta text-white border-terracotta'
-                : 'bg-surface text-muted border-border hover:text-ink hover:border-ink'
+                : 'bg-paper text-muted border-border hover:border-terracotta'
             }`}
           >
-            {tab}
+            {hideTranslation ? 'Focus ON' : 'Focus'}
           </button>
-        ))}
+        </div>
       </div>
 
       {activeTab === 'read' && (
