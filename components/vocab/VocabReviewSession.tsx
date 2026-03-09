@@ -6,11 +6,11 @@ import { createClient } from '@/lib/supabase/client'
 import { applySrs } from '@/lib/srs'
 import type { SrsCard, Rating } from '@/lib/types'
 
-const RATING_BUTTONS: { rating: Rating; label: string; color: string }[] = [
-  { rating: 0, label: 'Again', color: 'bg-red-100 text-red-700 hover:bg-red-200 border-red-200' },
-  { rating: 1, label: 'Hard', color: 'bg-orange-100 text-orange-700 hover:bg-orange-200 border-orange-200' },
-  { rating: 2, label: 'Good', color: 'bg-blue-100 text-blue-700 hover:bg-blue-200 border-blue-200' },
-  { rating: 3, label: 'Easy', color: 'bg-green-100 text-green-700 hover:bg-green-200 border-green-200' },
+const RATING_BUTTONS: { rating: Rating; label: string; style: { bg: string; text: string; hover: string; border: string } }[] = [
+  { rating: 0, label: 'Again', style: { bg: '#F9E4DF', text: '#B5573A', hover: '#F2CCBF', border: '#E8B5A4' } },
+  { rating: 1, label: 'Hard', style: { bg: '#FDF0DD', text: '#A67830', hover: '#F8E3C0', border: '#E8CFA0' } },
+  { rating: 2, label: 'Good', style: { bg: '#DDEEF6', text: '#3A7FA8', hover: '#C8E2F0', border: '#A8CDE0' } },
+  { rating: 3, label: 'Easy', style: { bg: '#DFF5E3', text: '#3A8A4A', hover: '#C8EACE', border: '#A4D8AD' } },
 ]
 
 export default function VocabReviewSession({
@@ -146,12 +146,15 @@ export default function VocabReviewSession({
       {/* Rating buttons */}
       {flipped && (
         <div className="grid grid-cols-4 gap-2">
-          {RATING_BUTTONS.map(({ rating, label, color }) => (
+          {RATING_BUTTONS.map(({ rating, label, style }) => (
             <button
               key={rating}
               onClick={() => handleRating(rating)}
               disabled={submitting}
-              className={`py-2.5 rounded border text-sm font-medium transition-colors disabled:opacity-50 ${color}`}
+              className="py-2.5 rounded border text-sm font-medium transition-colors disabled:opacity-50"
+              style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
+              onMouseEnter={e => (e.currentTarget.style.backgroundColor = style.hover)}
+              onMouseLeave={e => (e.currentTarget.style.backgroundColor = style.bg)}
             >
               {label}
             </button>
