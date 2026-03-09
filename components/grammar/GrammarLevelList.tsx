@@ -1,6 +1,3 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
 import { GRAMMAR_TREE } from '@/lib/grammar-tree'
 
@@ -11,19 +8,13 @@ interface Props {
   levelColors: Record<string, string>
 }
 
-const INITIAL_COUNT = 3
-
 export default function GrammarLevelList({ statusMap, dueSet, lessonSet, levelColors }: Props) {
-  const [expanded, setExpanded] = useState(false)
   const dueSetLookup = new Set(dueSet)
   const lessonSetLookup = new Set(lessonSet)
 
-  const visible = expanded ? GRAMMAR_TREE : GRAMMAR_TREE.slice(0, INITIAL_COUNT)
-  const hasMore = GRAMMAR_TREE.length > INITIAL_COUNT
-
   return (
     <div className="space-y-8">
-      {visible.map(levelData => (
+      {GRAMMAR_TREE.map(levelData => (
         <div key={levelData.level}>
           <h2 className="font-serif text-xl mb-4 flex items-center gap-2">
             <span
@@ -80,15 +71,6 @@ export default function GrammarLevelList({ statusMap, dueSet, lessonSet, levelCo
           ))}
         </div>
       ))}
-
-      {hasMore && (
-        <button
-          onClick={() => setExpanded(e => !e)}
-          className="text-sm text-terracotta hover:underline transition-colors"
-        >
-          {expanded ? 'Show less' : `Show all levels (${GRAMMAR_TREE.length})`}
-        </button>
-      )}
     </div>
   )
 }
