@@ -28,7 +28,7 @@ export default async function DashboardPage() {
           </Link>
           <Link
             href="/login"
-            className="inline-block border border-border px-5 py-2 rounded text-ink hover:bg-gray-50"
+            className="inline-block border border-border px-5 py-2 rounded text-ink hover:bg-sidebar"
           >
             Sign in
           </Link>
@@ -88,7 +88,7 @@ export default async function DashboardPage() {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
         <StreakCounter days={streakDays} />
 
-        <div className="bg-white border border-border rounded-lg p-4">
+        <div className="bg-surface border border-border rounded-lg p-4">
           <p className="text-xs text-muted uppercase tracking-wide mb-3">Vocab Progress</p>
           {Object.values(statusCounts).every(v => v === 0) ? (
             <p className="text-sm text-muted">
@@ -113,7 +113,7 @@ export default async function DashboardPage() {
           )}
         </div>
 
-        <div className="col-span-2 md:col-span-1 bg-white border border-border rounded-lg p-4">
+        <div className="col-span-2 md:col-span-1 bg-surface border border-border rounded-lg p-4">
           <p className="text-xs text-muted uppercase tracking-wide mb-3">Grammar Progress</p>
           {Object.values(grammarStatusCounts).every(v => v === 0) ? (
             <p className="text-sm text-muted">
@@ -141,7 +141,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* Grammar Grid */}
-      <div className="bg-white border border-border rounded-lg p-6">
+      <div className="bg-surface border border-border rounded-lg p-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-serif text-lg">Grammar Progress</h2>
           <Link href="/grammar" className="text-sm text-terracotta hover:underline">

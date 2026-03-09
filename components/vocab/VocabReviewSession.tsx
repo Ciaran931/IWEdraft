@@ -6,12 +6,21 @@ import { createClient } from '@/lib/supabase/client'
 import { applySrs } from '@/lib/srs'
 import type { SrsCard, Rating } from '@/lib/types'
 
-const RATING_BUTTONS: { rating: Rating; label: string; style: { bg: string; text: string; hover: string; border: string } }[] = [
-  { rating: 0, label: 'Again', style: { bg: '#F9E4DF', text: '#B5573A', hover: '#F2CCBF', border: '#E8B5A4' } },
-  { rating: 1, label: 'Hard', style: { bg: '#FDF0DD', text: '#A67830', hover: '#F8E3C0', border: '#E8CFA0' } },
-  { rating: 2, label: 'Good', style: { bg: '#DDEEF6', text: '#3A7FA8', hover: '#C8E2F0', border: '#A8CDE0' } },
-  { rating: 3, label: 'Easy', style: { bg: '#DFF5E3', text: '#3A8A4A', hover: '#C8EACE', border: '#A4D8AD' } },
+const RATING_BUTTONS: { rating: Rating; label: string; cssKey: string }[] = [
+  { rating: 0, label: 'Again', cssKey: 'again' },
+  { rating: 1, label: 'Hard', cssKey: 'hard' },
+  { rating: 2, label: 'Good', cssKey: 'good' },
+  { rating: 3, label: 'Easy', cssKey: 'easy' },
 ]
+
+function ratingStyle(key: string) {
+  return {
+    bg: `rgb(var(--color-rating-${key}-bg))`,
+    text: `rgb(var(--color-rating-${key}-text))`,
+    hover: `rgb(var(--color-rating-${key}-hover))`,
+    border: `rgb(var(--color-rating-${key}-border))`,
+  }
+}
 
 export default function VocabReviewSession({
   cards,
@@ -96,7 +105,7 @@ export default function VocabReviewSession({
       {/* Card */}
       <div className="flex-1 flex flex-col">
         {/* Front */}
-        <div className="bg-white border border-border rounded-xl p-8 mb-4 text-center flex-1 flex flex-col items-center justify-center">
+        <div className="bg-surface border border-border rounded-xl p-8 mb-4 text-center flex-1 flex flex-col items-center justify-center">
           {word ? (
             <>
               <p className="font-serif text-3xl text-ink mb-1">{word.word}</p>
@@ -146,19 +155,22 @@ export default function VocabReviewSession({
       {/* Rating buttons */}
       {flipped && (
         <div className="grid grid-cols-4 gap-2">
-          {RATING_BUTTONS.map(({ rating, label, style }) => (
-            <button
-              key={rating}
-              onClick={() => handleRating(rating)}
-              disabled={submitting}
-              className="py-2.5 rounded border text-sm font-medium transition-colors disabled:opacity-50"
-              style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
-              onMouseEnter={e => (e.currentTarget.style.backgroundColor = style.hover)}
-              onMouseLeave={e => (e.currentTarget.style.backgroundColor = style.bg)}
-            >
-              {label}
-            </button>
-          ))}
+          {RATING_BUTTONS.map(({ rating, label, cssKey }) => {
+            const style = ratingStyle(cssKey)
+            return (
+              <button
+                key={rating}
+                onClick={() => handleRating(rating)}
+                disabled={submitting}
+                className="py-2.5 rounded border text-sm font-medium transition-colors disabled:opacity-50"
+                style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = style.hover)}
+                onMouseLeave={e => (e.currentTarget.style.backgroundColor = style.bg)}
+              >
+                {label}
+              </button>
+            )
+          })}
         </div>
       )}
     </div>

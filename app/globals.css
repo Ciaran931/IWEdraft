@@ -3,12 +3,84 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-paper: 253 251 247;
+    --color-ink: 44 44 44;
+    --color-muted: 107 107 107;
+    --color-sidebar: 244 240 234;
+    --color-border: 217 211 201;
+    --color-surface: 255 255 255;
+    --color-terracotta: 181 87 58;
+    --color-terracotta-light: 212 115 90;
+    --color-terracotta-muted: 200 136 110;
+    --color-srs-new: 107 127 215;
+    --color-srs-learning: 232 168 80;
+    --color-srs-review: 91 164 207;
+    --color-srs-mature: 107 191 107;
+
+    --color-word-selected: 46 125 140;
+    --color-word-highlight: 46 125 140;
+
+    --color-rating-again-bg: 249 228 223;
+    --color-rating-again-text: 181 87 58;
+    --color-rating-again-hover: 242 204 191;
+    --color-rating-again-border: 232 181 164;
+    --color-rating-hard-bg: 253 240 221;
+    --color-rating-hard-text: 166 120 48;
+    --color-rating-hard-hover: 248 227 192;
+    --color-rating-hard-border: 232 207 160;
+    --color-rating-good-bg: 221 238 246;
+    --color-rating-good-text: 58 127 168;
+    --color-rating-good-hover: 200 226 240;
+    --color-rating-good-border: 168 205 224;
+    --color-rating-easy-bg: 223 245 227;
+    --color-rating-easy-text: 58 138 74;
+    --color-rating-easy-hover: 200 234 206;
+    --color-rating-easy-border: 164 216 173;
+  }
+
+  .dark {
+    --color-paper: 42 31 26;
+    --color-ink: 240 232 224;
+    --color-muted: 168 152 136;
+    --color-sidebar: 53 42 34;
+    --color-border: 74 60 48;
+    --color-surface: 53 42 34;
+    --color-terracotta: 212 115 90;
+    --color-terracotta-light: 232 137 110;
+    --color-terracotta-muted: 200 136 110;
+    --color-srs-new: 139 159 231;
+    --color-srs-learning: 240 188 106;
+    --color-srs-review: 123 184 223;
+    --color-srs-mature: 139 208 139;
+
+    --color-word-selected: 78 170 185;
+    --color-word-highlight: 78 170 185;
+
+    --color-rating-again-bg: 90 40 30;
+    --color-rating-again-text: 232 160 140;
+    --color-rating-again-hover: 110 50 38;
+    --color-rating-again-border: 120 60 45;
+    --color-rating-hard-bg: 90 70 30;
+    --color-rating-hard-text: 240 200 120;
+    --color-rating-hard-hover: 110 85 38;
+    --color-rating-hard-border: 120 90 45;
+    --color-rating-good-bg: 30 60 80;
+    --color-rating-good-text: 140 200 230;
+    --color-rating-good-hover: 38 75 100;
+    --color-rating-good-border: 45 85 110;
+    --color-rating-easy-bg: 30 70 40;
+    --color-rating-easy-text: 140 220 155;
+    --color-rating-easy-hover: 38 85 50;
+    --color-rating-easy-border: 45 95 58;
+  }
+
   html {
     @apply text-ink;
   }
 
   body {
-    @apply bg-paper font-sans;
+    @apply bg-paper font-sans transition-colors duration-200;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -28,14 +100,14 @@
   }
 
   .word.selected {
-    background-color: #2E7D8C; /* deep teal */
+    background-color: rgb(var(--color-word-selected));
     color: white;
     padding: 0 2px;
     margin: 0 -2px;
   }
 
   .sentence-highlight {
-    background-color: rgba(46, 125, 140, 0.1); /* deep teal at 10% */
+    background-color: rgb(var(--color-word-highlight) / 0.1);
     border-radius: 3px;
   }
 
@@ -55,6 +127,6 @@
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-bottom: 6px solid var(--color-border, #e5e7eb);
+    border-bottom: 6px solid rgb(var(--color-border));
   }
 }

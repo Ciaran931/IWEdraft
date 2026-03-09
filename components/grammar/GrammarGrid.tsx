@@ -4,18 +4,18 @@ import Link from 'next/link'
 import { GRAMMAR_TREE } from '@/lib/grammar-tree'
 
 const LEVEL_COLORS: Record<string, string> = {
-  A1: 'bg-green-100 text-green-800',
-  A2: 'bg-green-100 text-green-800',
-  B1: 'bg-blue-100 text-blue-800',
-  B2: 'bg-blue-100 text-blue-800',
-  C1: 'bg-purple-100 text-purple-800',
-  C2: 'bg-purple-100 text-purple-800',
+  A1: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
+  A2: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
+  B1: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
+  B2: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
+  C1: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
+  C2: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
 }
 
 function statusColor(status: string | undefined) {
-  if (status === 'mature') return 'bg-mindmap-green border-green-300'
-  if (status) return 'bg-mindmap-orange border-orange-300'
-  return 'bg-mindmap-grey border-gray-200'
+  if (status === 'mature') return 'bg-mindmap-green border-green-300 dark:border-green-700'
+  if (status) return 'bg-mindmap-orange border-orange-300 dark:border-orange-700'
+  return 'bg-mindmap-grey border-gray-200 dark:border-gray-600'
 }
 
 export default function GrammarGrid({
@@ -27,7 +27,7 @@ export default function GrammarGrid({
     <div className="space-y-3">
       {GRAMMAR_TREE.map(level => (
         <div key={level.level}>
-          <p className={`inline-block text-[10px] font-semibold px-1.5 py-0.5 rounded mb-1 ${LEVEL_COLORS[level.level] ?? 'bg-gray-100 text-gray-700'}`}>
+          <p className={`inline-block text-[10px] font-semibold px-1.5 py-0.5 rounded mb-1 ${LEVEL_COLORS[level.level] ?? 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'}`}>
             {level.level}
           </p>
           <div className="flex flex-wrap gap-1">

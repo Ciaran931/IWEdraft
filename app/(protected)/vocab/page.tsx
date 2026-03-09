@@ -92,7 +92,7 @@ export default async function VocabPage() {
           return (
             <div
               key={deck.id}
-              className="bg-white border border-border rounded-lg p-5 flex items-center justify-between gap-4"
+              className="bg-surface border border-border rounded-lg p-5 flex items-center justify-between gap-4"
             >
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">

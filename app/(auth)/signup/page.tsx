@@ -54,7 +54,7 @@ export default function SignupPage() {
       <div className="min-h-screen bg-paper flex items-center justify-center px-4">
         <div className="w-full max-w-md text-center">
           <h1 className="font-serif text-3xl text-ink mb-4">Input With Ease</h1>
-          <div className="bg-white border border-border rounded-lg p-8 shadow-sm">
+          <div className="bg-surface border border-border rounded-lg p-8 shadow-sm">
             <h2 className="font-serif text-xl mb-3">Check your email</h2>
             <p className="text-muted text-sm mb-6">
               We sent a confirmation link to <strong className="text-ink">{email}</strong>.
@@ -77,7 +77,7 @@ export default function SignupPage() {
           <p className="text-muted text-sm">Create your account to start learning</p>
         </div>
 
-        <div className="bg-white border border-border rounded-lg p-8 shadow-sm">
+        <div className="bg-surface border border-border rounded-lg p-8 shadow-sm">
           <h2 className="font-serif text-xl mb-6">Create account</h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -127,7 +127,7 @@ export default function SignupPage() {
             </div>
 
             {error && (
-              <p className="text-red-600 text-sm bg-red-50 border border-red-200 rounded px-3 py-2">
+              <p className="text-red-600 dark:text-red-400 text-sm bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded px-3 py-2">
                 {error}
               </p>
             )}

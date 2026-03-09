@@ -1,10 +1,10 @@
 'use client'
 
 const STATUS_COLORS = {
-  new: '#6B7FD7',
-  learning: '#E8A850',
-  review: '#5BA4CF',
-  mature: '#6BBF6B',
+  new: 'rgb(var(--color-srs-new))',
+  learning: 'rgb(var(--color-srs-learning))',
+  review: 'rgb(var(--color-srs-review))',
+  mature: 'rgb(var(--color-srs-mature))',
 }
 
 const STATUS_LABELS: Record<string, string> = {
@@ -58,7 +58,7 @@ export default function ProgressDonut({
     <div className="flex items-center gap-4">
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
         {/* Background circle */}
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke="#D9D3C9" strokeWidth={strokeWidth} />
+        <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgb(var(--color-border))" strokeWidth={strokeWidth} />
         {segments.map(seg => (
           <path
             key={seg.key}
@@ -69,7 +69,7 @@ export default function ProgressDonut({
             strokeLinecap="butt"
           />
         ))}
-        <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="middle" fontSize="14" fontWeight="600" fill="#2C2C2C">
+        <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="middle" fontSize="14" fontWeight="600" fill="rgb(var(--color-ink))">
           {total}
         </text>
       </svg>

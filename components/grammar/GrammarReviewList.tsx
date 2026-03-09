@@ -10,12 +10,12 @@ interface GrammarReviewItem {
 }
 
 const LEVEL_COLORS: Record<string, string> = {
-  A1: 'text-green-700 bg-green-50 border-green-200',
-  A2: 'text-green-700 bg-green-50 border-green-200',
-  B1: 'text-blue-700 bg-blue-50 border-blue-200',
-  B2: 'text-blue-700 bg-blue-50 border-blue-200',
-  C1: 'text-purple-700 bg-purple-50 border-purple-200',
-  C2: 'text-purple-700 bg-purple-50 border-purple-200',
+  A1: 'text-green-700 bg-green-50 border-green-200 dark:text-green-300 dark:bg-green-900/30 dark:border-green-700',
+  A2: 'text-green-700 bg-green-50 border-green-200 dark:text-green-300 dark:bg-green-900/30 dark:border-green-700',
+  B1: 'text-blue-700 bg-blue-50 border-blue-200 dark:text-blue-300 dark:bg-blue-900/30 dark:border-blue-700',
+  B2: 'text-blue-700 bg-blue-50 border-blue-200 dark:text-blue-300 dark:bg-blue-900/30 dark:border-blue-700',
+  C1: 'text-purple-700 bg-purple-50 border-purple-200 dark:text-purple-300 dark:bg-purple-900/30 dark:border-purple-700',
+  C2: 'text-purple-700 bg-purple-50 border-purple-200 dark:text-purple-300 dark:bg-purple-900/30 dark:border-purple-700',
 }
 
 const STATUS_LABEL: Record<string, string> = {
@@ -48,7 +48,7 @@ export default function GrammarReviewList({ items }: { items: GrammarReviewItem[
   const dueNowCount = items.filter(i => isDueNow(i.dueDate)).length
 
   return (
-    <div className="bg-white border border-border rounded-lg p-4 mb-8">
+    <div className="bg-surface border border-border rounded-lg p-4 mb-8">
       <div className="flex items-center justify-between mb-3">
         <h2 className="font-serif text-lg">My Reviews</h2>
         {dueNowCount > 0 && (

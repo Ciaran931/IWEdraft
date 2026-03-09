@@ -186,13 +186,13 @@ export default function QuizComponent({
         {question.options.map((option, idx) => {
           let cls = 'w-full text-left px-4 py-2.5 rounded border text-sm transition-colors '
           if (!state.answered) {
-            cls += 'border-border bg-white hover:border-terracotta hover:text-terracotta'
+            cls += 'border-border bg-surface hover:border-terracotta hover:text-terracotta'
           } else if (idx === question.correct_index) {
-            cls += 'border-green-400 bg-green-50 text-green-800 font-medium'
+            cls += 'border-green-400 bg-green-50 text-green-800 dark:border-green-600 dark:bg-green-900/30 dark:text-green-300 font-medium'
           } else if (idx === state.selectedIdx) {
-            cls += 'border-red-400 bg-red-50 text-red-800'
+            cls += 'border-red-400 bg-red-50 text-red-800 dark:border-red-600 dark:bg-red-900/30 dark:text-red-300'
           } else {
-            cls += 'border-border bg-white text-muted'
+            cls += 'border-border bg-surface text-muted'
           }
 
           return (
@@ -210,7 +210,7 @@ export default function QuizComponent({
 
       {state.answered && (
         <div className="mb-4">
-          <div className="bg-white border border-border rounded px-4 py-3 text-sm text-muted">
+          <div className="bg-surface border border-border rounded px-4 py-3 text-sm text-muted">
             {question.explanation}
           </div>
         </div>

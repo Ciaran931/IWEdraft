@@ -5,12 +5,12 @@ import GrammarReviewList from '@/components/grammar/GrammarReviewList'
 import Link from 'next/link'
 
 const LEVEL_COLORS: Record<string, string> = {
-  A1: 'text-green-700 border-green-200 bg-green-50',
-  A2: 'text-green-700 border-green-200 bg-green-50',
-  B1: 'text-blue-700 border-blue-200 bg-blue-50',
-  B2: 'text-blue-700 border-blue-200 bg-blue-50',
-  C1: 'text-purple-700 border-purple-200 bg-purple-50',
-  C2: 'text-purple-700 border-purple-200 bg-purple-50',
+  A1: 'text-green-700 border-green-200 bg-green-50 dark:text-green-300 dark:border-green-700 dark:bg-green-900/30',
+  A2: 'text-green-700 border-green-200 bg-green-50 dark:text-green-300 dark:border-green-700 dark:bg-green-900/30',
+  B1: 'text-blue-700 border-blue-200 bg-blue-50 dark:text-blue-300 dark:border-blue-700 dark:bg-blue-900/30',
+  B2: 'text-blue-700 border-blue-200 bg-blue-50 dark:text-blue-300 dark:border-blue-700 dark:bg-blue-900/30',
+  C1: 'text-purple-700 border-purple-200 bg-purple-50 dark:text-purple-300 dark:border-purple-700 dark:bg-purple-900/30',
+  C2: 'text-purple-700 border-purple-200 bg-purple-50 dark:text-purple-300 dark:border-purple-700 dark:bg-purple-900/30',
 }
 
 export default async function GrammarPage() {
@@ -77,7 +77,7 @@ export default async function GrammarPage() {
       <GrammarReviewList items={reviewItems} />
 
       {/* Compact grid overview */}
-      <div className="bg-white border border-border rounded-lg p-4 mb-8">
+      <div className="bg-surface border border-border rounded-lg p-4 mb-8">
         <h2 className="font-serif text-lg mb-3">Progress</h2>
         <GrammarGrid statusMap={statusMap} />
       </div>
@@ -89,7 +89,7 @@ export default async function GrammarPage() {
             <h2 className="font-serif text-xl mb-4 flex items-center gap-2">
               <span
                 className={`text-sm font-sans font-semibold px-2 py-0.5 rounded border ${
-                  LEVEL_COLORS[levelData.level] ?? 'bg-gray-50 text-gray-700 border-gray-200'
+                  LEVEL_COLORS[levelData.level] ?? 'bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600'
                 }`}
               >
                 {levelData.level}
@@ -117,7 +117,7 @@ export default async function GrammarPage() {
                       <Link
                         key={child.id}
                         href={`/grammar/${child.id}`}
-                        className="flex items-center gap-3 bg-white border border-border rounded px-3 py-2.5 text-sm hover:border-terracotta transition-colors group"
+                        className="flex items-center gap-3 bg-surface border border-border rounded px-3 py-2.5 text-sm hover:border-terracotta transition-colors group"
                       >
                         <span
                           className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${statusDot}`}

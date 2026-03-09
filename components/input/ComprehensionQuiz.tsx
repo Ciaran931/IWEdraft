@@ -23,7 +23,7 @@ export default function ComprehensionQuiz({ questions }: Props) {
         const isCorrect = selected === q.correct_index
 
         return (
-          <div key={q.id} className="bg-white rounded border border-border/60 shadow-sm px-6 py-5">
+          <div key={q.id} className="bg-surface rounded border border-border/60 shadow-sm px-6 py-5">
             <p className="font-serif text-sm text-muted text-center">{qIdx + 1}.</p>
             <p className="mt-1 font-medium text-ink mb-4">
               {q.question}
@@ -35,9 +35,9 @@ export default function ComprehensionQuiz({ questions }: Props) {
 
                 if (answered) {
                   if (oIdx === q.correct_index) {
-                    optionClass = 'border-green-500 bg-green-50 text-green-800'
+                    optionClass = 'border-green-500 bg-green-50 text-green-800 dark:border-green-600 dark:bg-green-900/30 dark:text-green-300'
                   } else if (oIdx === selected && !isCorrect) {
-                    optionClass = 'border-red-400 bg-red-50 text-red-700'
+                    optionClass = 'border-red-400 bg-red-50 text-red-700 dark:border-red-600 dark:bg-red-900/30 dark:text-red-300'
                   } else {
                     optionClass = 'border-border text-muted opacity-60'
                   }

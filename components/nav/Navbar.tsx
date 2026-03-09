@@ -11,6 +11,7 @@ import {
   Cog6ToothIcon,
   ArrowRightOnRectangleIcon,
 } from '@heroicons/react/24/outline'
+import ThemeToggle from './ThemeToggle'
 
 const NAV_ITEMS = [
   { href: '/dashboard', label: 'Dashboard', Icon: HomeIcon },
@@ -59,6 +60,7 @@ export default function Navbar() {
               >
                 Settings
               </Link>
+              <ThemeToggle />
               <button
                 onClick={signOut}
                 className="ml-2 p-2 text-muted hover:text-ink transition-colors"
@@ -68,12 +70,15 @@ export default function Navbar() {
               </button>
             </>
           ) : (
-            <Link
-              href="/login"
-              className="ml-4 px-4 py-1.5 text-sm font-medium bg-terracotta text-white rounded hover:bg-terracotta-light transition-colors"
-            >
-              Sign in
-            </Link>
+            <>
+              <ThemeToggle />
+              <Link
+                href="/login"
+                className="ml-2 px-4 py-1.5 text-sm font-medium bg-terracotta text-white rounded hover:bg-terracotta-light transition-colors"
+              >
+                Sign in
+              </Link>
+            </>
           )}
         </div>
       </nav>

@@ -85,7 +85,7 @@ export default function WordListClient({ cards }: { cards: SrsCard[] }) {
           return (
             <div
               key={card.id}
-              className="bg-white px-4 py-3 flex items-center gap-4"
+              className="bg-surface px-4 py-3 flex items-center gap-4"
             >
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
