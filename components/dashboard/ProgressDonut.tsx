@@ -14,7 +14,7 @@ const STATUS_LABELS: Record<string, string> = {
   mature: 'Mature',
 }
 
-export default function VocabDonut({
+export default function ProgressDonut({
   counts,
 }: {
   counts: Record<string, number>

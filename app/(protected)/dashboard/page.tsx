@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import StreakCounter from '@/components/dashboard/StreakCounter'
-import VocabDonut from '@/components/dashboard/VocabDonut'
+import ProgressDonut from '@/components/dashboard/ProgressDonut'
 import GrammarGrid from '@/components/grammar/GrammarGrid'
 import Link from 'next/link'
 
@@ -60,13 +60,18 @@ export default async function DashboardPage() {
   const streakDays = profile?.streak_days ?? 0
   const dueVocabCount = dueCards?.filter(c => c.card_type === 'vocab').length ?? 0
   const dueGrammarCount = dueCards?.filter(c => c.card_type === 'grammar').length ?? 0
-  const dueCount = dueVocabCount + dueGrammarCount
-
   // Build vocab status counts
   const statusCounts = { new: 0, learning: 0, review: 0, mature: 0 }
   vocabStatus?.forEach(card => {
     const s = card.status as keyof typeof statusCounts
     if (s in statusCounts) statusCounts[s]++
+  })
+
+  // Build grammar status counts
+  const grammarStatusCounts = { new: 0, learning: 0, review: 0, mature: 0 }
+  grammarCards?.forEach(card => {
+    const s = card.status as keyof typeof grammarStatusCounts
+    if (s in grammarStatusCounts) grammarStatusCounts[s]++
   })
 
   // Build lessonId → status map for grammar grid
@@ -84,28 +89,6 @@ export default async function DashboardPage() {
         <StreakCounter days={streakDays} />
 
         <div className="bg-white border border-border rounded-lg p-4">
-          <p className="text-xs text-muted uppercase tracking-wide mb-1">Due Today</p>
-          <p className="font-serif text-3xl text-ink">{dueCount}</p>
-          <p className="text-xs text-muted mt-1">cards to review</p>
-          {dueVocabCount > 0 && (
-            <Link
-              href="/vocab/review"
-              className="mt-3 inline-block text-xs text-terracotta hover:underline"
-            >
-              Review vocab ({dueVocabCount}) →
-            </Link>
-          )}
-          {dueGrammarCount > 0 && (
-            <Link
-              href="/grammar/review"
-              className="mt-3 inline-block text-xs text-terracotta hover:underline ml-3"
-            >
-              Review grammar ({dueGrammarCount}) →
-            </Link>
-          )}
-        </div>
-
-        <div className="col-span-2 md:col-span-1 bg-white border border-border rounded-lg p-4">
           <p className="text-xs text-muted uppercase tracking-wide mb-3">Vocab Progress</p>
           {Object.values(statusCounts).every(v => v === 0) ? (
             <p className="text-sm text-muted">
@@ -115,7 +98,44 @@ export default async function DashboardPage() {
               to build your vocabulary.
             </p>
           ) : (
-            <VocabDonut counts={statusCounts} />
+            <>
+              <ProgressDonut counts={statusCounts} />
+              <p className="text-xs text-muted mt-3">{dueVocabCount} due today</p>
+              {dueVocabCount > 0 && (
+                <Link
+                  href="/vocab/review"
+                  className="mt-1 inline-block text-xs text-terracotta hover:underline"
+                >
+                  Review vocab →
+                </Link>
+              )}
+            </>
+          )}
+        </div>
+
+        <div className="col-span-2 md:col-span-1 bg-white border border-border rounded-lg p-4">
+          <p className="text-xs text-muted uppercase tracking-wide mb-3">Grammar Progress</p>
+          {Object.values(grammarStatusCounts).every(v => v === 0) ? (
+            <p className="text-sm text-muted">
+              Start{' '}
+              <Link href="/grammar" className="text-terracotta hover:underline">
+                grammar lessons
+              </Link>{' '}
+              to track progress.
+            </p>
+          ) : (
+            <>
+              <ProgressDonut counts={grammarStatusCounts} />
+              <p className="text-xs text-muted mt-3">{dueGrammarCount} due today</p>
+              {dueGrammarCount > 0 && (
+                <Link
+                  href="/grammar/review"
+                  className="mt-1 inline-block text-xs text-terracotta hover:underline"
+                >
+                  Review grammar →
+                </Link>
+              )}
+            </>
           )}
         </div>
       </div>

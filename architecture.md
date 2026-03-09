@@ -774,7 +774,7 @@ components/
   grammar/QuizComponent.tsx
   grammar/GrammarGrid.tsx  // Colour-coded progress grid
   dashboard/StreakCounter.tsx
-  dashboard/VocabDonut.tsx
+  dashboard/ProgressDonut.tsx   // Reusable donut chart for vocab & grammar
   ui/                      // Shared UI primitives (buttons, cards, modals)
 
 
