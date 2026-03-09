@@ -18,9 +18,13 @@ export default function SrsForecast({ buckets }: ForecastProps) {
           return (
             <div
               key={b.date}
-              className="flex-1 h-full group relative flex items-end"
-              title={`${b.date}: ${b.count} reviews`}
+              className="flex-1 h-full group relative flex flex-col items-center justify-end"
             >
+              {b.count > 0 && (
+                <span className="text-[10px] text-muted opacity-0 group-hover:opacity-100 transition-opacity mb-0.5">
+                  {b.count}
+                </span>
+              )}
               <div
                 className={`w-full rounded-t transition-colors ${
                   isToday ? 'bg-terracotta' : 'bg-terracotta/40 group-hover:bg-terracotta/70'

@@ -63,6 +63,7 @@ export default async function DashboardPage() {
         .from('srs_cards')
         .select('due_date')
         .eq('user_id', authUser.id)
+        .eq('card_type', 'vocab')
         .lte('due_date', thirtyDaysFromNow.toISOString()),
     ])
 
