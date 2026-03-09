@@ -12,6 +12,15 @@ interface QuizState {
   score: number
 }
 
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
 export default function QuizComponent({
   questions,
   userId,
@@ -24,6 +33,8 @@ export default function QuizComponent({
   onFinish?: (score: number, total: number) => void
 }) {
   const supabase = createClient()
+  // Shuffle questions once on mount so users learn the grammar, not the order
+  const [shuffled] = useState(() => shuffle(questions))
   const [state, setState] = useState<QuizState>({
     questionIdx: 0,
     selectedIdx: null,
@@ -33,7 +44,7 @@ export default function QuizComponent({
   const [finished, setFinished] = useState(false)
   const [saving, setSaving] = useState(false)
 
-  const question = questions[state.questionIdx]
+  const question = shuffled[state.questionIdx]
 
   async function handleAnswer(idx: number) {
     if (state.answered) return
@@ -47,7 +58,7 @@ export default function QuizComponent({
   }
 
   async function handleNext() {
-    if (state.questionIdx + 1 >= questions.length) {
+    if (state.questionIdx + 1 >= shuffled.length) {
       // Quiz done — save grammar cards to SRS if logged in
       if (userId) {
         setSaving(true)
@@ -66,7 +77,7 @@ export default function QuizComponent({
   }
 
   async function saveGrammarProgress() {
-    const ratio = state.score / questions.length
+    const ratio = state.score / shuffled.length
     let rating: Rating
     if (ratio <= 0.25) rating = 0
     else if (ratio <= 0.5) rating = 1
@@ -130,17 +141,18 @@ export default function QuizComponent({
     return (
       <div className="bg-sidebar border border-border rounded-xl p-6 text-center">
         <p className="font-serif text-xl mb-2">
-          {state.score} / {questions.length}
+          {state.score} / {shuffled.length}
         </p>
         {onFinish ? (
           <>
             <p className="text-muted text-sm mb-4">
-              {state.score === questions.length
+              {state.score === shuffled.length
                 ? 'Perfect!'
-                : 'Good effort!'}
+                : 'Good effort!'
+              }
             </p>
             <button
-              onClick={() => onFinish(state.score, questions.length)}
+              onClick={() => onFinish(state.score, shuffled.length)}
               className="bg-terracotta text-white px-4 py-2 rounded text-sm font-medium hover:bg-terracotta-light transition-colors"
             >
               Next Lesson →
@@ -149,7 +161,7 @@ export default function QuizComponent({
         ) : userId ? (
           <>
             <p className="text-muted text-sm mb-4">
-              {state.score === questions.length
+              {state.score === shuffled.length
                 ? 'Perfect! Your progress has been saved.'
                 : 'Good effort! Your progress has been saved.'}
             </p>
@@ -176,7 +188,7 @@ export default function QuizComponent({
       <div className="flex items-center justify-between mb-4">
         <h3 className="font-serif text-base">Quiz</h3>
         <span className="text-xs text-muted">
-          {state.questionIdx + 1} / {questions.length}
+          {state.questionIdx + 1} / {shuffled.length}
         </span>
       </div>
 
@@ -222,7 +234,7 @@ export default function QuizComponent({
           disabled={saving}
           className="w-full bg-terracotta text-white py-2 rounded text-sm font-medium hover:bg-terracotta-light transition-colors disabled:opacity-50"
         >
-          {saving ? 'Saving…' : state.questionIdx + 1 >= questions.length ? 'Finish' : 'Next →'}
+          {saving ? 'Saving…' : state.questionIdx + 1 >= shuffled.length ? 'Finish' : 'Next →'}
         </button>
       )}
     </div>

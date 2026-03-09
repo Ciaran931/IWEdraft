@@ -135,27 +135,6 @@ export const GRAMMAR_TREE: GrammarTreeLevel[] = [
       },
     ],
   },
-  {
-    level: 'C2',
-    children: [
-      {
-        type: 'category',
-        label: 'Stylistics',
-        children: [
-          { type: 'leaf', id: 'register-and-tone', label: 'Register and Tone' },
-          { type: 'leaf', id: 'advanced-idioms', label: 'Advanced Idioms' },
-        ],
-      },
-      {
-        type: 'category',
-        label: 'Complex Structures',
-        children: [
-          { type: 'leaf', id: 'nominalization', label: 'Nominalisation' },
-          { type: 'leaf', id: 'advanced-passive', label: 'Advanced Passive' },
-        ],
-      },
-    ],
-  },
 ]
 
 /** Flatten tree to get all leaf lesson IDs */

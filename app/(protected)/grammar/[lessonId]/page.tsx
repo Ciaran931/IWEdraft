@@ -10,13 +10,17 @@ export default async function LessonPage({ params }: { params: { lessonId: strin
   const {
     data: { user: authUser },
   } = await supabase.auth.getUser()
-  const [{ data: lesson }, { data: questions }] = await Promise.all([
+  const [{ data: lesson }, { data: questions }, { data: relatedTexts }] = await Promise.all([
     supabase.from('grammar_lessons').select('*').eq('id', params.lessonId).single(),
     supabase
       .from('grammar_questions')
       .select('*')
       .eq('lesson_id', params.lessonId)
       .order('id'),
+    supabase
+      .from('texts')
+      .select('id, title, level')
+      .eq('grammar_lesson_id', params.lessonId),
   ])
 
   if (!lesson) {
@@ -48,6 +52,23 @@ export default async function LessonPage({ params }: { params: { lessonId: strin
           {lesson.level}
         </span>
       </div>
+
+      {relatedTexts && relatedTexts.length > 0 && (
+        <div className="px-6 py-3 border-b border-border bg-surface flex-shrink-0">
+          <p className="text-xs text-muted mb-1">Practice with a story:</p>
+          <div className="flex flex-wrap gap-2">
+            {relatedTexts.map(t => (
+              <Link
+                key={t.id}
+                href={`/input/${t.id}`}
+                className="text-sm text-terracotta hover:underline"
+              >
+                {t.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       <LessonRenderer
         lesson={lesson as GrammarLesson}

@@ -10,7 +10,6 @@ const LEVEL_COLORS: Record<string, string> = {
   B1: 'text-blue-700 border-blue-200 bg-blue-50 dark:text-blue-300 dark:border-blue-700 dark:bg-blue-900/30',
   B2: 'text-blue-700 border-blue-200 bg-blue-50 dark:text-blue-300 dark:border-blue-700 dark:bg-blue-900/30',
   C1: 'text-purple-700 border-purple-200 bg-purple-50 dark:text-purple-300 dark:border-purple-700 dark:bg-purple-900/30',
-  C2: 'text-purple-700 border-purple-200 bg-purple-50 dark:text-purple-300 dark:border-purple-700 dark:bg-purple-900/30',
 }
 
 export default async function GrammarPage() {
