@@ -23,24 +23,25 @@ export default async function DeckDetailPage({
     )
   }
 
-  const { data: deck } = await supabase
-    .from('srs_decks')
-    .select('*')
-    .eq('id', deckId)
-    .single()
+  const [{ data: deck }, { data: cards }] = await Promise.all([
+    supabase
+      .from('srs_decks')
+      .select('id, name, user_id')
+      .eq('id', deckId)
+      .single(),
+    supabase
+      .from('srs_cards')
+      .select('*, vocab_words(id, word, pos, en_definition, translations)')
+      .eq('user_id', authUser.id)
+      .eq('deck_id', deckId)
+      .eq('card_type', 'vocab')
+      .order('created_at', { ascending: false }),
+  ])
 
   if (!deck) return notFound()
 
   // Verify access: user owns the deck or it's a shared (null user_id) deck
   if (deck.user_id && deck.user_id !== authUser.id) return notFound()
-
-  const { data: cards } = await supabase
-    .from('srs_cards')
-    .select('*, vocab_words(*)')
-    .eq('user_id', authUser.id)
-    .eq('deck_id', deckId)
-    .eq('card_type', 'vocab')
-    .order('created_at', { ascending: false })
 
   const now = new Date().toISOString()
   const dueCount = cards?.filter(c => c.due_date <= now).length ?? 0

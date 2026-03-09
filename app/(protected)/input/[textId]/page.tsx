@@ -11,11 +11,17 @@ export default async function TextPage({ params }: { params: { textId: string } 
     data: { user: authUser },
   } = await supabase.auth.getUser()
 
-  const [{ data: text }, profileResult] = await Promise.all([
+  // Merge into one parallel batch — questions don't depend on profile
+  const [{ data: text }, profileResult, { data: questions }] = await Promise.all([
     supabase.from('texts').select('*').eq('id', params.textId).single(),
     authUser
-      ? supabase.from('users').select('*').eq('id', authUser.id).single()
+      ? supabase.from('users').select('id, language_code').eq('id', authUser.id).single()
       : Promise.resolve({ data: null }),
+    supabase
+      .from('text_questions')
+      .select('*')
+      .eq('text_id', params.textId)
+      .order('sort_order'),
   ])
 
   if (!text) notFound()
@@ -23,19 +29,12 @@ export default async function TextPage({ params }: { params: { textId: string } 
   const profile = profileResult.data as User | null
   const langCode = profile?.language_code ?? 'pl'
 
-  const [{ data: translation }, { data: questions }] = await Promise.all([
-    supabase
-      .from('text_translations')
-      .select('*')
-      .eq('text_id', params.textId)
-      .eq('language_code', langCode)
-      .single(),
-    supabase
-      .from('text_questions')
-      .select('*')
-      .eq('text_id', params.textId)
-      .order('sort_order'),
-  ])
+  const { data: translation } = await supabase
+    .from('text_translations')
+    .select('*')
+    .eq('text_id', params.textId)
+    .eq('language_code', langCode)
+    .single()
 
   const comprehensionQuestions = (questions ?? []).filter(
     (q: TextQuestion) => q.question_type === 'comprehension'

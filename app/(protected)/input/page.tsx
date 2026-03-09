@@ -18,20 +18,15 @@ type TextRow = {
   title: string
   level: string
   category: string
-  paragraphs: { id: number; sentences: string[] }[]
 }
 
 function TextCard({ text }: { text: TextRow }) {
-  const firstSentence = text.paragraphs?.[0]?.sentences?.[0] ?? ''
-  const excerpt =
-    firstSentence.length > 80 ? firstSentence.slice(0, 80) + '…' : firstSentence
-
   return (
     <Link
       href={`/input/${text.id}`}
       className="block bg-surface border border-border rounded-lg p-5 hover:border-terracotta transition-colors group"
     >
-      <div className="flex items-start justify-between gap-3 mb-2">
+      <div className="flex items-start justify-between gap-3">
         <h2 className="font-serif text-base text-ink group-hover:text-terracotta transition-colors">
           {text.title}
         </h2>
@@ -43,7 +38,6 @@ function TextCard({ text }: { text: TextRow }) {
           {text.level}
         </span>
       </div>
-      {excerpt && <p className="text-sm text-muted leading-relaxed">{excerpt}</p>}
     </Link>
   )
 }
@@ -56,16 +50,23 @@ export default async function InputPage({
   const supabase = createClient()
   const activeLevel = searchParams.level || 'All'
 
-  const { data: texts, error } = await supabase
+  // Parallel queries: graded (with optional level filter) + immersion
+  let gradedQuery = supabase
     .from('texts')
-    .select('id, title, level, category, paragraphs')
+    .select('id, title, level, category')
+    .neq('category', 'immersion')
     .order('level')
+  if (activeLevel !== 'All') {
+    gradedQuery = gradedQuery.eq('level', activeLevel)
+  }
 
-  const graded = (texts as TextRow[] | null)?.filter(t => t.category !== 'immersion') ?? []
-  const immersion = (texts as TextRow[] | null)?.filter(t => t.category === 'immersion') ?? []
+  const [{ data: gradedData, error }, { data: immersionData }] = await Promise.all([
+    gradedQuery,
+    supabase.from('texts').select('id, title, level, category').eq('category', 'immersion').order('level'),
+  ])
 
-  const filteredGraded =
-    activeLevel === 'All' ? graded : graded.filter(t => t.level === activeLevel)
+  const filteredGraded = (gradedData as TextRow[] | null) ?? []
+  const immersion = (immersionData as TextRow[] | null) ?? []
 
   return (
     <div className="p-6 max-w-5xl mx-auto w-full">

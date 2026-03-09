@@ -10,11 +10,9 @@ export default async function ProtectedLayout({ children }: { children: React.Re
     data: { user: authUser },
   } = await supabase.auth.getUser()
 
-  let profile: User | null = null
-  if (authUser) {
-    const { data } = await supabase.from('users').select('*').eq('id', authUser.id).single()
-    profile = data as User | null
-  }
+  const profile: User | null = authUser
+    ? ((await supabase.from('users').select('id, email, language_code, level, streak_days, last_active_at').eq('id', authUser.id).single()).data as User | null)
+    : null
 
   return (
     <AuthProvider user={profile}>

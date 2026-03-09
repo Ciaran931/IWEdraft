@@ -20,18 +20,18 @@ export default async function GrammarPage() {
     data: { user: authUser },
   } = await supabase.auth.getUser()
 
-  const grammarCardsResult = authUser
-    ? await supabase
-        .from('srs_cards')
-        .select('content_id, status, due_date, last_reviewed_at')
-        .eq('user_id', authUser.id)
-        .eq('card_type', 'grammar')
-    : { data: null }
+  // Parallelize grammar cards + lessons fetch
+  const [grammarCardsResult, { data: lessons }] = await Promise.all([
+    authUser
+      ? supabase
+          .from('srs_cards')
+          .select('content_id, status, due_date, last_reviewed_at')
+          .eq('user_id', authUser.id)
+          .eq('card_type', 'grammar')
+      : Promise.resolve({ data: null }),
+    supabase.from('grammar_lessons').select('id, title, level, category'),
+  ])
   const { data: grammarCards } = grammarCardsResult
-
-  const { data: lessons } = await supabase
-    .from('grammar_lessons')
-    .select('id, title, level, category')
 
   // Build lessonId → lesson lookup
   const lessonLookup: Record<string, { title: string; level: string }> = {}

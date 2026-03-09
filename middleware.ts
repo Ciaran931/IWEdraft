@@ -23,7 +23,9 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  const { data: { user } } = await supabase.auth.getUser()
+  // Use getSession() for lightweight cookie-based check (no DB roundtrip).
+  // Pages that need verified user data still call getUser() themselves.
+  const { data: { session } } = await supabase.auth.getSession()
 
   const { pathname } = request.nextUrl
   const isAuthPage = pathname === '/login' || pathname === '/signup'
@@ -32,11 +34,11 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith('/vocab') ||
     pathname.startsWith('/grammar')
 
-  if (user && isAuthPage) {
+  if (session && isAuthPage) {
     return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 
-  if (!user && isProtected) {
+  if (!session && isProtected) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 

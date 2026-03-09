@@ -39,8 +39,8 @@ export default async function GrammarReviewPage() {
   const lessonIds = Array.from(new Set(dueCards.map(c => c.content_id)))
 
   const [{ data: lessons }, { data: questions }] = await Promise.all([
-    supabase.from('grammar_lessons').select('*').in('id', lessonIds),
-    supabase.from('grammar_questions').select('*').in('lesson_id', lessonIds),
+    supabase.from('grammar_lessons').select('id, title, level, category, order, explanation').in('id', lessonIds),
+    supabase.from('grammar_questions').select('id, lesson_id, question, options, correct_index, explanation').in('lesson_id', lessonIds),
   ])
 
   const lessonMap = new Map(lessons?.map(l => [l.id, l]) ?? [])

@@ -15,14 +15,8 @@ export default async function VocabReviewPage({
   } = await supabase.auth.getUser()
   if (!authUser) return null
 
-  const { data: profile } = await supabase
-    .from('users')
-    .select('language_code')
-    .eq('id', authUser.id)
-    .single()
-  const language = profile?.language_code ?? 'pl'
-
-  let query = supabase
+  // Build cards query with optional deck filter
+  let cardsQuery = supabase
     .from('srs_cards')
     .select('*')
     .eq('user_id', authUser.id)
@@ -31,10 +25,15 @@ export default async function VocabReviewPage({
     .order('due_date')
 
   if (searchParams.deck) {
-    query = query.eq('deck_id', searchParams.deck)
+    cardsQuery = cardsQuery.eq('deck_id', searchParams.deck)
   }
 
-  const { data: rawCards, error } = await query
+  // Parallelize profile + cards fetch
+  const [{ data: profile }, { data: rawCards, error }] = await Promise.all([
+    supabase.from('users').select('language_code').eq('id', authUser.id).single(),
+    cardsQuery,
+  ])
+  const language = profile?.language_code ?? 'pl'
 
   if (error) {
     return (
@@ -50,7 +49,7 @@ export default async function VocabReviewPage({
     const wordIds = Array.from(new Set(cards.map(c => c.content_id)))
     const { data: words } = await supabase
       .from('vocab_words')
-      .select('*')
+      .select('id, word, pos, en_definition, examples, translations')
       .in('id', wordIds)
     const wordMap = new Map(words?.map(w => [w.id, w]) ?? [])
     cards = cards.map(card => ({ ...card, vocab_words: wordMap.get(card.content_id) }))
