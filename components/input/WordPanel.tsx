@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import type { VocabWord, TextWordOverride } from '@/lib/types'
@@ -24,6 +24,10 @@ export default function WordPanel({ wordData, languageCode, textId, userId, sent
   const supabase = createClient()
   const router = useRouter()
   const [addState, setAddState] = useState<AddState>('idle')
+
+  useEffect(() => {
+    setAddState('idle')
+  }, [wordData?.word.id])
 
   if (!wordData) {
     return (

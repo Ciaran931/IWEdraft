@@ -1,6 +1,6 @@
 'use client'
 
-import { forwardRef, useLayoutEffect, useRef, useState } from 'react'
+import { forwardRef, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import type { VocabWord, TextWordOverride } from '@/lib/types'
@@ -29,6 +29,10 @@ const MobileWordTooltip = forwardRef<HTMLDivElement, Props>(
     const router = useRouter()
     const [addState, setAddState] = useState<AddState>('idle')
     const [flipAbove, setFlipAbove] = useState(false)
+
+    useEffect(() => {
+      setAddState('idle')
+    }, [wordData?.word.id])
     const [shiftLeft, setShiftLeft] = useState(0)
 
     useLayoutEffect(() => {
