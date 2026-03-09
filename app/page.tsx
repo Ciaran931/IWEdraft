@@ -14,7 +14,7 @@ export default async function RootPage() {
     <div className="min-h-screen bg-paper flex flex-col">
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-border">
-        <span className="font-serif text-lg text-ink">Input With Ease</span>
+        <Link href="/" className="font-serif text-lg text-ink hover:text-terracotta transition-colors">Input With Ease</Link>
         <div className="flex items-center gap-4">
           <Link href="/login" className="text-sm text-muted hover:text-ink transition-colors">
             Sign in
