@@ -65,7 +65,12 @@ export default function GrammarReviewSession({
         />
       </div>
 
-      <p className="text-sm text-muted mb-4">{item.lesson.title}</p>
+      <Link
+        href={`/grammar/${item.lesson.id}`}
+        className="text-sm text-terracotta hover:underline mb-4 inline-block"
+      >
+        {item.lesson.title} →
+      </Link>
 
       <QuizComponent
         key={item.card.id}
