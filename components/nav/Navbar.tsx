@@ -32,7 +32,7 @@ export default function Navbar() {
     <>
       {/* Desktop top navbar */}
       <nav className="hidden md:flex items-center justify-between px-6 py-0 bg-paper border-b border-border">
-        <Link href="/dashboard" className="font-serif font-bold text-lg text-ink py-3 hover:text-terracotta transition-colors">Input With Ease</Link>
+        <Link href="/" className="font-serif font-bold text-lg text-ink py-3 hover:text-terracotta transition-colors">Input With Ease</Link>
 
         <div className="flex items-center">
           {NAV_ITEMS.map(({ href, label }) => (
