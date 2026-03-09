@@ -10,7 +10,7 @@ const LEVEL_COLORS: Record<string, string> = {
   Native: 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300',
 }
 
-const LEVELS = ['All', 'A1', 'A2', 'B1', 'B2', 'C1']
+const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1']
 
 type TextRow = {
   id: string
@@ -41,31 +41,23 @@ function TextCard({ text }: { text: TextRow }) {
   )
 }
 
-export default async function InputPage({
-  searchParams,
-}: {
-  searchParams: { level?: string }
-}) {
+export default async function InputPage() {
   const supabase = createClient()
-  const activeLevel = searchParams.level || 'All'
 
-  // Parallel queries: graded (with optional level filter) + immersion
-  let gradedQuery = supabase
-    .from('texts')
-    .select('id, title, level, category')
-    .neq('category', 'immersion')
-    .order('level')
-  if (activeLevel !== 'All') {
-    gradedQuery = gradedQuery.eq('level', activeLevel)
-  }
-
+  // Parallel queries: graded + immersion
   const [{ data: gradedData, error }, { data: immersionData }] = await Promise.all([
-    gradedQuery,
-    supabase.from('texts').select('id, title, level, category').eq('category', 'immersion').order('level'),
+    supabase.from('texts').select('id, title, level, category').neq('category', 'immersion').order('level'),
+    supabase.from('texts').select('id, title, level, category').eq('category', 'immersion').order('title'),
   ])
 
-  const filteredGraded = (gradedData as TextRow[] | null) ?? []
+  const graded = (gradedData as TextRow[] | null) ?? []
   const immersion = (immersionData as TextRow[] | null) ?? []
+
+  // Group graded texts by level
+  const gradedByLevel: Record<string, TextRow[]> = {}
+  for (const text of graded) {
+    ;(gradedByLevel[text.level] ??= []).push(text)
+  }
 
   return (
     <div className="p-6 max-w-5xl mx-auto w-full">
@@ -77,40 +69,9 @@ export default async function InputPage({
         </div>
       )}
 
-      {/* Graded Readers */}
-      <section className="mb-10">
-        <div className="flex flex-wrap items-center gap-3 mb-4">
-          <h2 className="font-serif text-lg text-ink">Graded Readers</h2>
-          <div className="flex flex-wrap gap-2">
-            {LEVELS.map(level => (
-              <Link
-                key={level}
-                href={level === 'All' ? '/input' : `/input?level=${level}`}
-                className={`px-3 py-1 rounded-full text-sm font-medium border transition-colors ${
-                  activeLevel === level
-                    ? 'bg-terracotta text-white border-terracotta'
-                    : 'bg-surface text-muted border-border hover:border-terracotta hover:text-terracotta'
-                }`}
-              >
-                {level}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {filteredGraded.map(text => <TextCard key={text.id} text={text} />)}
-          {filteredGraded.length === 0 && (
-            <p className="text-muted col-span-2 py-8 text-center">
-              No texts found at this level.
-            </p>
-          )}
-        </div>
-      </section>
-
-      {/* Immersion */}
+      {/* Immersion — prioritized at top */}
       {immersion.length > 0 && (
-        <section>
+        <section className="mb-10">
           <div className="mb-4">
             <h2 className="font-serif text-lg text-ink">Immersion</h2>
             <p className="text-sm text-muted mt-1">
@@ -122,6 +83,34 @@ export default async function InputPage({
           </div>
         </section>
       )}
+
+      {/* Graded Readers — sectioned by level */}
+      <section>
+        <h2 className="font-serif text-lg text-ink mb-4">Graded Readers</h2>
+        {LEVELS.map(level => {
+          const texts = gradedByLevel[level]
+          if (!texts || texts.length === 0) return null
+          return (
+            <div key={level} className="mb-8">
+              <h3 className="flex items-center gap-2 mb-3">
+                <span
+                  className={`text-xs font-semibold px-2 py-0.5 rounded ${
+                    LEVEL_COLORS[level] ?? 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'
+                  }`}
+                >
+                  {level}
+                </span>
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {texts.map(text => <TextCard key={text.id} text={text} />)}
+              </div>
+            </div>
+          )
+        })}
+        {graded.length === 0 && (
+          <p className="text-muted py-8 text-center">No graded texts available yet.</p>
+        )}
+      </section>
     </div>
   )
 }
