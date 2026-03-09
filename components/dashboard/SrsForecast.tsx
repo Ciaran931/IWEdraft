@@ -18,7 +18,7 @@ export default function SrsForecast({ buckets }: ForecastProps) {
           return (
             <div
               key={b.date}
-              className="flex-1 group relative"
+              className="flex-1 h-full group relative flex items-end"
               title={`${b.date}: ${b.count} reviews`}
             >
               <div
