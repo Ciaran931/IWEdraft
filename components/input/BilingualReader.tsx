@@ -173,7 +173,7 @@ export default function BilingualReader({ text, translation, user, comprehension
                 : 'bg-paper text-muted border-border hover:border-terracotta'
             }`}
           >
-            {hideTranslation ? 'Hard Mode ON' : 'Hard Mode'}
+            {hideTranslation ? 'Focus ON' : 'Focus'}
           </button>
         </div>
       </div>
