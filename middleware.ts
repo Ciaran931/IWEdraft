@@ -32,7 +32,8 @@ export async function middleware(request: NextRequest) {
   const isProtected =
     pathname.startsWith('/settings') ||
     pathname.startsWith('/vocab') ||
-    pathname.startsWith('/grammar')
+    pathname.startsWith('/grammar') ||
+    pathname.startsWith('/placement')
 
   if (session && isAuthPage) {
     return NextResponse.redirect(new URL('/dashboard', request.url))

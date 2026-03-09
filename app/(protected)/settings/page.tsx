@@ -129,6 +129,19 @@ export default function SettingsPage() {
         </div>
       </div>
 
+      <div className="bg-surface border border-border rounded-lg p-6 mb-4">
+        <h2 className="font-medium text-ink mb-4">Level</h2>
+        <p className="text-sm text-muted mb-3">
+          {user?.level ? `Your current level: ${user.level}` : 'No level set yet.'}
+        </p>
+        <a
+          href="/placement"
+          className="text-sm text-terracotta hover:underline"
+        >
+          {user?.level ? 'Retake placement quiz' : 'Take the placement quiz'}
+        </a>
+      </div>
+
       <div className="bg-surface border border-border rounded-lg p-6">
         <h2 className="font-medium text-ink mb-4">Session</h2>
         <button

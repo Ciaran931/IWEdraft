@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import StreakCounter from '@/components/dashboard/StreakCounter'
 import ProgressDonut from '@/components/dashboard/ProgressDonut'
+import SrsForecast from '@/components/dashboard/SrsForecast'
 import GrammarGrid from '@/components/grammar/GrammarGrid'
 import Link from 'next/link'
 
@@ -37,7 +38,10 @@ export default async function DashboardPage() {
     )
   }
 
-  const [{ data: profile }, { data: dueCards }, { data: vocabStatus }, { data: grammarCards }] =
+  const thirtyDaysFromNow = new Date()
+  thirtyDaysFromNow.setDate(thirtyDaysFromNow.getDate() + 30)
+
+  const [{ data: profile }, { data: dueCards }, { data: vocabStatus }, { data: grammarCards }, { data: forecastCards }] =
     await Promise.all([
       supabase.from('users').select('streak_days').eq('id', authUser.id).single(),
       supabase
@@ -55,6 +59,11 @@ export default async function DashboardPage() {
         .select('content_id, status')
         .eq('user_id', authUser.id)
         .eq('card_type', 'grammar'),
+      supabase
+        .from('srs_cards')
+        .select('due_date')
+        .eq('user_id', authUser.id)
+        .lte('due_date', thirtyDaysFromNow.toISOString()),
     ])
 
   const streakDays = profile?.streak_days ?? 0
@@ -79,6 +88,20 @@ export default async function DashboardPage() {
   grammarCards?.forEach(card => {
     grammarStatusMap[card.content_id] = card.status
   })
+
+  // Build 30-day forecast buckets
+  const forecastBuckets: { date: string; count: number }[] = []
+  const bucketMap = new Map<string, number>()
+  forecastCards?.forEach(card => {
+    const day = card.due_date.slice(0, 10) // YYYY-MM-DD
+    bucketMap.set(day, (bucketMap.get(day) ?? 0) + 1)
+  })
+  for (let i = 0; i < 30; i++) {
+    const d = new Date()
+    d.setDate(d.getDate() + i)
+    const key = d.toISOString().slice(0, 10)
+    forecastBuckets.push({ date: key, count: bucketMap.get(key) ?? 0 })
+  }
 
   return (
     <div className="p-6 max-w-6xl mx-auto w-full">
@@ -168,6 +191,14 @@ export default async function DashboardPage() {
           </div>
         </div>
       </details>
+
+      {/* SRS Forecast */}
+      {forecastBuckets.some(b => b.count > 0) && (
+        <div className="bg-surface border border-border rounded-lg p-6 mb-8">
+          <h2 className="font-serif text-lg mb-4">Upcoming Reviews</h2>
+          <SrsForecast buckets={forecastBuckets} />
+        </div>
+      )}
 
       {/* Grammar Grid */}
       <div className="bg-surface border border-border rounded-lg p-6">
