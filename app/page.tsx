@@ -30,7 +30,7 @@ export default async function RootPage() {
 
       {/* Hero */}
       <main className="flex-1 flex flex-col items-center justify-center px-6 text-center">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl mb-16">
           <h1 className="font-serif text-4xl md:text-5xl text-ink mb-4 leading-tight">
             Learn English the natural way
           </h1>
