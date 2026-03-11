@@ -150,21 +150,58 @@ export default function BilingualReader({ text, translation, user, comprehension
   return (
     <div className="flex flex-col flex-1 overflow-hidden">
       {/* Header bar */}
-      <div className="grid grid-cols-3 items-center px-6 py-2 border-b border-border flex-shrink-0">
-        <div className="flex items-center min-w-0">
-          <Link href="/input" className="text-muted hover:text-ink transition-colors text-sm shrink-0">
-            ← Library
-          </Link>
-          <span className="text-border mx-2 shrink-0">|</span>
-          <h1 className="font-serif text-base text-ink truncate">{text.title}</h1>
+      <div className="flex-shrink-0 border-b border-border">
+        {/* Top row: nav + controls */}
+        <div className="flex items-center justify-between px-6 py-2">
+          <div className="flex items-center min-w-0">
+            <Link href="/input" className="text-muted hover:text-ink transition-colors text-sm shrink-0">
+              ← Library
+            </Link>
+            <span className="text-border mx-2 shrink-0">|</span>
+            <h1 className="font-serif text-base text-ink truncate">{text.title}</h1>
+          </div>
+
+          {/* Tabs: desktop only (inline) */}
+          <div className="hidden md:flex items-center justify-center gap-2 px-4">
+            {(['read', 'understand', 'discuss'] as const).map(tab => (
+              <button
+                key={tab}
+                onClick={() => { dismissTooltip(); setActiveTab(tab) }}
+                className={`px-4 py-1.5 text-xs font-medium capitalize rounded border transition-colors ${
+                  activeTab === tab
+                    ? 'bg-terracotta text-white border-terracotta'
+                    : 'bg-surface text-muted border-border hover:text-ink hover:border-ink'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="text-xs px-2 py-0.5 rounded bg-sidebar text-muted border border-border">
+              {text.level}
+            </span>
+            <button
+              onClick={() => setHideTranslation(h => !h)}
+              className={`text-xs px-3 py-1.5 rounded border transition-colors ${
+                hideTranslation
+                  ? 'bg-terracotta text-white border-terracotta'
+                  : 'bg-paper text-muted border-border hover:border-terracotta'
+              }`}
+            >
+              {hideTranslation ? 'Focus ON' : 'Focus'}
+            </button>
+          </div>
         </div>
 
-        <div className="flex items-center justify-center gap-2">
+        {/* Tabs: mobile only (second row, full width) */}
+        <div className="md:hidden flex items-center justify-center gap-3 px-6 py-2 border-t border-border">
           {(['read', 'understand', 'discuss'] as const).map(tab => (
             <button
               key={tab}
               onClick={() => { dismissTooltip(); setActiveTab(tab) }}
-              className={`px-4 py-1.5 text-xs font-medium capitalize rounded border transition-colors ${
+              className={`flex-1 py-2 text-xs font-medium capitalize rounded border transition-colors ${
                 activeTab === tab
                   ? 'bg-terracotta text-white border-terracotta'
                   : 'bg-surface text-muted border-border hover:text-ink hover:border-ink'
@@ -173,22 +210,6 @@ export default function BilingualReader({ text, translation, user, comprehension
               {tab}
             </button>
           ))}
-        </div>
-
-        <div className="flex items-center justify-end gap-2">
-          <span className="text-xs px-2 py-0.5 rounded bg-sidebar text-muted border border-border">
-            {text.level}
-          </span>
-          <button
-            onClick={() => setHideTranslation(h => !h)}
-            className={`text-xs px-3 py-1.5 rounded border transition-colors ${
-              hideTranslation
-                ? 'bg-terracotta text-white border-terracotta'
-                : 'bg-paper text-muted border-border hover:border-terracotta'
-            }`}
-          >
-            {hideTranslation ? 'Focus ON' : 'Focus'}
-          </button>
         </div>
       </div>
 
