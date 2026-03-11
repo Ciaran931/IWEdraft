@@ -9,6 +9,7 @@ import {
   AcademicCapIcon,
   Cog6ToothIcon,
   ArrowRightOnRectangleIcon,
+  HomeIcon,
 } from '@heroicons/react/24/outline'
 import ThemeToggle from './ThemeToggle'
 
@@ -83,6 +84,15 @@ export default function Navbar() {
 
       {/* Mobile bottom tab bar */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-paper border-t border-border flex">
+        <Link
+          href="/dashboard"
+          className={`flex-1 flex flex-col items-center py-2 gap-0.5 text-xs transition-colors ${
+            isActive('/dashboard') ? 'text-terracotta' : 'text-muted'
+          }`}
+        >
+          <HomeIcon className="w-5 h-5" />
+          Dashboard
+        </Link>
         {NAV_ITEMS.map(({ href, label, Icon }) => (
           <Link
             key={href}
