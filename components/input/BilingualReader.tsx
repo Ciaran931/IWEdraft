@@ -98,7 +98,7 @@ export default function BilingualReader({ text, translation, user, comprehension
         setTooltipLocked(true)
       }
 
-      const [{ data: word }, { data: override }] = await Promise.all([
+      const [wordResult, overrideResult] = await Promise.all([
         supabase.from('vocab_words').select('*').eq('id', wordId).maybeSingle(),
         supabase
           .from('text_word_overrides')
@@ -108,6 +108,14 @@ export default function BilingualReader({ text, translation, user, comprehension
           .maybeSingle(),
       ])
 
+      if (wordResult.error || overrideResult.error) {
+        console.error('Failed to fetch word data:', wordResult.error ?? overrideResult.error)
+        setWordData(null)
+        return
+      }
+
+      const word = wordResult.data
+      const override = overrideResult.data
       setWordData(word ? { word: word as VocabWord, override: override as TextWordOverride | null } : null)
     },
     [supabase, text.id, isMobile]
@@ -136,8 +144,12 @@ export default function BilingualReader({ text, translation, user, comprehension
           return (
             <span
               key={i}
+              role="button"
+              tabIndex={0}
+              aria-label={`Look up word: ${part}`}
               className={`word${isSelected ? ' selected' : ''}`}
               onClick={(e) => handleWordClick(wordId, paraId, sentenceId, sentence, e)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleWordClick(wordId, paraId, sentenceId, sentence) } }}
             >
               {part}
             </span>

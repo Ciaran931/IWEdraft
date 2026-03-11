@@ -1,5 +1,7 @@
 'use client'
 
+import { useMemo } from 'react'
+
 const STATUS_COLORS = {
   new: 'rgb(var(--color-srs-new))',
   learning: 'rgb(var(--color-srs-learning))',
@@ -31,16 +33,18 @@ export default function ProgressDonut({
   const strokeWidth = 14
 
   // Build arc segments
-  let cumulativeAngle = 0 // start at top (polarToCartesian already offsets -90°)
-  const segments = statuses
-    .filter(s => (counts[s] ?? 0) > 0)
-    .map(s => {
-      const pct = (counts[s] ?? 0) / total
-      const angle = pct * 360
-      const start = cumulativeAngle
-      cumulativeAngle += angle
-      return { key: s, pct, start, end: cumulativeAngle, count: counts[s] ?? 0 }
-    })
+  const segments = useMemo(() => {
+    let cumulativeAngle = 0
+    return statuses
+      .filter(s => (counts[s] ?? 0) > 0)
+      .map(s => {
+        const pct = (counts[s] ?? 0) / total
+        const angle = pct * 360
+        const start = cumulativeAngle
+        cumulativeAngle += angle
+        return { key: s, pct, start, end: cumulativeAngle, count: counts[s] ?? 0 }
+      })
+  }, [counts, total])
 
   function polarToCartesian(cx: number, cy: number, r: number, angleDeg: number) {
     const rad = ((angleDeg - 90) * Math.PI) / 180
@@ -56,7 +60,7 @@ export default function ProgressDonut({
 
   return (
     <div className="flex items-center gap-4">
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} role="img" aria-label={`Progress: ${statuses.filter(s => (counts[s] ?? 0) > 0).map(s => `${STATUS_LABELS[s]} ${counts[s]}`).join(', ')}`}>
         {/* Background circle */}
         <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgb(var(--color-border))" strokeWidth={strokeWidth} />
         {segments.map(seg => (

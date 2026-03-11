@@ -45,7 +45,9 @@ export default function VocabReviewSession({
 
   // Update streak at start (fire and forget)
   useState(() => {
-    supabase.rpc('update_streak', { p_user_id: userId })
+    supabase.rpc('update_streak', { p_user_id: userId }).then(({ error }) => {
+      if (error) console.error('Failed to update streak:', error)
+    })
   })
 
   async function handleRating(rating: Rating) {
@@ -53,10 +55,12 @@ export default function VocabReviewSession({
     setSubmitting(true)
 
     const update = applySrs(current, rating)
-    await supabase
+    const { error } = await supabase
       .from('srs_cards')
       .update(update)
       .eq('id', current.id)
+
+    if (error) console.error('Failed to update SRS card:', error)
 
     if (currentIdx + 1 >= queue.length) {
       setDone(true)

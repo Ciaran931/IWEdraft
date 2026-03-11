@@ -64,6 +64,7 @@ export default function Navbar() {
                 onClick={signOut}
                 className="ml-2 p-2 text-muted hover:text-ink transition-colors"
                 title="Sign out"
+                aria-label="Sign out"
               >
                 <ArrowRightOnRectangleIcon className="w-5 h-5" />
               </button>

@@ -45,10 +45,12 @@ export default async function InputPage() {
   const supabase = createClient()
 
   // Parallel queries: graded + immersion
-  const [{ data: gradedData, error }, { data: immersionData }] = await Promise.all([
+  const [{ data: gradedData, error }, { data: immersionData, error: immersionError }] = await Promise.all([
     supabase.from('texts').select('id, title, level, category').neq('category', 'immersion').order('level'),
     supabase.from('texts').select('id, title, level, category').eq('category', 'immersion').order('title'),
   ])
+
+  const fetchError = error || immersionError
 
   const graded = (gradedData as TextRow[] | null) ?? []
   const immersion = (immersionData as TextRow[] | null) ?? []
@@ -63,7 +65,7 @@ export default async function InputPage() {
     <div className="p-6 max-w-5xl mx-auto w-full">
       <h1 className="font-serif text-2xl mb-6">Reading Library</h1>
 
-      {error && (
+      {fetchError && (
         <div className="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 rounded px-4 py-3 text-sm mb-4">
           Something went wrong loading texts. Please try again.
         </div>

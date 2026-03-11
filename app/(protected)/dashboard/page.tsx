@@ -42,7 +42,7 @@ export default async function DashboardPage() {
   const thirtyDaysFromNow = new Date()
   thirtyDaysFromNow.setDate(thirtyDaysFromNow.getDate() + 30)
 
-  const [{ data: profile }, { data: dueCards }, { data: vocabStatus }, { data: grammarCards }, { data: forecastCards }] =
+  const [profileResult, dueCardsResult, vocabStatusResult, grammarCardsResult, forecastCardsResult] =
     await Promise.all([
       supabase.from('users').select('streak_days').eq('id', authUser.id).single(),
       supabase
@@ -67,6 +67,16 @@ export default async function DashboardPage() {
         .eq('card_type', 'vocab')
         .lte('due_date', thirtyDaysFromNow.toISOString()),
     ])
+
+  if (profileResult.error || dueCardsResult.error || vocabStatusResult.error || grammarCardsResult.error || forecastCardsResult.error) {
+    console.error('Dashboard query error:', profileResult.error ?? dueCardsResult.error ?? vocabStatusResult.error ?? grammarCardsResult.error ?? forecastCardsResult.error)
+  }
+
+  const profile = profileResult.data
+  const dueCards = dueCardsResult.data
+  const vocabStatus = vocabStatusResult.data
+  const grammarCards = grammarCardsResult.data
+  const forecastCards = forecastCardsResult.data
 
   const streakDays = profile?.streak_days ?? 0
   const dueVocabCount = dueCards?.filter(c => c.card_type === 'vocab').length ?? 0
