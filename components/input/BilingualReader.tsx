@@ -225,26 +225,6 @@ export default function BilingualReader({ text, translation, user, comprehension
         </div>
       </div>
 
-      {activeTab === 'read' && text.youtube_url && (() => {
-        const videoId = text.youtube_url.match(/[?&]v=([^&]+)/)?.[1]
-        if (!videoId) return null
-        return (
-          <div className="flex-shrink-0 border-b border-border bg-surface px-6 py-4">
-            <div className="max-w-2xl mx-auto">
-              <div className="relative w-full aspect-video rounded overflow-hidden">
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${videoId}`}
-                  title="Source video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
-            </div>
-          </div>
-        )
-      })()}
-
       {activeTab === 'read' && (
         <div className="flex flex-1 overflow-hidden">
           {/* Word panel sidebar (desktop) */}
@@ -267,6 +247,23 @@ export default function BilingualReader({ text, translation, user, comprehension
               ref={scrollContainerRef}
               className="flex-1 overflow-y-auto relative p-6"
             >
+              {text.youtube_url && (() => {
+                const videoId = text.youtube_url!.match(/[?&]v=([^&]+)/)?.[1]
+                if (!videoId) return null
+                return (
+                  <div className="mb-6">
+                    <div className="relative w-full aspect-video rounded overflow-hidden">
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                        title="Source video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full"
+                      />
+                    </div>
+                  </div>
+                )
+              })()}
               {text.paragraphs.map(para => (
                 <div key={para.id} className="mb-8">
                   {para.sentences.map((sentence, sIdx) =>
@@ -309,6 +306,23 @@ export default function BilingualReader({ text, translation, user, comprehension
           {/* Desktop: side-by-side layout */}
           <div className="hidden md:block flex-1 overflow-y-auto relative">
             <div className="p-6 max-w-5xl">
+              {text.youtube_url && (() => {
+                const videoId = text.youtube_url!.match(/[?&]v=([^&]+)/)?.[1]
+                if (!videoId) return null
+                return (
+                  <div className="mb-6 max-w-2xl">
+                    <div className="relative w-full aspect-video rounded overflow-hidden">
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                        title="Source video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full"
+                      />
+                    </div>
+                  </div>
+                )
+              })()}
               {text.paragraphs.map(para => (
                 <div key={para.id} className={`mb-8 ${hideTranslation ? '' : 'grid grid-cols-2 gap-8'}`}>
                   {/* English */}
