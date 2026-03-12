@@ -251,8 +251,8 @@ export default function BilingualReader({ text, translation, user, comprehension
                 const videoId = text.youtube_url!.match(/[?&]v=([^&]+)/)?.[1]
                 if (!videoId) return null
                 return (
-                  <div className="mb-6">
-                    <div className="relative w-full aspect-video rounded overflow-hidden">
+                  <div className="mb-6 max-w-2xl mx-auto">
+                    <div className="relative w-full aspect-video rounded overflow-hidden border-2 border-terracotta">
                       <iframe
                         src={`https://www.youtube-nocookie.com/embed/${videoId}`}
                         title="Source video"
@@ -310,8 +310,8 @@ export default function BilingualReader({ text, translation, user, comprehension
                 const videoId = text.youtube_url!.match(/[?&]v=([^&]+)/)?.[1]
                 if (!videoId) return null
                 return (
-                  <div className="mb-6 max-w-2xl">
-                    <div className="relative w-full aspect-video rounded overflow-hidden">
+                  <div className="mb-6 max-w-2xl mx-auto">
+                    <div className="relative w-full aspect-video rounded overflow-hidden border-2 border-terracotta">
                       <iframe
                         src={`https://www.youtube-nocookie.com/embed/${videoId}`}
                         title="Source video"
