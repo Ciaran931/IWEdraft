@@ -1,0 +1,57 @@
+[
+  {
+    "text_id": "the-assassination-of-rasputin",
+    "word_id": "laced",
+    "en_definition": "To add a substance, especially a harmful one like poison, to something such as food or drink.",
+    "translations": {
+      "pl": {
+        "word": "dodać (np. truciznę)",
+        "definition": "Dodać substancję, zwłaszcza szkodliwą (np. truciznę), do czegoś, takiego jak jedzenie lub napój."
+      }
+    }
+  },
+  {
+    "text_id": "the-assassination-of-rasputin",
+    "word_id": "modeled",
+    "en_definition": "To create a representation or simulation of something, often for demonstration or analysis purposes.",
+    "translations": {
+      "pl": {
+        "word": "przedstawiliśmy (w formie modelu/symulacji)",
+        "definition": "Stworzyć reprezentację lub symulację czegoś, często w celu demonstracji lub analizy."
+      }
+    }
+  },
+  {
+    "text_id": "the-assassination-of-rasputin",
+    "word_id": "timeline",
+    "en_definition": "A chronological sequence of events, often presented visually or in a list to show the order in which they occurred.",
+    "translations": {
+      "pl": {
+        "word": "harmonogram wydarzeń",
+        "definition": "Chronologiczna sekwencja wydarzeń, często przedstawiona wizualnie lub w formie listy, aby pokazać kolejność ich występowania."
+      }
+    }
+  },
+  {
+    "text_id": "the-assassination-of-rasputin",
+    "word_id": "hemophilia",
+    "en_definition": "A medical condition where the blood does not clot properly, leading to excessive bleeding from minor injuries.",
+    "translations": {
+      "pl": {
+        "word": "hemofilia",
+        "definition": "Stan medyczny, w którym krew nie krzepnie prawidłowo, prowadząc do nadmiernego krwawienia z drobnych urazów."
+      }
+    }
+  },
+  {
+    "text_id": "the-assassination-of-rasputin",
+    "word_id": "flat",
+    "en_definition": "An apartment or set of rooms for living in, typically on one floor of a building.",
+    "translations": {
+      "pl": {
+        "word": "mieszkanie",
+        "definition": "Mieszkanie lub zestaw pokoi do zamieszkania, zazwyczaj na jednym piętrze budynku."
+      }
+    }
+  }
+]
