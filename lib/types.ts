@@ -35,6 +35,7 @@ export interface Text {
   level: string
   category: 'graded' | 'immersion'
   grammar_lesson_id?: string
+  youtube_url?: string | null
   paragraphs: TextParagraph[]
 }
 

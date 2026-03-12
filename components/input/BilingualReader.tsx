@@ -225,6 +225,26 @@ export default function BilingualReader({ text, translation, user, comprehension
         </div>
       </div>
 
+      {activeTab === 'read' && text.youtube_url && (() => {
+        const videoId = text.youtube_url.match(/[?&]v=([^&]+)/)?.[1]
+        if (!videoId) return null
+        return (
+          <div className="flex-shrink-0 border-b border-border bg-surface px-6 py-4">
+            <div className="max-w-2xl mx-auto">
+              <div className="relative w-full aspect-video rounded overflow-hidden">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                  title="Source video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        )
+      })()}
+
       {activeTab === 'read' && (
         <div className="flex flex-1 overflow-hidden">
           {/* Word panel sidebar (desktop) */}
